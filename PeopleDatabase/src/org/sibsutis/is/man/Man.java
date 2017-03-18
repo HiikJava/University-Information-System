@@ -1,8 +1,10 @@
 
 package org.sibsutis.is.man;
 
+import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.sibsutis.is.location.AbstractLocation;
 
 
 public class Man
@@ -17,13 +19,25 @@ public class Man
     }
 
     
+
+    
+    
+    
+    
+    
     public void setMiddleName(String MiddleName)
     {
         this.MiddleName = MiddleName;
     }
-    private String FistName;             // Имя человека 
-    private String SureName;         // Фамилия человека     
-    private String MiddleName;     // Отчество  человека 
+    private String FistName;                        // Имя человека 
+    private String SureName;                        // Фамилия человека     
+    private String MiddleName;                     // Отчество  человека 
+    private LocalDateTime   BirthDate;          //Дата рождения
+    private AbstractLocation BirthLocation;
+    
+    
+    
+    
 
     public Man (  )
     {        

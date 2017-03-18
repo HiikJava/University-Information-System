@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.sibsutis.is.documents;
 
-/**
- *
- * @author vaganovdv
- */
 public class Passport extends AbstractDocument
 {
-    private String  SerialNumber;
+    private String SerialNumber;
 
     @Override
     public String getValidTo()
@@ -60,7 +51,5 @@ public class Passport extends AbstractDocument
     {
         super.setValidTo(ValidTo); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
     
 }

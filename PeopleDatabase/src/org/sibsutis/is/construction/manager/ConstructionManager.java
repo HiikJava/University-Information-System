@@ -11,18 +11,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.sibsutis.is.construction.Building;
 
-/**
- *
- * @author vaganovdv
- */
 public class ConstructionManager implements  ConstructionManagerAPI
 {
-
-    private static final Logger log = Logger.getLogger(ConstructionManager.class.getName());
- // База данных зданий
+    private static final Logger log = Logger.getLogger(ConstructionManager.class.getName()); // База данных зданий
     private Map <Long,  Building > BuildingDatabase  = new HashMap < >();
-      
-    
+         
     public ConstructionManager()
     {
         log.log(Level.INFO,"[ConstructionManager]   Создан экземпляр класса"  );
@@ -42,7 +35,7 @@ public class ConstructionManager implements  ConstructionManagerAPI
     @Override
     public boolean stop()
     {
-       boolean result = false;
+        boolean result = false;
         BuildingDatabase.clear();
         log.log(Level.INFO,"[ConstructionManager]   база данных зданий   очищена" );
         result = true;
@@ -53,31 +46,29 @@ public class ConstructionManager implements  ConstructionManagerAPI
     @Override
     public boolean addBuilding()
     {
-         boolean result = false;
-         Building  building= new Building ();
-         long count = 0;
-         count = BuildingDatabase.size()+1;
-         
-         BuildingDatabase.put(count, building);
-         result = true;
-         return result;
+        boolean result = false;
+        Building building= new Building();
+        long count = 0;
+        count = BuildingDatabase.size()+1;
+
+        BuildingDatabase.put(count, building);
+        result = true;
+        return result;
     }
 
     @Override
     public boolean removeBuilding(long BuildingID)
     {
-         boolean result = false;
-        
+        boolean result = false;
+        BuildingDatabase.remove(BuildingID);
          
-         BuildingDatabase.remove(BuildingID);
-         
-         return result;
+        return result;
     }
 
     @Override
     public long getTotalBuildings()
     {
-          return  BuildingDatabase.size();
+        return  BuildingDatabase.size();
     }
     
     

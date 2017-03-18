@@ -13,8 +13,6 @@ public class AbstractLocation
     private String Village;
     private AbstractPoint Point;
     private GpsPoint GPSPoint;
-    
-
 
     public String getVillage()
     {

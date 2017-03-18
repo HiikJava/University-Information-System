@@ -1,36 +1,29 @@
-
 package org.sibsutis.is.documents;
 
 import org.sibsutis.is.documents.AbstractDocument;
 
 
 public class MilitaryId extends AbstractDocument
-{
+{ 
+    private String MilitaryRank;
+    private String Position;
+    private String Specialty;
 
-   
- private String MilitaryRank;
- private String Position;
- private String Specialty;
-
-   
     public String getMilitaryRank()
     {
         return MilitaryRank;
     }
-
-    
+ 
     public void setMilitaryRank(String MilitaryRank)
     {
         this.MilitaryRank = MilitaryRank;
     }
 
-    
     public String getPosition()
     {
         return Position;
     }
 
-    
     public void setPosition(String Position) 
     {
         this.Position = Position;
@@ -94,6 +87,5 @@ public class MilitaryId extends AbstractDocument
     {
         this.Specialty = Specialty;
     }
-    
-    
+     
 }

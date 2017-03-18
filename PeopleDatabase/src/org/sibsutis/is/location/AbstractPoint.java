@@ -39,6 +39,5 @@ public class AbstractPoint
     {
         this.X = X;
     }
-
     
 }

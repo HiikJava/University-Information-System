@@ -6,9 +6,9 @@ import org.sibsutis.is.documents.AbstractDocument;
 
 public class RecordBook extends AbstractDocument  
 {
-   private String Specialty;
-   private String OrderNumber;
-   private String FormOfTraining;
+    private String Specialty;
+    private String OrderNumber;
+    private String FormOfTraining;
 
     
     public String getSpecialty()
@@ -93,7 +93,5 @@ public class RecordBook extends AbstractDocument
     {
         super.setValidTo(ValidTo); //To change body of generated methods, choose Tools | Templates.
     }
-
-   
-    
+  
 }

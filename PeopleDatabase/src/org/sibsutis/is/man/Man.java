@@ -10,12 +10,9 @@ public class Man
 
     private static final Logger log = Logger.getLogger(Man.class.getName());
 
-   
-    
     public String getMiddleName()
     {
-        log.log(Level.INFO, "   ");
-        
+        log.log(Level.INFO, "   ");        
         return MiddleName;
     }
 
@@ -25,19 +22,16 @@ public class Man
         this.MiddleName = MiddleName;
     }
     private String FistName;             // Имя человека 
-    private  String SureName;         // Фамилия человека     
+    private String SureName;         // Фамилия человека     
     private String MiddleName;     // Отчество  человека 
-    
-  
-      public Man (  )
-    {
-        
-       log.log(Level.INFO, "[Man]   Создание экземпляра класса..."); 
-      this.FistName = "";
-      this.MiddleName = "";
-      this.SureName = "";
-       log.log(Level.INFO, "[Man]   Создание экземпляра класса закончено"); 
-      
+
+    public Man (  )
+    {        
+        log.log(Level.INFO, "[Man]   Создание экземпляра класса..."); 
+        this.FistName = "";
+        this.MiddleName = "";
+        this.SureName = "";
+        log.log(Level.INFO, "[Man]   Создание экземпляра класса закончено");   
     }       
     
      public String getFistName()
@@ -67,9 +61,7 @@ public class Man
     
     public String getFullName ()
     {
-    return this.getFistName()+" "+this.getMiddleName()+" "+this.getSureName();
-    
-    }        
-  
+    return this.getFistName()+" "+this.getMiddleName()+" "+this.getSureName();    
+    }    
     
 }

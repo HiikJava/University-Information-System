@@ -1,4 +1,3 @@
-
 package org.sibsutis.is.construction;
 
 import java.util.List;
@@ -11,10 +10,6 @@ public class Building extends AbstractConstruction
     public Building()
     {
         Floor = "";
-        Rooms.clear();
-    }
-    
-    
-    
-    
+        this.Rooms.clear();
+    }  
 }

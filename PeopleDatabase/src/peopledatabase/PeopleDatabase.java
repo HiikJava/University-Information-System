@@ -4,6 +4,8 @@ package peopledatabase;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.sibsutis.is.construction.manager.ConstructionManager;
+import org.sibsutis.is.man.Man;
+import org.sibsutis.is.man.manager.ManManager;
 
 
 public class PeopleDatabase
@@ -18,21 +20,13 @@ public class PeopleDatabase
     {
         log.log(Level.INFO, "Программа БД управления персоналом , версия {"+version+"]");
         
-        constructionManager = new  ConstructionManager ();
-        constructionManager.start();
-      
-        constructionManager.stop();
         
-        constructionManager.addBuilding();
-        constructionManager.addBuilding();
-        constructionManager.addBuilding();
-        constructionManager.addBuilding();
-        constructionManager.addBuilding();            
-               
-        log.log(Level.INFO, "База зданий содержит {"+constructionManager.getTotalBuildings()+"} зданий");
-            constructionManager.removeBuilding(1);
-            constructionManager.removeBuilding(4);
-        log.log(Level.INFO, "База зданий содержит {"+constructionManager.getTotalBuildings()+"} зданий");
+        
+         ManManager  manManager = new ManManager();
+         Man m = manManager.createMan();
+         manManager.addMan(m);
+         
+         
         
         log.log(Level.INFO, "Программа БД управления персоналом , версия ["+version+"] завершена");         
     }  

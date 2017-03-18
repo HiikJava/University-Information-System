@@ -10,6 +10,22 @@ import org.sibsutis.is.location.AbstractLocation;
 public class Man
 {
 
+    /**
+     * @return the id
+     */
+    public long getId()
+    {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id)
+    {
+        this.id = id;
+    }
+
     private static final Logger log = Logger.getLogger(Man.class.getName());
 
     public String getMiddleName()
@@ -29,6 +45,8 @@ public class Man
     {
         this.MiddleName = MiddleName;
     }
+    
+    private long id;                                        // Идентификатор человека в БД
     private String FistName;                        // Имя человека 
     private String SureName;                        // Фамилия человека     
     private String MiddleName;                     // Отчество  человека 
@@ -75,7 +93,7 @@ public class Man
     
     public String getFullName ()
     {
-    return this.getFistName()+" "+this.getMiddleName()+" "+this.getSureName();    
+        return this.getFistName()+" "+this.getMiddleName()+" "+this.getSureName();    
     }    
     
 }

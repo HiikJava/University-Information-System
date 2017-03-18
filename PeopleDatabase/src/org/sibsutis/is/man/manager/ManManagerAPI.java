@@ -5,6 +5,8 @@
  */
 package org.sibsutis.is.man.manager;
 
+import org.sibsutis.is.man.Man;
+
 /**
  *
  * @author vaganovdv
@@ -12,7 +14,9 @@ package org.sibsutis.is.man.manager;
 public interface ManManagerAPI
 {
     
-    public boolean createMan ();
+    public Man createMan ();
+    public boolean addMan(Man man);
+    
     
     
 }

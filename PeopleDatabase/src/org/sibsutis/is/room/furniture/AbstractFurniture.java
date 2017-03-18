@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.sibsutis.is.room.objects;
+package org.sibsutis.is.room.furniture;
+
+import org.sibsutis.is.location.AbstractPoint;
 
 /**
  *
  * @author Maximus
  */
-public class AbstractObject 
+public class AbstractFurniture 
 {
-    private AbstractLocationRoom Location;
+    private AbstractPoint point;
 }

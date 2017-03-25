@@ -1,0 +1,197 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package org.sibsutis.is.man.editor;
+
+import java.awt.BorderLayout;
+import java.io.IOException;
+import java.net.URL;
+import java.util.concurrent.CountDownLatch;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.JavaFXBuilderFactory;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import org.netbeans.api.settings.ConvertAsProperties;
+import org.openide.LifecycleManager;
+import org.openide.awt.ActionID;
+import org.openide.awt.ActionReference;
+import org.openide.windows.TopComponent;
+import org.openide.util.NbBundle.Messages;
+
+/**
+ * Top component which displays something.
+ */
+@ConvertAsProperties(
+        dtd = "-//org.sibsutis.is.man.editor//ManEditor//EN",
+        autostore = false
+)
+@TopComponent.Description(
+        preferredID = "ManEditorTopComponent",
+        //iconBase="SET/PATH/TO/ICON/HERE", 
+        persistenceType = TopComponent.PERSISTENCE_ALWAYS
+)
+@TopComponent.Registration(mode = "editor", openAtStartup = true)
+@ActionID(category = "Window", id = "org.sibsutis.is.man.editor.ManEditorTopComponent")
+@ActionReference(path = "Menu/Window" /*, position = 333 */)
+@TopComponent.OpenActionRegistration(
+        displayName = "#CTL_ManEditorAction",
+        preferredID = "ManEditorTopComponent"
+)
+@Messages(
+        {
+            "CTL_ManEditorAction=Редактор персон",
+            "CTL_ManEditorTopComponent=Редактор персон",
+            "HINT_ManEditorTopComponent=Редактор персон"
+        })
+public final class ManEditorTopComponent extends TopComponent
+{
+
+    private static final Logger log= Logger.getLogger(ManEditorTopComponent.class.getName());
+    
+    private JFXPanel  fxPanel;
+    private FXMLController controller;
+
+    public ManEditorTopComponent()
+    {
+        initComponents();
+        setName(Bundle.CTL_ManEditorTopComponent());
+        setToolTipText(Bundle.HINT_ManEditorTopComponent());
+        setLayout(new BorderLayout());
+        init();
+        
+        
+       
+
+    }
+
+    
+      private void init()
+    {
+
+        final CountDownLatch latch = new CountDownLatch(1);
+
+        fxPanel = new JFXPanel();
+        add(fxPanel, BorderLayout.CENTER);
+        Platform.setImplicitExit(false);
+        Platform.runLater(()
+                -> 
+                {
+                    try
+                    {
+                        createScene();
+                    }
+                    finally
+                    {
+                        latch.countDown();
+                    }
+        }
+        );
+
+        try
+        {
+            latch.await(); // wait for createScene() to finish // get the InstanceContent from the controller 
+            // associateLookup(new AbstractLookup(controller.getInstanceContent()));
+        }
+        catch (InterruptedException ex)
+        {
+            log.log(Level.SEVERE, "Ошибка ожидания загрузки связанных компонент интерфейса");
+            log.log(Level.SEVERE, "Описание ошибки [" + ex.getMessage() + "]");
+            log.log(Level.SEVERE, "Причина ошибки [" + ex.getMessage() + "]");
+            LifecycleManager.getDefault().exit();
+        }
+
+    }
+
+    private void createScene()
+    {
+        try
+        {
+            log.info("Загрузка сцены для модуля [ManEditor]... ");
+            URL location = getClass().getResource("Scene.fxml");
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(location);
+            fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
+            Parent root = (Parent) fxmlLoader.load(location.openStream());
+            Scene scene = new Scene(root);
+            if (scene != null)
+            {    
+             log.info("Сцена модуля [CMPeditorTopComponent] загружена успешно ");
+            fxPanel.setScene(scene);
+            controller = (FXMLController) fxmlLoader.getController();
+            log.info("Модуль [CMPeditorTopComponent] загружен успешно");
+                    
+           
+            }
+            else
+            {
+               log.log(Level.SEVERE, "Ошибка загрузки сцены модуля  [CPSeditorTopComponent]");
+               
+            }
+            
+        }
+        catch (IOException ex)
+        {
+            log.info("Инициализация графического интерфейса [CPSeditorTopComponent] завершилась неудачей");
+            log.log(Level.SEVERE, "Описание ошибки: ", ex.toString());
+        }
+    }
+    
+    
+    
+    
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents()
+    {
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // End of variables declaration//GEN-END:variables
+    @Override
+    public void componentOpened()
+    {
+        // TODO add custom code on component opening
+    }
+
+    @Override
+    public void componentClosed()
+    {
+        // TODO add custom code on component closing
+    }
+
+    void writeProperties(java.util.Properties p)
+    {
+        // better to version settings since initial version as advocated at
+        // http://wiki.apidesign.org/wiki/PropertyFiles
+        p.setProperty("version", "1.0");
+        // TODO store your settings
+    }
+
+    void readProperties(java.util.Properties p)
+    {
+        String version = p.getProperty("version");
+        // TODO read your settings according to their version
+    }
+}

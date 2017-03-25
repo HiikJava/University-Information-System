@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sibsutis.is.man.editor.FXMLController">
+    <children>
+        <Label fx:id="label" layoutX="378.0" layoutY="90.0" minHeight="16" minWidth="69" text="lkjkljlkjlk" />
+      <ProgressIndicator layoutX="942.0" layoutY="34.0" progress="0.0" />
+    </children>
+</AnchorPane>

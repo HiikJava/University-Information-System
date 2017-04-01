@@ -24,9 +24,14 @@ public class FXMLController implements Initializable
 @FXML
 private TextField Suname_TF;
 @FXML
+private TextField FistName_TF;
+@FXML
+private TextField MiddleName_TF;
+
+@FXML
 private Button Add_Person_BT;
   
-    
+
 
 
     @Override
@@ -51,6 +56,9 @@ private Button Add_Person_BT;
         {// Обработка нажатия клавиши
 
             log.log(Level.INFO, "[man.editor] Нажата кнопка добавления студента {Добавить}");  
+            log.log(Level.INFO, "[man.editor] Фамилия: "+this.Suname_TF);  
+            log.log(Level.INFO, "[man.editor] Имя : "+this.FistName_TF);  
+            log.log(Level.INFO, "[man.editor] Отчество: "+this.MiddleName_TF);  
 
         } // Обработка нажатия клавиши
         );

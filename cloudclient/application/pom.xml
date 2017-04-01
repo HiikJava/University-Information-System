@@ -25,11 +25,6 @@
             <version>${netbeans.version}</version>
             <type>pom</type>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>cloudclient-branding</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <!-- NbModuleSuite functional in RELEASE70 or later: -->
         <dependency>
             <groupId>org.netbeans.api</groupId>
@@ -45,6 +40,16 @@
             <scope>test</scope>
         </dependency>
         -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>man.manager</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cloudclient-branding</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>startpage</artifactId>
@@ -110,4 +115,5 @@
             </build>
         </profile>
     </profiles>
+    <version>0.0.6</version>
 </project>

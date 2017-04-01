@@ -121,16 +121,16 @@ public final class ManEditorTopComponent extends TopComponent
             Scene scene = new Scene(root);
             if (scene != null)
             {    
-             log.info("Сцена модуля [CMPeditorTopComponent] загружена успешно ");
+             log.info("Сцена модуля [ManEditorTopComponent] загружена успешно ");
             fxPanel.setScene(scene);
             controller = (FXMLController) fxmlLoader.getController();
-            log.info("Модуль [CMPeditorTopComponent] загружен успешно");
+            log.info("Модуль [ManEditorTopComponent] загружен успешно");
                     
            
             }
             else
             {
-               log.log(Level.SEVERE, "Ошибка загрузки сцены модуля  [CPSeditorTopComponent]");
+               log.log(Level.SEVERE, "Ошибка загрузки сцены модуля  [ManEditorTopComponent]");
                
             }
             

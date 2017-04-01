@@ -23,7 +23,7 @@ public class FXMLController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         log.info("----------------------------------------------------------------------");
-        log.info("Конфигурация зависимых модулей ...");
+        log.info(" ...");
         //ConfigureModules();
         //ConfigureButtons();
         log.info("Конфигурация зависимых модулей завершена");

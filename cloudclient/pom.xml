@@ -72,6 +72,7 @@
         <module>application</module>
         <module>startpage</module>
         <module>man.editor</module>
+        <module>man.manager</module>
     </modules>
 
     <properties>

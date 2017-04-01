@@ -73,6 +73,7 @@
         <module>startpage</module>
         <module>man.editor</module>
         <module>man.manager</module>
+        <module>man.model</module>
     </modules>
 
     <properties>

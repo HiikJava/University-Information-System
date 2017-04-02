@@ -1,0 +1,21 @@
+package org.sibsutis.is.authorization;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
+
+/**
+ FXML Controller class
+
+ @author Maximus
+ */
+public class AuthInterfaceController implements Initializable
+{
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb)
+    {
+        // TODO
+    }    
+    
+}

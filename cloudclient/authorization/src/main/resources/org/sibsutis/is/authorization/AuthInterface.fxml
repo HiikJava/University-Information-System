@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sibsutis.is.authorization.AuthInterfaceController">
+    <stylesheets>
+        <URL value="@authinterface.css" />
+    </stylesheets>
+   <children>
+      <Accordion layoutX="14.0" layoutY="14.0" prefHeight="453.0" prefWidth="616.0">
+        <panes>
+          <TitledPane animated="false" text="Авторизация">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="97.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="40.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="20.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="Auth_Login_LB" text="Логин:" />
+                              <Label fx:id="Auth_Pass_LB" text="Пароль" GridPane.rowIndex="1" />
+                              <TextField fx:id="Auth_Login_TF" GridPane.columnIndex="2" />
+                              <PasswordField fx:id="Auth_Pass_TF" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label fx:id="Auth_Save_LB" text="Сохранить" GridPane.rowIndex="2" />
+                              <CheckBox fx:id="Auth_Save_ChB" mnemonicParsing="false" prefHeight="17.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button fx:id="Auth_Enter_BT" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Вход" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Регистрация">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane alignment="CENTER" layoutX="98.6" layoutY="67.6" nodeOrientation="LEFT_TO_RIGHT" prefHeight="256.0" prefWidth="451.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="58.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.99999237060547" minWidth="10.0" prefWidth="124.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="55.99999237060547" minWidth="1.0" prefWidth="15.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="217.00000762939453" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="9.0" prefWidth="9.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="92.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="Reg_Surname_LB" text="Фамилия" />
+                              <Label fx:id="Reg_Name_LB" text="Имя" GridPane.rowIndex="1" />
+                              <TextField fx:id="Reg_Surname_TF" GridPane.columnIndex="2" />
+                              <Label fx:id="Reg_Middlename_LB" text="Отчество" GridPane.rowIndex="2" />
+                              <Button fx:id="Reg_Registration_BT" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Регистрация" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                              <Label fx:id="Reg_Mail_LB" text="Эл. почта" GridPane.rowIndex="3" />
+                              <Label fx:id="Reg_Status_LB" text="Статус" GridPane.rowIndex="4" />
+                              <PasswordField fx:id="Reg_Pass_PF" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label fx:id="Reg_Pass_LB" text="Пароль" GridPane.rowIndex="5" />
+                              <ComboBox fx:id="Reg_Status_CB" prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </ComboBox>
+                              <TextField fx:id="Reg_Name_TF" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <TextField fx:id="Reg_Middlename_TF" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <TextField fx:id="Reg_Mail_TF" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="Reg_Mail_Mess_LB" text="Message" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Label fx:id="Reg_Pass_Mess_LB" text="Message" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Восстановление пароля">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane nodeOrientation="LEFT_TO_RIGHT" prefWidth="505.0" AnchorPane.leftAnchor="90.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="119.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="4.0" prefWidth="11.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="220.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="9.0" prefWidth="9.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="148.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="Recovery_Mail_LB" text="Эл. почта:" GridPane.rowIndex="1" />
+                              <TextField fx:id="Recovery_Mail_TF" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button fx:id="Recovery_Send_BT" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Выслать" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <Label prefHeight="17.0" prefWidth="222.0" text="Выслать код восстановления на почту" GridPane.columnIndex="2" />
+                              <Label fx:id="Recovery_Mail_Mess_LB" text="Message" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Label fx:id="Recovery_Code_LB" text="Код восстановления:" GridPane.rowIndex="4" />
+                              <TextField fx:id="Recovery_Code_TF" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <PasswordField fx:id="Recovery_NewPass_TF" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <PasswordField fx:id="Recovery_ConfirmPass_TF" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Label fx:id="Recovery_Code_Mess_LB" text="Message" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <Label fx:id="Recovery_NewPass_LB" text="Новый пароль:" GridPane.rowIndex="5" />
+                              <Label fx:id="Recovery_ConfirmPass_LB" prefHeight="34.0" prefWidth="118.0" text="Подтвердить пароль:" GridPane.rowIndex="6" />
+                              <Label fx:id="Recovery_NewPass_Mess_LB" text="Message" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                              <Label fx:id="Recovery_ConfirmPass_Mess_LB" text="Message" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                              <Button fx:id="Recovery_RestorePass_BT" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Восстановить" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>

@@ -74,6 +74,8 @@
         <module>man.editor</module>
         <module>man.manager</module>
         <module>man.model</module>
+        <module>authorization</module>
+        <module>authorization</module>
     </modules>
 
     <properties>

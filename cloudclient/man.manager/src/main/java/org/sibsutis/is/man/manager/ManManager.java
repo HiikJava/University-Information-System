@@ -9,6 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.openide.util.lookup.ServiceProvider;
 import org.sibsutis.is.man.model.Man;
 import org.sibsutis.is.man.model.ManManagerAPI;
 
@@ -17,9 +18,10 @@ import org.sibsutis.is.man.model.ManManagerAPI;
  * @author vaganovdv
  */
 
+@ServiceProvider(service = ManManagerAPI.class)
 public class ManManager implements ManManagerAPI
 {
-
+ 
     private static final Logger log = Logger.getLogger(ManManager.class.getName());
     
     
@@ -50,8 +52,5 @@ public class ManManager implements ManManagerAPI
        
        return result;
     }
-    
-    
-    
     
 }

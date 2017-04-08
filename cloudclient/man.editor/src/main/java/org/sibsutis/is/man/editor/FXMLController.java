@@ -49,7 +49,7 @@ public class FXMLController implements Initializable
             {   // Обработка нажатия клавиши
                 log.log(Level.INFO, "[man.editor] Нажата кнопка добавления студента {Добавить}");  
                 log.log(Level.INFO, "[man.editor] Фамилия: "+this.Suname_TF);  
-                log.log(Level.INFO, "[man.editor] Имя : "+this.FistName_TF);  
+                log.log(Level.INFO, "[man.editor] Имя: "+this.FistName_TF);  
                 log.log(Level.INFO, "[man.editor] Отчество: "+this.MiddleName_TF);  
             }
         );

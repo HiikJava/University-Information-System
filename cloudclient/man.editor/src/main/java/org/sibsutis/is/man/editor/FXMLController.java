@@ -12,20 +12,22 @@ import javafx.scene.control.TextField;
 
 
 
+
 public class FXMLController implements Initializable
 {
-    // лог
+
+// лог
     private static final Logger log = Logger.getLogger(FXMLController.class.getName());
 
-    // Форма регистрации студента 
-    @FXML
-    private TextField Suname_TF;
-    @FXML
-    private TextField FistName_TF;
-    @FXML
-    private TextField MiddleName_TF;
-    @FXML
-    private Button Add_Person_BT;
+// Форма регистрации студента 
+
+@FXML
+private TextField Suname_TF;
+@FXML
+private Button Add_Person_BT;
+  
+    
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -45,14 +47,12 @@ public class FXMLController implements Initializable
 
     private void Configure_Add_Person_BT()
     {
-        Add_Person_BT.setOnAction(
-                (ActionEvent event) ->
-            {   // Обработка нажатия клавиши
-                log.log(Level.INFO, "[man.editor] Нажата кнопка добавления студента {Добавить}");  
-                log.log(Level.INFO, "[man.editor] Фамилия: "+this.Suname_TF);  
-                log.log(Level.INFO, "[man.editor] Имя : "+this.FistName_TF);  
-                log.log(Level.INFO, "[man.editor] Отчество: "+this.MiddleName_TF);  
-            }
+        Add_Person_BT.setOnAction((ActionEvent event) ->
+        {// Обработка нажатия клавиши
+
+            log.log(Level.INFO, "[man.editor] Нажата кнопка добавления студента {Добавить}");  
+
+        } // Обработка нажатия клавиши
         );
     }
 

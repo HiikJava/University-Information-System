@@ -65,6 +65,11 @@
             <artifactId>man.model</artifactId>
             <version>0.0.5</version>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>authorization</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

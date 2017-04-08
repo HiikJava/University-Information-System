@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import org.openide.util.Lookup;
+import org.sibsutis.is.man.model.Man;
 import org.sibsutis.is.man.model.ManManagerAPI;
 
 
@@ -55,6 +56,15 @@ public class FXMLController implements Initializable
                 log.log(Level.INFO, "[man.editor] Фамилия: "+this.Suname_TF);  
                 log.log(Level.INFO, "[man.editor] Имя: "+this.FistName_TF);  
                 log.log(Level.INFO, "[man.editor] Отчество: "+this.MiddleName_TF);  
+                
+                Man man = new Man();
+                man.setFistName(FistName_TF.getText());
+                
+                if (ManManager!=null)
+                 {
+                     ManManager.addMan(man);
+                }
+                
             }
         );
     }

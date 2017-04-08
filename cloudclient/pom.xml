@@ -75,6 +75,7 @@
         <module>man.manager</module>
         <module>man.model</module>
         <module>authorization</module>
+        <module>location</module>
     </modules>
 
     <properties>

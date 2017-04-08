@@ -8,13 +8,28 @@ package org.sibsutis.is.man.manager;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import org.sibsutis.is.man.model.Man;
+import org.sibsutis.is.man.model.ManManagerAPI;
 
 /**
  *
  * @author vaganovdv
  */
-public class ManManager
+
+public class ManManager implements ManManagerAPI
 {
     private final ConcurrentMap <Long,  Man > ManDatabase  = new ConcurrentHashMap < >();
+
+    @Override
+    public boolean addMan(Man man)
+    {
+       boolean result = false;
+       
+       
+       
+       return result;
+    }
+    
+    
+    
     
 }

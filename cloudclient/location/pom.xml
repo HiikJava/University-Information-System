@@ -6,7 +6,7 @@
         <artifactId>cloudclient-parent</artifactId>
         <version>0.0.5</version>
     </parent>
-    <artifactId>man.model</artifactId>
+    <artifactId>location</artifactId>
     <packaging>nbm</packaging>
     <build>
         <plugins>
@@ -17,7 +17,7 @@
                 <configuration>
                     <useOSGiDependencies>true</useOSGiDependencies>
                     <publicPackages>
-                        <publicPackage>org.sibsutis.is.man.model</publicPackage>
+                        <publicPackage>org.sibsutis.is.location</publicPackage>
                     </publicPackages>
                 </configuration>
             </plugin>
@@ -35,11 +35,6 @@
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-annotations-common</artifactId>
             <version>${netbeans.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>location</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
     <properties>

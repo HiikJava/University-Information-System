@@ -50,25 +50,45 @@ public class FXMLController implements Initializable
     private void Configure_Add_Person_BT()
     {
         Add_Person_BT.setOnAction(
-            (ActionEvent event) ->
-            {   // Обработка нажатия клавиши
-                log.log(Level.INFO, "[man.editor] Нажата кнопка добавления студента {Добавить}");  
-                log.log(Level.INFO, "[man.editor] Фамилия: "+this.Suname_TF.getText());  
-                log.log(Level.INFO, "[man.editor] Имя: "+this.FistName_TF.getText());  
-                log.log(Level.INFO, "[man.editor] Отчество: "+this.MiddleName_TF.getText());  
+                (ActionEvent event) ->
+        {   // Обработка нажатия клавиши
+            log.log(Level.INFO, "[man.editor] Нажата кнопка добавления студента {Добавить}");
+            log.log(Level.INFO, "[man.editor] Фамилия: " + this.Suname_TF.getText());
+            log.log(Level.INFO, "[man.editor] Имя: " + this.FistName_TF.getText());
+            log.log(Level.INFO, "[man.editor] Отчество: " + this.MiddleName_TF.getText());
+
+            Man man = new Man();
+            if (!FistName_TF.getText().isEmpty()
+                    && !MiddleName_TF.getText().isEmpty()
+                    && !Suname_TF.getText().isEmpty())
+            {
+                man.setFistName(this.FistName_TF.getText());
+                man.setMiddleName(MiddleName_TF.getText());
+                man.setSureName(Suname_TF.getText());
                 
-                Man man = new Man();
-                man.setFistName(FistName_TF.getText());
                 
-                if (ManManager!=null)
-                 {
-                     ManManager.addMan(man);
-                }
-                
+            } else
+            {
+                log.log(Level.INFO, "[man.editor] Не заполнены поля Ф.И.О. сохранение не возможно");
             }
+
+            if (ManManager != null)
+            {
+                ManManager.addMan(man);
+            }
+
+        }
         );
     }
 
+    
+    private boolean  saveMan(Man man)
+    {
+       boolean result = false;   
+       
+       
+       return result;
+    }      
     
      private synchronized boolean LookingForManManager()
     {

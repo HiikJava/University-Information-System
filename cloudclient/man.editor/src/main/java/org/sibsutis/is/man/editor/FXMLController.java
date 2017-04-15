@@ -53,9 +53,9 @@ public class FXMLController implements Initializable
             (ActionEvent event) ->
             {   // Обработка нажатия клавиши
                 log.log(Level.INFO, "[man.editor] Нажата кнопка добавления студента {Добавить}");  
-                log.log(Level.INFO, "[man.editor] Фамилия: "+this.Suname_TF);  
-                log.log(Level.INFO, "[man.editor] Имя: "+this.FistName_TF);  
-                log.log(Level.INFO, "[man.editor] Отчество: "+this.MiddleName_TF);  
+                log.log(Level.INFO, "[man.editor] Фамилия: "+this.Suname_TF.getText());  
+                log.log(Level.INFO, "[man.editor] Имя: "+this.FistName_TF.getText());  
+                log.log(Level.INFO, "[man.editor] Отчество: "+this.MiddleName_TF.getText());  
                 
                 Man man = new Man();
                 man.setFistName(FistName_TF.getText());

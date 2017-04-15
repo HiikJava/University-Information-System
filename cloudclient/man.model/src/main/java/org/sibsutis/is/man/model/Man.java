@@ -25,7 +25,7 @@ public class Man
     
     
 
-    public Man (  )
+    public Man ()
     {        
         log.log(Level.INFO, "[Man]   Создание экземпляра класса..."); 
         this.FistName       =  "";

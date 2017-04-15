@@ -1,5 +1,7 @@
 package org.sibsutis.is.man.editor;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -34,11 +36,11 @@ public class FXMLController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         log.info("----------------------------------------------------------------------");
-        log.info(" ...");
-        //ConfigureModules();
+        log.info(" Загрузка модуля {man.editor}...");
+        ConfigureModules();
         ConfigureButtons();
-        LookingForManManager();
-        log.info("Конфигурация зависимых модулей завершена");
+
+        log.info("агрузка модуля {man.editor} завершена");
         log.info("----------------------------------------------------------------------");
     }
 
@@ -47,6 +49,22 @@ public class FXMLController implements Initializable
         Configure_Add_Person_BT();
     }
 
+    // ------------------------------------------------------------------------- 
+    //                  Обаботчик событий [ManlManager]  
+    // ------------------------------------------------------------------------- 
+    private final PropertyChangeListener ManManagerListener = (PropertyChangeEvent evt)
+    ->
+    {         
+        log.log(Level.INFO, "[man.editor] Поступило событие от  модуля {ManManager}");
+    };
+
+
+    
+    
+    
+    
+    
+    
     private void Configure_Add_Person_BT()
     {
         Add_Person_BT.setOnAction(
@@ -109,11 +127,18 @@ public class FXMLController implements Initializable
             result = false;
         } else
         {     
-            log.info("[ManEditor] Модуль [ManManager] загружен успешно ");            
+            log.info("[ManEditor] Модуль [ManManager] найден успешно ");
+
+            ManManager.addPropertyChangeListener(ManManagerListener);
          
             result =true;          
         }
         return result;
+    }
+
+    private void ConfigureModules()
+    {
+               LookingForManManager();
     }
 
     

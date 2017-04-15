@@ -6,11 +6,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.openide.util.Lookup;
 import org.sibsutis.is.man.model.Man;
 import org.sibsutis.is.man.model.ManManagerAPI;
@@ -32,15 +37,33 @@ public class FXMLController implements Initializable
     @FXML
     private Button Add_Person_BT;
 
+    //---------------------------------------------------
+    //  Таблица персон
+    @FXML
+    private  TableView<Man> ManTableView ;
+  
+    private TableColumn<Man, String> SureName;
+    private TableColumn<Man, String> FistName;
+    private TableColumn<Man, String> MiddleName;
+    
+    // Данные таблицы [ManTableView]
+    private ObservableList<Man> ManTableViewData = FXCollections.observableArrayList();
+    
+    //---------------------------------------------------
+    
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
         log.info("----------------------------------------------------------------------");
-        log.info(" Загрузка модуля {man.editor}...");
+        log.info(" Загрузка модуля {ManEditor}...");
         ConfigureModules();
         ConfigureButtons();
+        ConfigureTableView();
 
-        log.info("агрузка модуля {man.editor} завершена");
+        log.info("Загрузка модуля {ManEditor} завершена");
         log.info("----------------------------------------------------------------------");
     }
 
@@ -49,13 +72,19 @@ public class FXMLController implements Initializable
         Configure_Add_Person_BT();
     }
 
+    
+      private void ConfigureTableView()
+    {
+        ConfigureManTableView();
+    }
+
     // ------------------------------------------------------------------------- 
     //                  Обаботчик событий [ManlManager]  
     // ------------------------------------------------------------------------- 
     private final PropertyChangeListener ManManagerListener = (PropertyChangeEvent evt)
     ->
     {         
-        log.log(Level.INFO, "[man.editor] Поступило событие от  модуля {ManManager}");
+        log.log(Level.INFO, "[ManEditor] Поступило событие от  модуля {ManManager}");
     };
 
 
@@ -70,10 +99,10 @@ public class FXMLController implements Initializable
         Add_Person_BT.setOnAction(
                 (ActionEvent event) ->
         {   // Обработка нажатия клавиши
-            log.log(Level.INFO, "[man.editor] Нажата кнопка добавления студента {Добавить}");
-            log.log(Level.INFO, "[man.editor] Фамилия: " + this.Suname_TF.getText());
-            log.log(Level.INFO, "[man.editor] Имя: " + this.FistName_TF.getText());
-            log.log(Level.INFO, "[man.editor] Отчество: " + this.MiddleName_TF.getText());
+            log.log(Level.INFO, "[ManEditor] Нажата кнопка добавления студента {Добавить}");
+            log.log(Level.INFO, "[ManEditor] Фамилия: " + this.Suname_TF.getText());
+            log.log(Level.INFO, "[ManEditor] Имя: " + this.FistName_TF.getText());
+            log.log(Level.INFO, "[ManEditor] Отчество: " + this.MiddleName_TF.getText());
 
             Man man = new Man();
             if (!FistName_TF.getText().isEmpty()
@@ -87,7 +116,7 @@ public class FXMLController implements Initializable
                 
             } else
             {
-                log.log(Level.INFO, "[man.editor] Не заполнены поля Ф.И.О. сохранение не возможно");
+                log.log(Level.INFO, "[ManEditor] Не заполнены поля Ф.И.О. сохранение не возможно");
             }
 
             if (ManManager != null)
@@ -141,6 +170,38 @@ public class FXMLController implements Initializable
                LookingForManManager();
     }
 
+    /*
+    @FXML
+    private  TableView<Man> ManTableView ;
+  
+    private TableColumn<Man, String> SureName;
+    private TableColumn<Man, String> FistName;
+    private TableColumn<Man, String> MiddleName;
+    
+    */
+    
+    
+    private void ConfigureManTableView()
+    {
+         log.log(Level.INFO, "[ManEditor] конфигурирование таблицы {ManTableView}...");
+        if (ManManager != null)
+        {
+
+            SureName = new TableColumn("Фамилия");
+            SureName.setMinWidth(200);
+            SureName.setCellValueFactory(new PropertyValueFactory<Man, String>("SureName"));
+            
+             ManTableView.getColumns().setAll(SureName );
+
+            ManTableView.setItems(ManTableViewData);
+            ManTableView.refresh();
+            
+        }
+          log.log(Level.INFO, "[ManEditor] конфигурирование таблицы {ManTableView} заврешено");
+        
+    }
+
+  
     
     
     

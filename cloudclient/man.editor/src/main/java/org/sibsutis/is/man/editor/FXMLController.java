@@ -6,8 +6,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -85,6 +87,8 @@ public class FXMLController implements Initializable
     ->
     {         
         log.log(Level.INFO, "[ManEditor] Поступило событие от  модуля {ManManager}");
+        this.UpdateManTableView();
+        
     };
 
 
@@ -209,7 +213,53 @@ public class FXMLController implements Initializable
         
     }
 
-  
+       private  void UpdateManTableView()
+      {
+       
+      // Обновление таблицы графического интерфейса
+         log.log(Level.INFO, "[ManEditor] Обновление интерфейса таблицы [ManTableView]...");   
+        
+          Task task = new Task<Void>()
+          {  @Override
+              public Void call() throws Exception
+              {           
+                 Platform.runLater(new Runnable()
+                      {
+                          @Override 
+                          public void run()
+                          {  
+                             // Обновление таблицы персон  
+                             ManTableViewData.clear();   
+                             ManTableView.getItems().clear(); 
+                             ManTableView.refresh();
+                             if (ManManager.getAllMan().size() > 0 )
+                             {    
+                                ManTableViewData.addAll(ManManager.getAllMan());
+                             }
+                             ManTableView.setItems(ManTableViewData);
+                             ManTableView.refresh();
+                             ManTableView.getSelectionModel().selectLast();
+                          }
+                          
+                      });
+                 return null;
+              }
+          };
+          
+          log.log(Level.INFO, "[ManEditor] Запуск нити обновления строк таблицы..."); 
+          Thread th = new Thread(task);
+          th.setDaemon(true);
+          th.start();
+          log.log(Level.INFO, "[ManEditor] Модель таблицы содержит ["+ManTableViewData.size()+"] записей"); 
+          ManTableView.requestFocus();
+          
+          
+          log.log(Level.INFO, "[ManEditor] Таблица обновлена");
+          log.log(Level.INFO, "[ManEditor] Количество записей в таблице ["+ManTableViewData.size()+"]");  
+          log.log(Level.INFO, "[ManEditor] Обновление интерфейса таблицы [ManEditor] завершено");
+      }        
+    
+
     
     
     

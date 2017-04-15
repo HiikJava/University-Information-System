@@ -85,7 +85,13 @@ public class FXMLController implements Initializable
     private boolean  saveMan(Man man)
     {
        boolean result = false;   
-       
+       if (ManManager != null)
+       {
+           log.log(Level.INFO,"[ManEditor] Попытка добавления экземпляра класса {Man} выполнение {saveMan}...");
+           ManManager.addMan(man);
+            log.log(Level.INFO,"[ManEditor] Выполнение операции  {saveMan} завершено");
+           
+       }  
        
        return result;
     }      

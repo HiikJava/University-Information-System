@@ -36,18 +36,21 @@ public class ManManager implements ManManagerAPI
        
            if (ManDatabase.containsKey(man.getId()))
            {
-            log.log(Level.WARNING, "[ManManager] Невозможно  экземпляр [Man] класса - id = ["+man.getId()+"] существует в БД");
+             log.log(Level.WARNING, "[ManManager] Невозможно  экземпляр [Man] класса - id = ["+man.getId()+"] существует в БД");
+             result =false;
            } 
            else
            {
                 ManDatabase.put(man.getId(), man);
-                 log.log(Level.INFO, "[ManManager]  экземпляр [Man]  id = ["+man.getId()+"]  успешно добавлен  в БД");
+                log.log(Level.INFO, "[ManManager]  экземпляр [Man]  id = ["+man.getId()+"]  успешно добавлен  в БД");
+                result =true;
            }
            
        }  
        else
        {
        log.log(Level.WARNING, "[ManManager] Невозможно добавить пустой экземпляр [Man]");
+       result =false;
        }
        
        return result;

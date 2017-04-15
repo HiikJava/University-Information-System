@@ -191,7 +191,15 @@ public class FXMLController implements Initializable
             SureName.setMinWidth(200);
             SureName.setCellValueFactory(new PropertyValueFactory<Man, String>("SureName"));
             
-             ManTableView.getColumns().setAll(SureName );
+            FistName = new TableColumn("Имя");
+            FistName.setMinWidth(100);
+            FistName.setCellValueFactory(new PropertyValueFactory<Man, String>("FistName"));
+            
+             MiddleName = new TableColumn("Отчество");
+            MiddleName.setMinWidth(200);
+            MiddleName.setCellValueFactory(new PropertyValueFactory<Man, String>("MiddleName"));
+            
+             ManTableView.getColumns().setAll(SureName, FistName, MiddleName);
 
             ManTableView.setItems(ManTableViewData);
             ManTableView.refresh();

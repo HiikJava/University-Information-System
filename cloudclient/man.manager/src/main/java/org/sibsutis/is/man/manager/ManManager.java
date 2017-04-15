@@ -47,6 +47,7 @@ public class ManManager implements ManManagerAPI
            else
            {
                 ManDatabase.put(man.getId(), man);
+                getPropertyChangeSupport().firePropertyChange("", null, man);
                 log.log(Level.INFO, "[ManManager]  экземпляр [Man]  id = ["+man.getId()+"]  успешно добавлен  в БД");
                 result =true;
            }

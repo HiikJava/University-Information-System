@@ -5,6 +5,8 @@
  */
 package org.sibsutis.is.man.manager;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Level;
@@ -12,6 +14,8 @@ import java.util.logging.Logger;
 import org.openide.util.lookup.ServiceProvider;
 import org.sibsutis.is.man.model.Man;
 import org.sibsutis.is.man.model.ManManagerAPI;
+
+
 
 /**
  *
@@ -23,7 +27,8 @@ public class ManManager implements ManManagerAPI
 {
  
     private static final Logger log = Logger.getLogger(ManManager.class.getName());
-    
+     // Установка слушателей
+    private PropertyChangeSupport propChangeSupport = null;
     
     private final ConcurrentMap <Long,  Man > ManDatabase  = new ConcurrentHashMap < >();
 
@@ -56,4 +61,43 @@ public class ManManager implements ManManagerAPI
        return result;
     }
     
+    
+    private PropertyChangeSupport getPropertyChangeSupport()
+    {
+        if (this.propChangeSupport == null)
+        {
+            this.propChangeSupport = new PropertyChangeSupport(this);
+        }
+        return this.propChangeSupport;
+    }
+    
+    
+    
+   
+    @Override
+    public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
+    {
+        getPropertyChangeSupport().addPropertyChangeListener(listener);
+        log.log(Level.INFO, "" );
+        log.log(Level.INFO, "---------------------------------------------------------------" );
+        log.log(Level.INFO, "===LISTENER===" );
+        log.log(Level.INFO, "[ManManager] Установлен слушатель" );
+        log.log(Level.INFO, "[ManManager] Имя слушателя: ["+listener.toString()+"]" );
+        log.log(Level.INFO, "---------------------------------------------------------------" );
+        log.log(Level.INFO, "" );
+    }
+    
+   
+    @Override
+    public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
+    {
+        getPropertyChangeSupport().removePropertyChangeListener(listener);
+        log.log(Level.INFO, "" );
+        log.log(Level.INFO, "---------------------------------------------------------------" );
+        log.log(Level.INFO, "===LISTENER===" );
+        log.log(Level.INFO, "[ManManager] Удален слушатель" );
+        log.log(Level.INFO, "[ManManager] Имя слушателя: ["+listener.toString()+"]" );
+        log.log(Level.INFO, "---------------------------------------------------------------" );
+        log.log(Level.INFO, "" );
+    }
 }

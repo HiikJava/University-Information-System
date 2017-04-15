@@ -7,6 +7,8 @@ package org.sibsutis.is.man.manager;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Level;
@@ -100,5 +102,11 @@ public class ManManager implements ManManagerAPI
         log.log(Level.INFO, "[ManManager] Имя слушателя: ["+listener.toString()+"]" );
         log.log(Level.INFO, "---------------------------------------------------------------" );
         log.log(Level.INFO, "" );
+    }
+
+    @Override
+    public List<Man> getAllMan()
+    {
+       return  new ArrayList<Man>(ManDatabase.values());
     }
 }

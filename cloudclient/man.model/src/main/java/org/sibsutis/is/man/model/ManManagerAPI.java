@@ -6,6 +6,7 @@
 package org.sibsutis.is.man.model;
 
 import java.beans.PropertyChangeListener;
+import java.util.List;
 
 /**
  *
@@ -16,4 +17,6 @@ public interface ManManagerAPI
       public boolean addMan(Man man);
        public  void addPropertyChangeListener(PropertyChangeListener listener);
          public  void removePropertyChangeListener(PropertyChangeListener listener);
+         
+         public List<Man> getAllMan();
 }

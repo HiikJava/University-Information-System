@@ -86,8 +86,14 @@ public class FXMLController implements Initializable
     private final PropertyChangeListener ManManagerListener = (PropertyChangeEvent evt)
     ->
     {         
-        log.log(Level.INFO, "[ManEditor] Поступило событие от  модуля {ManManager}");
-        this.UpdateManTableView();
+       if ( evt.getPropertyName().equalsIgnoreCase(ManManagerAPI.EVENT_ADD_MAN) && evt.getNewValue() !=null)
+       {
+         log.log(Level.INFO, "[ManEditor] Поступило событие от  модуля {ManManager} - [addMan]");
+         Man man = (Man) evt.getNewValue();
+          log.log(Level.INFO, "[ManEditor] добавлен новый человек: ["+man.getFullName()+"]");
+         
+         this.UpdateManTableView();
+       }
         
     };
 
@@ -108,11 +114,14 @@ public class FXMLController implements Initializable
             log.log(Level.INFO, "[ManEditor] Имя: " + this.FistName_TF.getText());
             log.log(Level.INFO, "[ManEditor] Отчество: " + this.MiddleName_TF.getText());
 
-            Man man = new Man();
-            if (!FistName_TF.getText().isEmpty()
+            Man man = new Man();  // создание экземпляра класса Man
+            if (!FistName_TF.getText().isEmpty()  
+                    // проверка факта заполнения полей
                     && !MiddleName_TF.getText().isEmpty()
                     && !Suname_TF.getText().isEmpty())
             {
+                
+                // заполнение атрибутов класса Man
                 man.setFistName(this.FistName_TF.getText());
                 man.setMiddleName(MiddleName_TF.getText());
                 man.setSureName(Suname_TF.getText());
@@ -229,16 +238,16 @@ public class FXMLController implements Initializable
                           public void run()
                           {  
                              // Обновление таблицы персон  
-                             ManTableViewData.clear();   
-                             ManTableView.getItems().clear(); 
-                             ManTableView.refresh();
+                             ManTableViewData.clear();              // очистка списка таблицы
+                             ManTableView.getItems().clear();   //  очистка таблицы
+                             ManTableView.refresh();                    // обновление таблицы
                              if (ManManager.getAllMan().size() > 0 )
                              {    
                                 ManTableViewData.addAll(ManManager.getAllMan());
                              }
-                             ManTableView.setItems(ManTableViewData);
-                             ManTableView.refresh();
-                             ManTableView.getSelectionModel().selectLast();
+                             ManTableView.setItems(ManTableViewData);  // размещение списка людей с списке таблицы
+                             ManTableView.refresh();  // обновление таблицы
+                             ManTableView.getSelectionModel().selectLast();  // перемещение курсора таблицы на последюю запись
                           }
                           
                       });
@@ -250,7 +259,7 @@ public class FXMLController implements Initializable
           Thread th = new Thread(task);
           th.setDaemon(true);
           th.start();
-          log.log(Level.INFO, "[ManEditor] Модель таблицы содержит ["+ManTableViewData.size()+"] записей"); 
+ 
           ManTableView.requestFocus();
           
           

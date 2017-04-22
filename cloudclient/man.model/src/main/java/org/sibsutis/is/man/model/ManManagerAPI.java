@@ -14,9 +14,13 @@ import java.util.List;
  */
 public interface ManManagerAPI
 {
+    
+    public static final String EVENT_ADD_MAN = "addMan";
+    
+    
       public boolean addMan(Man man);
-       public  void addPropertyChangeListener(PropertyChangeListener listener);
-         public  void removePropertyChangeListener(PropertyChangeListener listener);
+      public  void addPropertyChangeListener(PropertyChangeListener listener);
+      public  void removePropertyChangeListener(PropertyChangeListener listener);
          
-         public List<Man> getAllMan();
+       public List<Man> getAllMan();
 }

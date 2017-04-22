@@ -4,9 +4,13 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.Callable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -14,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -39,6 +44,19 @@ public class FXMLController implements Initializable
     @FXML
     private Button Add_Person_BT;
 
+    // Форма кароточки студента
+    
+      @FXML
+    private  Label FistNameLabel;
+      
+         @FXML
+    private  Label SureNameLabel;
+         @FXML
+    private  Label MiddleNameLabel;
+         
+   
+    
+    
     //---------------------------------------------------
     //  Таблица персон
     @FXML
@@ -217,6 +235,42 @@ public class FXMLController implements Initializable
             ManTableView.setItems(ManTableViewData);
             ManTableView.refresh();
             
+                     
+        log.log(Level.INFO, "Настройка слушателя событий для строк таблицы {ManTableView}");        
+        ManTableView.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Man>ov, Man value, Man new_value) 
+                ->
+            {
+                // Обработка события выбора пункта списка
+
+                if (new_value != null)
+                {
+                    log.log(Level.INFO, "[Справочник персон] -->   ["+new_value.getFullName()+"] выбор строки");
+                    
+                    updateManBinding();
+                    
+                    /*
+                    
+                    if (CatalogManager.getHardwareModuleByName(new_value.getName()) != null   )
+                    {
+                    log.log(Level.INFO, "[Справочник аппаратных модулей ]: ["+new_value.getName()+"] - найдено значение");
+                    
+                    }
+                    else
+                    {
+                    log.log(Level.WARNING, "[Справочник аппаратных модулей ]: не найдено");
+                    }
+                    */
+                }
+            } // Обработка события выбора пункта списка
+            // Слушатель событий
+            // Слушатель событий
+            );
+            
+            
+            
+            
+            
+            
         }
           log.log(Level.INFO, "[ManEditor] конфигурирование таблицы {ManTableView} заврешено");
         
@@ -267,10 +321,42 @@ public class FXMLController implements Initializable
           log.log(Level.INFO, "[ManEditor] Количество записей в таблице ["+ManTableViewData.size()+"]");  
           log.log(Level.INFO, "[ManEditor] Обновление интерфейса таблицы [ManEditor] завершено");
       }        
+
+    private void updateManBinding()
+    {
+          if (Platform.isFxApplicationThread())
+        {
+            ConfigureManLabelUnbinding();
+            ConfigureManLabelBinding();
+        } else
+        {
+            Platform.runLater(() ->
+            {
+                 ConfigureManLabelUnbinding();
+                 ConfigureManLabelBinding();
+            });
+        }
+    }
+
+    private void ConfigureManLabelUnbinding()
+    {
+        SureNameLabel.textProperty().unbind();
+    }
+
+    private void ConfigureManLabelBinding()
+    {
+        SureNameLabel.textProperty().bind(Bindings.createStringBinding(new Callable<String>()
+        {   @Override
+            public String call()
+            {   Man man = ManTableView.getSelectionModel().getSelectedItem();
+                if (man == null)
+                {return null;
+                } else {return man.getSureName(); }
+            }
+        },Bindings.selectString(ManTableView.getSelectionModel().selectedItemProperty(), "SureName"))); 
+    }
     
 
-    
-    
     
     
     

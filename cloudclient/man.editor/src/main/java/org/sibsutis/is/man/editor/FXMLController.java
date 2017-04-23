@@ -32,7 +32,8 @@ public class FXMLController implements Initializable
     // лог
     private static final Logger log = Logger.getLogger(FXMLController.class.getName());
     private ManManagerAPI ManManager;
-
+    
+    // <editor-fold desc="Переменные FXML">
     // Форма регистрации студента 
     @FXML
     private TextField Suname_TF;
@@ -51,7 +52,7 @@ public class FXMLController implements Initializable
     private Label SureNameLabel;
     @FXML
     private Label MiddleNameLabel;
-
+    
     //---------------------------------------------------
     //  Таблица персон
     @FXML
@@ -61,6 +62,8 @@ public class FXMLController implements Initializable
     private TableColumn<Man, String> FistName;
     private TableColumn<Man, String> MiddleName;
     // Данные таблицы [ManTableView]
+    // </editor-fold>
+    
     private ObservableList<Man> ManTableViewData = FXCollections.observableArrayList();
 
     //---------------------------------------------------

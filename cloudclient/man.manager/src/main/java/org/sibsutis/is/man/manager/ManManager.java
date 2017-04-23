@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ To change this license header, choose License Headers in Project Properties.
+ To change this template file, choose Tools | Templates
+ and open the template in the editor.
  */
 package org.sibsutis.is.man.manager;
 
@@ -17,56 +17,75 @@ import org.openide.util.lookup.ServiceProvider;
 import org.sibsutis.is.man.model.Man;
 import org.sibsutis.is.man.model.ManManagerAPI;
 
-
-
 /**
- *
- * @author vaganovdv
- */
 
+ @author vaganovdv
+ */
 @ServiceProvider(service = ManManagerAPI.class)
 public class ManManager implements ManManagerAPI
 {
- 
+
     private static final Logger log = Logger.getLogger(ManManager.class.getName());
-     // Установка слушателей
+    // Установка слушателей
     private PropertyChangeSupport propChangeSupport = null;
-    
-    private final ConcurrentMap <Long,  Man > ManDatabase  = new ConcurrentHashMap < >();
+
+    private final ConcurrentMap<Long, Man> ManDatabase = new ConcurrentHashMap<>();
 
     @Override
     public boolean addMan(Man man)
     {
-       boolean result = false;
-       if (man !=null)
-       {
-       
-           if (ManDatabase.containsKey(man.getId()))
-           {
-             log.log(Level.WARNING, "[ManManager] Невозможно  экземпляр [Man] класса - id = ["+man.getId()+"] существует в БД");
-             result =false;
-           } 
-           else
-           {
+        boolean result = false;
+        if (man != null)
+        {
+            if (ManDatabase.containsKey(man.getId()))
+            {
+                log.log(Level.WARNING, "[ManManager] Невозможно  экземпляр [Man] класса - id = [" + man.getId() + "] существует в БД");
+                result = false;
+            }
+            else
+            {
                 ManDatabase.put(man.getId(), man);
-                
                 // Генерация события добавления человкеп
                 getPropertyChangeSupport().firePropertyChange(ManManagerAPI.EVENT_ADD_MAN, null, man);
-                log.log(Level.INFO, "[ManManager]  экземпляр [Man]  id = ["+man.getId()+"]  успешно добавлен  в БД");
-                result =true;
-           }
-           
-       }  
-       else
-       {
-       log.log(Level.WARNING, "[ManManager] Невозможно добавить пустой экземпляр [Man]");
-       result =false;
-       }
-       
-       return result;
+                log.log(Level.INFO, "[ManManager] экземпляр [Man] id = [" + man.getId() + "] успешно добавлен в БД");
+                result = true;
+            }
+        }
+        else
+        {
+            log.log(Level.WARNING, "[ManManager] Невозможно добавить пустой экземпляр [Man]");
+            result = false;
+        }
+        return result;
     }
-    
-    
+/*
+    @Override
+    public boolean deleteMan(Man man)
+    {
+        boolean result = false;
+        if (man != null)
+        {
+            if (ManDatabase.containsKey(man.getId()))
+            {
+                ManDatabase.remove(man.Row, man);
+                getPropertyChangeSupport().firePropertyChange(ManManagerAPI.EVENT_REMOVE_MAN, null, man);
+                log.log(Level.INFO, "[ManManager] экземпляр [Man] id = [" + man.getId() + "] успешно удалён из БД");
+                result = true;
+            }
+            else
+            {
+                log.log(Level.WARNING, "[ManManager] Отсуцтвует экземпляр класса [Man] - id = [" + man.getId() + "]");
+                result = false;
+            }
+        }
+        else
+        {
+            log.log(Level.WARNING, "[ManManager] Невозможно удалить пустой экземпляр [Man]");
+            result = false;
+        }
+        return result;
+    }*/
+
     private PropertyChangeSupport getPropertyChangeSupport()
     {
         if (this.propChangeSupport == null)
@@ -75,40 +94,37 @@ public class ManManager implements ManManagerAPI
         }
         return this.propChangeSupport;
     }
-    
-    
-    
-   
+
     @Override
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
     {
         getPropertyChangeSupport().addPropertyChangeListener(listener);
-        log.log(Level.INFO, "" );
-        log.log(Level.INFO, "---------------------------------------------------------------" );
-        log.log(Level.INFO, "===LISTENER===" );
-        log.log(Level.INFO, "[ManManager] Установлен слушатель" );
-        log.log(Level.INFO, "[ManManager] Имя слушателя: ["+listener.toString()+"]" );
-        log.log(Level.INFO, "---------------------------------------------------------------" );
-        log.log(Level.INFO, "" );
+        log.log(Level.INFO, "");
+        log.log(Level.INFO, "---------------------------------------------------------------");
+        log.log(Level.INFO, "===LISTENER===");
+        log.log(Level.INFO, "[ManManager] Установлен слушатель");
+        log.log(Level.INFO, "[ManManager] Имя слушателя: [" + listener.toString() + "]");
+        log.log(Level.INFO, "---------------------------------------------------------------");
+        log.log(Level.INFO, "");
     }
-    
-   
+
     @Override
     public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
     {
         getPropertyChangeSupport().removePropertyChangeListener(listener);
-        log.log(Level.INFO, "" );
-        log.log(Level.INFO, "---------------------------------------------------------------" );
-        log.log(Level.INFO, "===LISTENER===" );
-        log.log(Level.INFO, "[ManManager] Удален слушатель" );
-        log.log(Level.INFO, "[ManManager] Имя слушателя: ["+listener.toString()+"]" );
-        log.log(Level.INFO, "---------------------------------------------------------------" );
-        log.log(Level.INFO, "" );
+        log.log(Level.INFO, "");
+        log.log(Level.INFO, "---------------------------------------------------------------");
+        log.log(Level.INFO, "===LISTENER===");
+        log.log(Level.INFO, "[ManManager] Удален слушатель");
+        log.log(Level.INFO, "[ManManager] Имя слушателя: [" + listener.toString() + "]");
+        log.log(Level.INFO, "---------------------------------------------------------------");
+        log.log(Level.INFO, "");
     }
 
     @Override
     public List<Man> getAllMan()
     {
-       return  new ArrayList<Man>(ManDatabase.values());
+        return new ArrayList<Man>(ManDatabase.values());
     }
+
 }

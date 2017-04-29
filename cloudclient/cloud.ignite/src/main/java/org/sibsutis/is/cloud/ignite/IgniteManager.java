@@ -60,7 +60,7 @@ public class IgniteManager implements IgniteManagerAPI
             {
                     Man man = new Man();
                     man = cache.get(i);
-                     log.log(Level.INFO,"Got [key=" + i + ", val=" + man.getFullName() + ']');
+                     log.log(Level.INFO,"Получено из кэша [ ключ=" + i + ", значение =" + man.getFullName() + ']');
             }
       
 

@@ -13,7 +13,7 @@ public class Installer extends ModuleInstall
 {
 
     private static final Logger log = Logger.getLogger(Installer.class.getName());
-    private  IgniteManager igniteManager;
+    private static  IgniteManager igniteManager;
     
     @Override
     public void restored()
@@ -33,6 +33,7 @@ public class Installer extends ModuleInstall
         log.log(Level.INFO, "[Ignite.installer] Закрытие  узла [Ignite]....");
 
          igniteManager.stop();
+         result = true;
         
         log.log(Level.INFO, "[Ignite.installer] Узел  [Ignite] закрыт");
         return result;

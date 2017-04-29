@@ -11,6 +11,7 @@ import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCache;
 import org.apache.ignite.IgniteException;
 import org.apache.ignite.Ignition;
+import org.sibsutis.is.man.model.Man;
 
 /**
  *
@@ -35,17 +36,31 @@ public class IgniteManager implements IgniteManagerAPI
            ignite = Ignition.start();
            result = true;
 
-            IgniteCache<Integer, String> cache = ignite.getOrCreateCache("man.model");
+            IgniteCache<Integer, Man> cache = ignite.getOrCreateCache("man.model");
 
-            // Store keys in cache (values will end up on different cache nodes).
-            for (int i = 0; i < 10; i++)
-            {
-                cache.put(i, Integer.toString(i));
-            }
+      
+            
+            Man man1 = new Man();
+            man1.setFistName("Владимир");
+            man1.setMiddleName("Владимирович");
+            man1.setSureName("Путин");
+            cache.put(1,man1);
+            
+            
+            Man man2 = new Man();
+            man2.setFistName("Владимир");
+            man2.setMiddleName("Вольфович");
+            man2.setSureName("Жириновский");
+            cache.put(2,man2);
+            
+            
+            
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 1; i < 3; i++)
             {
-                     log.log(Level.INFO,"Got [key=" + i + ", val=" + cache.get(i) + ']');
+                    Man man = new Man();
+                    man = cache.get(i);
+                     log.log(Level.INFO,"Got [key=" + i + ", val=" + man.getFullName() + ']');
             }
       
 

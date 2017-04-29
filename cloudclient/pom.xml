@@ -76,6 +76,7 @@
         <module>man.model</module>
         <module>authorization</module>
         <module>location</module>
+        <module>cloud.ignite</module>
     </modules>
 
     <properties>

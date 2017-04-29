@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
+OpenIDE-Module-Install: org/sibsutis/is/cloud/ignite/Installer.class
 OpenIDE-Module-Localizing-Bundle: org/sibsutis/is/cloud/ignite/Bundle.properties
 

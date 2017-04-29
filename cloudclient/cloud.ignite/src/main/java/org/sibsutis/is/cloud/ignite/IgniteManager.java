@@ -16,18 +16,15 @@ import org.apache.ignite.Ignition;
  *
  * @author vaganovdv
  */
+
+
 public class IgniteManager implements IgniteManagerAPI
 {
-       private static final Logger log = Logger.getLogger(IgniteManager.class.getName());
+    private static final Logger log = Logger.getLogger(IgniteManager.class.getName());
     
     private static Ignite ignite;
     
-    
-    //public IgniteManager()
-    //{
-    //    log.log(Level.INFO,"[IgniteManager] Создан экземпляр класса");    
-    //}
-
+   
     @Override
     public boolean start()
     {

@@ -14,8 +14,8 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.openide.util.lookup.ServiceProvider;
-import org.sibsutis.is.man.model.Man;
-import org.sibsutis.is.man.model.ManManagerAPI;
+import org.sibsutis.is.database.all.Man;
+import org.sibsutis.is.database.all.ManManagerAPI;
 
 /**
 
@@ -28,8 +28,9 @@ public class ManManager implements ManManagerAPI
     private static final Logger log = Logger.getLogger(ManManager.class.getName());
     // Установка слушателей
     private PropertyChangeSupport propChangeSupport = null;
-
     private final ConcurrentMap<Long, Man> ManDatabase = new ConcurrentHashMap<>();
+    
+    
 
     @Override
     public boolean addMan(Man man)

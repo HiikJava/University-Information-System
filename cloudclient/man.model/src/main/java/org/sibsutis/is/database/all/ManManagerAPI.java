@@ -3,7 +3,7 @@
  To change this template file, choose Tools | Templates
  and open the template in the editor.
  */
-package org.sibsutis.is.man.model;
+package org.sibsutis.is.database.all;
 
 import java.beans.PropertyChangeListener;
 import java.util.List;

@@ -17,7 +17,7 @@
                 <configuration>
                     <useOSGiDependencies>true</useOSGiDependencies>
                     <publicPackages>
-                        <publicPackage>org.sibsutis.is.man.model</publicPackage>
+                        <publicPackage>org.sibsutis.is.database.all</publicPackage>
                     </publicPackages>
                 </configuration>
             </plugin>

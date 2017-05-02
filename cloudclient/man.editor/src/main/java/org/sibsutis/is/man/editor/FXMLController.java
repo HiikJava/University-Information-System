@@ -24,8 +24,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.openide.util.Lookup;
-import org.sibsutis.is.man.model.Man;
-import org.sibsutis.is.man.model.ManManagerAPI;
+import org.sibsutis.is.database.all.Man;
+import org.sibsutis.is.database.all.ManManagerAPI;
 
 public class FXMLController implements Initializable
 {

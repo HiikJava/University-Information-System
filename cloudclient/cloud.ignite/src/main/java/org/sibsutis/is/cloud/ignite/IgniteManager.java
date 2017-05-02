@@ -5,13 +5,15 @@
  */
 package org.sibsutis.is.cloud.ignite;
 
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCache;
 import org.apache.ignite.IgniteException;
 import org.apache.ignite.Ignition;
-import org.sibsutis.is.man.model.Man;
+import org.apache.ignite.cache.CachePeekMode;
+import org.sibsutis.is.database.all.Man;
 
 /**
  *
@@ -36,31 +38,46 @@ public class IgniteManager implements IgniteManagerAPI
            ignite = Ignition.start();
            result = true;
 
-            IgniteCache<Integer, Man> cache = ignite.getOrCreateCache("man.model");
-
+           
+           IgniteCache<Long, Man> cache = ignite.getOrCreateCache("man.model");
+          
       
+            /*
             
             Man man1 = new Man();
             man1.setFistName("Владимир");
             man1.setMiddleName("Владимирович");
             man1.setSureName("Путин");
-            cache.put(1,man1);
+            cache.put(0L,man1);
             
             
             Man man2 = new Man();
             man2.setFistName("Владимир");
             man2.setMiddleName("Вольфович");
             man2.setSureName("Жириновский");
-            cache.put(2,man2);
+            cache.put(1L,man2);
+            */
             
+            log.log(Level.INFO, "[IgniteManager] Разамер базы кэша [man.model] --> {"+cache.sizeLong(CachePeekMode.ALL)+"}");
             
+            log.log(Level.INFO, "[IgniteManager] Попытка чтения из кэша [man.model]..." );
             
+            // Контрольное чтение
+            Man man = new Man();
+            
+         
 
-            for (int i = 1; i < 3; i++)
+            
+            
+            
+            for (long i = 0; i < cache.sizeLong(CachePeekMode.ALL); i++)
             {
-                    Man man = new Man();
-                    man = cache.get(i);
-                     log.log(Level.INFO,"Получено из кэша [ ключ=" + i + ", значение =" + man.getFullName() + ']');
+                    man = (Man)cache.get(i);
+                    //log.log(Level.INFO,"Получено из кэша [id = " +i+"] "+man.getSureName());
+                    
+                    log.log(Level.INFO,"Получено из кэша [id = " +i+"]"+ " { " + man.getFullName() + " }");
+                    
+                   // log.log(Level.INFO,"Получено из кэша [ id = " + man.getId() + " { " + man.getFullName() + " }");
             }
       
 

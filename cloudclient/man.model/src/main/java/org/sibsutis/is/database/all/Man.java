@@ -1,12 +1,18 @@
-package org.sibsutis.is.man.model;
+package org.sibsutis.is.database.all;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.sibsutis.is.location.AbstractLocation;
+import org.sibsutis.is.location.AbstractPoint;
 
-public class Man
+public class Man implements Serializable
 {
+
+  
 
     private static final Logger log = Logger.getLogger(Man.class.getName());
 
@@ -19,6 +25,8 @@ public class Man
     private static long count = 0L;
     //private Integer Row;
     public int Row;
+    private List<AbstractPoint> PointList = new ArrayList<>();
+    
     
     public Man()
     {
@@ -26,8 +34,6 @@ public class Man
         this.FistName = "";
         this.MiddleName = "";
         this.SureName = "";
-        this.count++;
-        this.id = count;
         log.log(Level.INFO, "[Man] Создание экземпляра класса закончено");
     }
 
@@ -53,7 +59,7 @@ public class Man
 
     public String getFullName()
     {
-        return this.getFistName() + " " + this.getMiddleName() + " " + this.getSureName();
+        return ""+getFistName() + " " +getMiddleName() + " "+getSureName();
     }
 
     public long getId()
@@ -86,4 +92,14 @@ public class Man
     {
         this.Row = Row;
     }*/
+    
+      public List<AbstractPoint> getPointList()
+    {
+        return PointList;
+    }
+
+    public void setPointList(List<AbstractPoint> PointList)
+    {
+        this.PointList = PointList;
+    }
 }

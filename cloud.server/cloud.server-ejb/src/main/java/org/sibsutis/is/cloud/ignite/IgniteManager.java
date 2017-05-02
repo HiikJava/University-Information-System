@@ -12,6 +12,10 @@ import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCache;
 import org.apache.ignite.IgniteException;
 import org.apache.ignite.Ignition;
+import org.apache.ignite.cache.CachePeekMode;
+import org.apache.ignite.transactions.Transaction;
+import static org.apache.ignite.transactions.TransactionConcurrency.PESSIMISTIC;
+import static org.apache.ignite.transactions.TransactionIsolation.REPEATABLE_READ;
 import org.sibsutis.is.database.all.Man;
 
 /**
@@ -38,26 +42,36 @@ public class IgniteManager implements IgniteManagerAPI
            result = true;
 
             IgniteCache<Long, Man> cache = ignite.getOrCreateCache("man.model");
-
-      
+            
+      try (Transaction tx = ignite.transactions().txStart(PESSIMISTIC, REPEATABLE_READ))
+       {   
             
             Man man1 = new Man();
             man1.setFistName("Владимир");
             man1.setMiddleName("Владимирович");
             man1.setSureName("Путин");
+            man1.setId(0L);
             cache.put(0L,man1);
+            log.log(Level.INFO,"[IgniteManager] Размещено в кеше ["+cache.getName()+"] --> { "+man1.getFullName()+" }");
             
             
             Man man2 = new Man();
             man2.setFistName("Владимир");
             man2.setMiddleName("Вольфович");
             man2.setSureName("Жириновский");
+            man2.setId(1L);
             cache.put(1L,man2);
+            log.log(Level.INFO,"[IgniteManager] Размещено в кеше ["+cache.getName()+"] --> { "+man2.getFullName()+" }");
+            
             
             log.log(Level.INFO,"Создание тестовых экземпляров закончено");
             log.log(Level.INFO,"Тестовые экземпляры размещены в кэше");
             
-            log.log(Level.INFO,"[IgniteManager] Размер кэша [man.model] ---> {"+cache.sizeLong()+"}");
+            tx.commit();
+            
+       }   
+            
+            log.log(Level.INFO,"[IgniteManager] Размер кэша [man.model] ---> {"+cache.sizeLong(CachePeekMode.PRIMARY)+"}");
            // log.log(Level.INFO,"Попытка получения данных из кэша");
             
            /*

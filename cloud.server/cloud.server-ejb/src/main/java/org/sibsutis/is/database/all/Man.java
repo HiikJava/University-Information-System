@@ -80,17 +80,7 @@ public class Man implements Serializable
         
         return ""+MiddleName;
     }
-    /*
-    public Integer getRow()
-    {
-        return Row;
-    }
-
-    public void setRow(Integer FistName)
-    {
-        this.Row = Row;
-    }*/
-    
+   
      public List<AbstractPoint> getPointList()
     {
         return PointList;

@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.sibsutis.is;
+package org.sibsutis.is.connection;
+
+import javax.ejb.Local;
 
 /**
  *
  * @author vaganovdv
  */
-public interface IgniteManagerAPI
+@Local
+public interface ConnectionAPI
 {
-    public boolean start();
-    public boolean stop();
+    
 }

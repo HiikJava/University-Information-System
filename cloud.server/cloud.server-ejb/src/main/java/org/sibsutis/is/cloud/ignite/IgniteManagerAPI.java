@@ -3,13 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.sibsutis.is;
+package org.sibsutis.is.cloud.ignite;
+
+import javax.ejb.Local;
 
 /**
  *
  * @author vaganovdv
  */
-public class IgniteManager
+@Local
+public interface IgniteManagerAPI
 {
-    
+       public boolean start();
+       public boolean stop(); 
 }

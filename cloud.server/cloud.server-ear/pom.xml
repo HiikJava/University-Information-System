@@ -43,15 +43,14 @@
     <dependencies>
         <dependency>
             <groupId>org.sibsutis.is</groupId>
-            <artifactId>cloud.server-ejb</artifactId>
-            <version>0.0.7</version>
-            <type>ejb</type>
-        </dependency>
-        <dependency>
-            <groupId>org.sibsutis.is</groupId>
             <artifactId>cloud.server-web</artifactId>
             <version>0.0.7</version>
             <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cloud.server-ejb</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

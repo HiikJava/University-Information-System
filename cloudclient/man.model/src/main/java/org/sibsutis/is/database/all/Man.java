@@ -30,11 +30,11 @@ public class Man implements Serializable
     
     public Man()
     {
-        log.log(Level.INFO, "[Man] Создание экземпляра класса...");
+        this.id = 0L;
         this.FistName = "";
         this.MiddleName = "";
         this.SureName = "";
-        log.log(Level.INFO, "[Man] Создание экземпляра класса закончено");
+      
     }
 
     public String getFistName()

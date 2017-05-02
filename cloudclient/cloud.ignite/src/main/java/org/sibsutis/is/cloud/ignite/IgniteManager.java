@@ -5,7 +5,6 @@
  */
 package org.sibsutis.is.cloud.ignite;
 
-import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.ignite.Ignite;
@@ -13,6 +12,9 @@ import org.apache.ignite.IgniteCache;
 import org.apache.ignite.IgniteException;
 import org.apache.ignite.Ignition;
 import org.apache.ignite.cache.CachePeekMode;
+import org.apache.ignite.transactions.Transaction;
+import static org.apache.ignite.transactions.TransactionConcurrency.PESSIMISTIC;
+import static org.apache.ignite.transactions.TransactionIsolation.REPEATABLE_READ;
 import org.sibsutis.is.database.all.Man;
 
 /**
@@ -35,6 +37,7 @@ public class IgniteManager implements IgniteManagerAPI
         log.log(Level.INFO, "[IgniteManager] Старт");
 
       
+           Ignition.setClientMode(true);
            ignite = Ignition.start();
            result = true;
 
@@ -58,27 +61,27 @@ public class IgniteManager implements IgniteManagerAPI
             cache.put(1L,man2);
             */
             
-            log.log(Level.INFO, "[IgniteManager] Разамер базы кэша [man.model] --> {"+cache.sizeLong(CachePeekMode.ALL)+"}");
+            log.log(Level.INFO, "[IgniteManager] Разамер базы кэша [man.model] --> {"+cache.sizeLong(CachePeekMode.PRIMARY)+"}");
             
             log.log(Level.INFO, "[IgniteManager] Попытка чтения из кэша [man.model]..." );
             
             // Контрольное чтение
             Man man = new Man();
             
-         
-
+       try (Transaction tx = ignite.transactions().txStart(PESSIMISTIC, REPEATABLE_READ))
+       {   
             
-            
-            
-            for (long i = 0; i < cache.sizeLong(CachePeekMode.ALL); i++)
+                        
+            for (long i = 0; i < cache.sizeLong(CachePeekMode.PRIMARY); i++)
             {
                     man = (Man)cache.get(i);
-                    //log.log(Level.INFO,"Получено из кэша [id = " +i+"] "+man.getSureName());
-                    
                     log.log(Level.INFO,"Получено из кэша [id = " +i+"]"+ " { " + man.getFullName() + " }");
-                    
-                   // log.log(Level.INFO,"Получено из кэша [ id = " + man.getId() + " { " + man.getFullName() + " }");
+                   
             }
+            
+            tx.commit();
+            
+       }    
       
 
         log.log(Level.INFO, "[IgniteManager] Стартовал");

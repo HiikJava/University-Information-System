@@ -4,14 +4,13 @@
 
 package org.sibsutis.is.database.model.entity;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
 
 /**
- * @author Admin
+ * @author vaganovdv
  */
 
 @Entity
-public class Student extends Man implements Serializable { 
+public class Student extends Man { 
 
 }

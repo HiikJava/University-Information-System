@@ -20,8 +20,8 @@ public abstract class Man
 {
 
     @Id
-    @GeneratedValue(generator = "man_Generator", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "man_Generator", sequenceName = "Man_Sequens")
+    @GeneratedValue(generator = "man_generator", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "man_generator", sequenceName = "man_sequence", allocationSize = 1)
     private Long id;
 
     @Basic

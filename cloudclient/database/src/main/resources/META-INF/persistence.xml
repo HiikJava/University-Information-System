@@ -6,6 +6,8 @@
     <class>org.sibsutis.is.database.model.entity.Professor</class>
     <class>org.sibsutis.is.database.model.entity.Employee</class>
     <class>org.sibsutis.is.database.model.entity.StudentGroup</class>
+    <class>org.sibsutis.is.database.model.entity.Pulpit</class>
+    <class>org.sibsutis.is.database.model.entity.Department</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
       <property name="javax.persistence.jdbc.password" value="app"/>

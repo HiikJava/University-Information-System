@@ -11,19 +11,19 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
- Группа студентов
- @author vaganovdv
+ Отдел
+ @author Maximus
  */
 @Entity
-public class StudentGroup
+public class Department
 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany(targetEntity = Student.class)
-    private List<Student> students;
+    @OneToMany(targetEntity = Employee.class)
+    private List<Employee> employees;
 
     public Long getId()
     {
@@ -35,14 +35,14 @@ public class StudentGroup
         this.id = id;
     }
 
-    public List<Student> getStudents()
+    public List<Employee> getEmployees()
     {
-        return this.students;
+        return this.employees;
     }
 
-    public void setStudents(List<Student> students)
+    public void setEmployees(List<Employee> employees)
     {
-        this.students = students;
+        this.employees = employees;
     }
 
 }

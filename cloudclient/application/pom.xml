@@ -80,6 +80,11 @@
             <artifactId>man.model</artifactId>
             <version>0.0.5</version>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>database</artifactId>
+            <version>0.0.5</version>
+        </dependency>
     </dependencies>
 
     <build>

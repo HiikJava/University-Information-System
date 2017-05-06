@@ -1,1 +1,209 @@
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.sibsutis.is.database.model.entity" v="4.2.1" rws="_14940797084542" Pws="_14940797084542" cws="_14940797084542" sm="false" xs="false" id="_14940797084531" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="DocumentPK" abs="false" class="Document" v="true" m="false" rootElement="_14940797084531" id="_1494080776730">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Admin</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="number" id="_149408082259622">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="birthday" id="_149408083348223">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="sex" id="_149408087045124">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149408104298534">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Document.findAll">
+            <jpa:query>Select m from Document m</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Document.findByNumber">
+            <jpa:query>Select d from Document d where d.number=:number</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Document.findByBirthday">
+            <jpa:query>Select d from Document d where d.birthday=:birthday</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Document.findBySex">
+            <jpa:query>Select d from Document d where d.sex=:sex</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:mapped-superclass>
+    <jpa:entity xre="false" compositePrimaryKeyClass="PassportPK" abs="false" class="Passport" superclassId="_1494080776730" v="true" m="false" rootElement="_14940797084531" id="_1494080881802">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Admin</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="series" id="_149408090587527">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="issued_by" id="_149408092864228">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="date_of_issue" id="_149408093415429">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="registration" id="_149408093796130">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Passport.findAll">
+            <jpa:query>Select e from Passport e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passport.findBySeries">
+            <jpa:query>Select p from Passport p where p.series=:series</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passport.findByIssued_by">
+            <jpa:query>Select p from Passport p where p.issued_by=:issued_by</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passport.findByDate_of_issue">
+            <jpa:query>Select p from Passport p where p.date_of_issue=:date_of_issue</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Passport.findByRegistration">
+            <jpa:query>Select p from Passport p where p.registration=:registration</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="SNILSPK" abs="false" class="SNILS" superclassId="_1494080776730" v="true" m="false" rootElement="_14940797084531" id="_1494081078994">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Admin</jpa:ath>
+        <jpa:attributes/>
+        <jpa:nq e="false" name="SNILS.findAll">
+            <jpa:query>Select e from SNILS e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="INNPK" abs="false" class="INN" superclassId="_1494080776730" v="true" m="false" rootElement="_14940797084531" id="_1494081149920">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Admin</jpa:ath>
+        <jpa:attributes/>
+        <jpa:nq e="false" name="INN.findAll">
+            <jpa:query>Select e from INN e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="MilitaryIDPK" abs="false" class="MilitaryID" superclassId="_1494080776730" v="true" m="false" rootElement="_14940797084531" id="_1494081240719">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Admin</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="series" id="_149408130073541">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="MilitaryID.findAll">
+            <jpa:query>Select e from MilitaryID e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="MilitaryID.findBySeries">
+            <jpa:query>Select m from MilitaryID m where m.series=:series</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="PolicyPK" abs="false" class="Policy" superclassId="_1494080776730" v="true" m="false" rootElement="_14940797084531" id="_1494081524196">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Admin</jpa:ath>
+        <jpa:attributes/>
+        <jpa:nq e="false" name="Policy.findAll">
+            <jpa:query>Select e from Policy e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Policy.findByPolicy">
+            <jpa:query>Select e from Policy e where e.Policy=:Policy</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="EducationPK" abs="false" class="Education" superclassId="_1494080776730" v="true" m="false" rootElement="_14940797084531" id="_1494081738003">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Admin</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Education" id="_149408184460947">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="series" id="_149408185048748">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="date_of_issue" id="_149408188408249">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Education.findAll">
+            <jpa:query>Select e from Education e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Education.findByEducation">
+            <jpa:query>Select e from Education e where e.Education=:Education</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Education.findBySeries">
+            <jpa:query>Select e from Education e where e.series=:series</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Education.findByDate_of_issue">
+            <jpa:query>Select e from Education e where e.date_of_issue=:date_of_issue</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_14940797084542">
+            <i ref="_1494081078994" x="392" y="62">
+                <el/>
+            </i>
+            <i ref="_1494081524196" x="173" y="62">
+                <el/>
+            </i>
+            <i ref="_1494080776730" x="272" y="140">
+                <el/>
+            </i>
+            <i ref="_1494081149920" x="286" y="464">
+                <el/>
+            </i>
+            <i ref="_1494080881802" x="173" y="329">
+                <el/>
+            </i>
+            <i ref="_1494081240719" x="383" y="329">
+                <el/>
+            </i>
+            <i ref="_1494081738003" x="274" y="-57">
+                <el/>
+            </i>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>

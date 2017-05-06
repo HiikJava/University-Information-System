@@ -2,19 +2,162 @@
 <jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.sibsutis.is.database.model.entity" v="4.2.1" rws="_14940563935152" Pws="_14940563935152" cws="_14940563935152" sm="false" xs="false" id="_14940563935111" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
     <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="ManPK" abs="false" class="Man" v="true" m="false" rootElement="_14940563935111" id="_1494056480672">
         <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
         <jpa:ath>vaganovdv</jpa:ath>
-        <jpa:attributes/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="SureName" id="_14940582999677">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Name" id="_14940582997516">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="MiddleName" id="_14940583002738">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.Map" mkt="NEW" mkat="String" v="true" name="Map" id="_149406101412436">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_14940580275305">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="SEQUENCE" generator="man_generator"/>
+                <jpa:sequence-generator name="man_generator" sequence-name="man_sequence" catalog="" schema="" initial-value="1" allocation-size="1"/>
+            </jpa:id>
+        </jpa:attributes>
         <jpa:nq e="false" name="Man.findAll">
             <jpa:query>Select m from Man m</jpa:query>
         </jpa:nq>
+        <jpa:nq e="false" name="Man.findByName">
+            <jpa:query>Select m from Man m where m.Name=:Name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Man.findBySureName">
+            <jpa:query>Select m from Man m where m.SureName=:SureName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Man.findByMiddleName">
+            <jpa:query>Select m from Man m where m.MiddleName=:MiddleName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Man.findByAttribute3">
+            <jpa:query>Select m from Man m where m.attribute3=:attribute3</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Man.findByAttribute4">
+            <jpa:query>Select m from Man m where m.attribute4=:attribute4</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Man.findByAttribute5">
+            <jpa:query>Select m from Man m where m.attribute5=:attribute5</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Man.findByAttribute6">
+            <jpa:query>Select m from Man m where m.attribute6=:attribute6</jpa:query>
+        </jpa:nq>
         <jpa:el/>
     </jpa:mapped-superclass>
+    <jpa:entity xre="false" compositePrimaryKeyClass="StudentPK" abs="false" class="Student" superclassId="_1494056480672" v="true" m="false" rootElement="_14940563935111" id="_1494058484870">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes/>
+        <jpa:nq e="false" name="Student.findAll">
+            <jpa:query>Select e from Student e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ProfessorPK" abs="false" class="Professor" superclassId="_1494056480672" v="true" m="false" rootElement="_14940563935111" id="_1494058499422">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Position" id="_149405906719920">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Professor.findAll">
+            <jpa:query>Select e from Professor e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Professor.findByPosition">
+            <jpa:query>Select p from Professor p where p.Position=:Position</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="EmployeePK" abs="false" class="Employee" superclassId="_1494056480672" v="true" m="false" rootElement="_14940563935111" id="_1494058512859">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Position" id="_149405904833919">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Employee.findAll">
+            <jpa:query>Select e from Employee e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Employee.findByPosition">
+            <jpa:query>Select e from Employee e where e.Position=:Position</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="StudentGroupPK" abs="false" class="StudentGroup" v="true" m="false" rootElement="_14940563935111" id="_1494059540052">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" connected-entity-id="_1494058484870" v="true" name="students" id="_149405991441225">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149405954007121">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="StudentGroup.findAll">
+            <jpa:query>Select e from StudentGroup e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
     <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
  * This file was generated by the Jeddict
  */</jpa:snp>
+    <jpa:c>
+        <ct>java.util.Map</ct>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Collection</ct>
+    </jpa:c>
     <jpa:wsl>
         <jpa:ws n="Main" id="_14940563935152">
-            <i ref="_1494056480672" x="107" y="61">
+            <i ref="_1494058499422" x="386" y="272">
+                <el/>
+            </i>
+            <i ref="_1494058484870" x="20" y="272">
+                <el/>
+            </i>
+            <i ref="_1494056480672" x="46" y="51">
+                <el/>
+            </i>
+            <i ref="_1494058512859" x="386" y="51">
+                <el/>
+            </i>
+            <i ref="_1494059540052" x="194" y="379">
                 <el/>
             </i>
         </jpa:ws>

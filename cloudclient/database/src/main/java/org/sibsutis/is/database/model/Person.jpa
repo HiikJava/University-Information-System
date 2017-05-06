@@ -21,6 +21,18 @@
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Birthday" id="_149407990098719">
+                <jpa:des>День рождения</jpa:des>
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Accepted" id="_149408040980020">
+                <jpa:des>Дата принятия</jpa:des>
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
             <jpa:element-collection target-class="java.lang.String" collection-type="java.util.Map" mkt="NEW" mkat="String" v="true" name="Map" id="_149406101412436">
                 <jpa:bv/>
                 <jpa:kbv/>
@@ -58,6 +70,12 @@
         <jpa:nq e="false" name="Man.findByAttribute6">
             <jpa:query>Select m from Man m where m.attribute6=:attribute6</jpa:query>
         </jpa:nq>
+        <jpa:nq e="false" name="Man.findByBirthday">
+            <jpa:query>Select m from Man m where m.Birthday=:Birthday</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Man.findByAccepted">
+            <jpa:query>Select m from Man m where m.Accepted=:Accepted</jpa:query>
+        </jpa:nq>
         <jpa:el/>
     </jpa:mapped-superclass>
     <jpa:entity xre="false" compositePrimaryKeyClass="StudentPK" abs="false" class="Student" superclassId="_1494056480672" v="true" m="false" rootElement="_14940563935111" id="_1494058484870">
@@ -69,6 +87,12 @@
         <jpa:nq e="false" name="Student.findAll">
             <jpa:query>Select e from Student e</jpa:query>
         </jpa:nq>
+        <jpa:nq e="false" name="Student.findByParty">
+            <jpa:query>Select s from Student s where s.party=:party</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Student.findByParty">
+            <jpa:query>Select s from Student s where s.Party=:Party</jpa:query>
+        </jpa:nq>
         <jpa:el/>
     </jpa:entity>
     <jpa:entity xre="false" compositePrimaryKeyClass="ProfessorPK" abs="false" class="Professor" superclassId="_1494056480672" v="true" m="false" rootElement="_14940563935111" id="_1494058499422">
@@ -78,6 +102,7 @@
         <jpa:ath>vaganovdv</jpa:ath>
         <jpa:attributes>
             <jpa:basic attribute-type="String" v="true" name="Position" id="_149405906719920">
+                <jpa:des>Должность преподователя</jpa:des>
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
@@ -98,6 +123,7 @@
         <jpa:ath>vaganovdv</jpa:ath>
         <jpa:attributes>
             <jpa:basic attribute-type="String" v="true" name="Position" id="_149405904833919">
+                <jpa:des>Должность сотрудника</jpa:des>
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
@@ -115,6 +141,7 @@
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
+        <jpa:des>Группа студентов</jpa:des>
         <jpa:ath>vaganovdv</jpa:ath>
         <jpa:attributes>
             <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" connected-entity-id="_1494058484870" v="true" name="students" id="_149405991441225">
@@ -134,30 +161,84 @@
         </jpa:nq>
         <jpa:el/>
     </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="PulpitPK" abs="false" class="Pulpit" v="true" m="false" rootElement="_14940563935111" id="_1494078556460">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:des>Кафедра</jpa:des>
+        <jpa:ath>Maximus</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" connected-entity-id="_1494058499422" v="true" name="professors" id="_149407862021912">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149407855648710">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Pulpit.findAll">
+            <jpa:query>Select e from Pulpit e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="DepartmentPK" abs="false" class="Department" v="true" m="false" rootElement="_14940563935111" id="_1494079255066">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:des>Отдел</jpa:des>
+        <jpa:ath>Maximus</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" connected-entity-id="_1494058512859" v="true" name="employees" id="_149407927582915">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149407925506713">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Department.findAll">
+            <jpa:query>Select e from Department e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
     <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
  * This file was generated by the Jeddict
  */</jpa:snp>
     <jpa:c>
-        <ct>java.util.Map</ct>
         <ct>java.util.List</ct>
+        <ct>java.util.Map</ct>
         <ct>java.util.Set</ct>
         <ct>java.util.Collection</ct>
     </jpa:c>
     <jpa:wsl>
         <jpa:ws n="Main" id="_14940563935152">
-            <i ref="_1494058499422" x="386" y="272">
+            <i ref="_1494058499422" x="196" y="287">
                 <el/>
             </i>
-            <i ref="_1494058484870" x="20" y="272">
+            <i ref="_1494058484870" x="89" y="231">
                 <el/>
             </i>
-            <i ref="_1494056480672" x="46" y="51">
+            <i ref="_1494056480672" x="316" y="-35">
                 <el/>
             </i>
-            <i ref="_1494058512859" x="386" y="51">
+            <i ref="_1494058512859" x="336" y="231">
                 <el/>
             </i>
-            <i ref="_1494059540052" x="194" y="379">
+            <i ref="_1494078556460" x="-23" y="374">
+                <el/>
+            </i>
+            <i ref="_1494079255066" x="-15" y="485">
+                <el/>
+            </i>
+            <i ref="_1494059540052" x="-46" y="270">
                 <el/>
             </i>
         </jpa:ws>

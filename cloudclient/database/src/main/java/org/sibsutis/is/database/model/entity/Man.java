@@ -33,6 +33,18 @@ public abstract class Man
     @Basic
     private String MiddleName;
 
+    /**
+     День рождения
+     */
+    @Basic
+    private String Birthday;
+
+    /**
+     Дата принятия
+     */
+    @Basic
+    private String Accepted;
+
     @ElementCollection
     private Map<String, String> Map;
 
@@ -74,6 +86,26 @@ public abstract class Man
     public void setMiddleName(String MiddleName)
     {
         this.MiddleName = MiddleName;
+    }
+
+    public String getBirthday()
+    {
+        return this.Birthday;
+    }
+
+    public void setBirthday(String Birthday)
+    {
+        this.Birthday = Birthday;
+    }
+
+    public String getAccepted()
+    {
+        return this.Accepted;
+    }
+
+    public void setAccepted(String Accepted)
+    {
+        this.Accepted = Accepted;
     }
 
     public Map<String, String> getMap()

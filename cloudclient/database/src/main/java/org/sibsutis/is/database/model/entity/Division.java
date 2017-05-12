@@ -11,20 +11,20 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
- * Кафедра
+ * Отдел
  *
  * @author Maximus
  */
 @Entity
-public class Department
+public class Division
 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany(targetEntity = Professor.class)
-    private List<Professor> professors;
+    @OneToMany(targetEntity = Employee.class)
+    private List<Employee> employees;
 
     public Long getId()
     {
@@ -36,14 +36,14 @@ public class Department
         this.id = id;
     }
 
-    public List<Professor> getProfessors()
+    public List<Employee> getEmployees()
     {
-        return this.professors;
+        return this.employees;
     }
 
-    public void setProfessors(List<Professor> professors)
+    public void setEmployees(List<Employee> employees)
     {
-        this.professors = professors;
+        this.employees = employees;
     }
 
 }

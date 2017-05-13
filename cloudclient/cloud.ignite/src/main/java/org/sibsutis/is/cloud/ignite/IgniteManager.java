@@ -12,6 +12,7 @@ import org.apache.ignite.IgniteCache;
 import org.apache.ignite.IgniteException;
 import org.apache.ignite.Ignition;
 import org.apache.ignite.cache.CachePeekMode;
+import org.apache.ignite.configuration.IgniteConfiguration;
 import org.apache.ignite.transactions.Transaction;
 import static org.apache.ignite.transactions.TransactionConcurrency.PESSIMISTIC;
 import static org.apache.ignite.transactions.TransactionIsolation.REPEATABLE_READ;
@@ -36,7 +37,10 @@ public class IgniteManager implements IgniteManagerAPI
         boolean result = false;
         log.log(Level.INFO, "[IgniteManager] Старт");
 
-      
+        IgniteConfiguration cfg = new IgniteConfiguration();
+        
+        CacheStorageConfiguration csc = new CacheStorageConfiguration(cfg);
+        
            Ignition.setClientMode(true);
            ignite = Ignition.start();
            result = true;

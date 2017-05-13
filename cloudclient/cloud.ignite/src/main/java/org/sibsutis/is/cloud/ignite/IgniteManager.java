@@ -31,18 +31,19 @@ public class IgniteManager implements IgniteManagerAPI
     public boolean start()
     {
         boolean result = false;
-        log.log(Level.INFO, "[IgniteManager] Старт");
+        
 
         IgniteConfiguration cfg = new IgniteConfiguration();
         //CacheStorageConfiguration csc = new CacheStorageConfiguration(cfg);
         cfg.setClientMode(true);
         
+        log.log(Level.INFO, "[IgniteManager] Конфигурация {Ignite} создана");
         
-        
+        log.log(Level.INFO, "[IgniteManager] Старт...");
         ignite = Ignition.start();
         result = true;
         
-        IgniteCache<Long, Man> cache = ignite.getOrCreateCache("man.model");
+        IgniteCache <Long, Man> cache = ignite.getOrCreateCache("man.model");
 
         log.log(Level.INFO, "[IgniteManager] Разамер базы кэша [man.model] --> {" + cache.sizeLong(CachePeekMode.PRIMARY) + "}");
         log.log(Level.INFO, "[IgniteManager] Размещение данных в кеше... ");

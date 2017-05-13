@@ -4,8 +4,6 @@
 package org.sibsutis.is.database.model.entity;
 
 import java.util.List;
-import java.util.Map;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,15 +14,12 @@ import javax.persistence.OneToMany;
  @author Vadim
  */
 @Entity
-public class Student
+public class Subject
 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @ElementCollection
-    private Map<String, String> Personal_Information;
 
     @OneToMany(targetEntity = Information_of_Works.class)
     private List<Information_of_Works> information_of_Workses;
@@ -37,16 +32,6 @@ public class Student
     public void setId(Long id)
     {
         this.id = id;
-    }
-
-    public Map<String, String> getPersonal_Information()
-    {
-        return this.Personal_Information;
-    }
-
-    public void setPersonal_Information(Map<String, String> Personal_Information)
-    {
-        this.Personal_Information = Personal_Information;
     }
 
     public List<Information_of_Works> getInformation_of_Workses()

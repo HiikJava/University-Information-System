@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="4.2.1" rws="_149406497272257" Pws="_149406497272257" cws="_149406497272257" sm="false" xs="false" id="_149406497272256" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.sibsutis.is.database.model.entity" v="4.2.1" rws="_149406497272257" Pws="_149406497272257" cws="_149406497272257" sm="false" xs="false" id="_149406497272256" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
     <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="ReportsPK" abs="false" class="Reports" v="true" m="false" rootElement="_149406497272256" id="_1494064975453">
         <jpa:ts e="true"/>
         <jpa:ath>vaganovdv</jpa:ath>

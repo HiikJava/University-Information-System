@@ -7,15 +7,19 @@ package org.sibsutis.is.cloud.ignite;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.cache.configuration.FactoryBuilder;
 import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteCache;
 import org.apache.ignite.IgniteException;
 import org.apache.ignite.Ignition;
+import org.apache.ignite.cache.CacheAtomicityMode;
 import org.apache.ignite.cache.CachePeekMode;
+import org.apache.ignite.configuration.CacheConfiguration;
 import org.apache.ignite.configuration.IgniteConfiguration;
 import org.apache.ignite.transactions.Transaction;
 import static org.apache.ignite.transactions.TransactionConcurrency.PESSIMISTIC;
 import static org.apache.ignite.transactions.TransactionIsolation.REPEATABLE_READ;
+import org.sibsutis.is.cloud.ignite.store.ManStore;
 import org.sibsutis.is.database.all.Man;
 
 /**
@@ -34,27 +38,41 @@ public class IgniteManager implements IgniteManagerAPI
         
 
         IgniteConfiguration cfg = new IgniteConfiguration();
-        //CacheStorageConfiguration csc = new CacheStorageConfiguration(cfg);
-        cfg.setClientMode(true);
+        CacheConfiguration configuration = new CacheConfiguration();
+        configuration.setName("man.model");
+        configuration.setAtomicityMode(CacheAtomicityMode.TRANSACTIONAL);
+
+        configuration.setCacheStoreFactory(FactoryBuilder.factoryOf(ManStore.class));
+        configuration.setReadThrough(true);
+        configuration.setWriteThrough(true);
+
+        configuration.setWriteBehindEnabled(true);
+
+       
+        cfg.setCacheConfiguration(configuration);
+        //cfg.setClientMode(true);
+        
         
         log.log(Level.INFO, "[IgniteManager] Конфигурация {Ignite} создана");
         
         log.log(Level.INFO, "[IgniteManager] Старт...");
-        ignite = Ignition.start();
+        ignite = Ignition.start(cfg);
         result = true;
         
-        IgniteCache <Long, Man> cache = ignite.getOrCreateCache("man.model");
+        IgniteCache <Long, Man> cache = ignite.getOrCreateCache(configuration);
 
         log.log(Level.INFO, "[IgniteManager] Разамер базы кэша [man.model] --> {" + cache.sizeLong(CachePeekMode.PRIMARY) + "}");
         log.log(Level.INFO, "[IgniteManager] Размещение данных в кеше... ");
-        Man man = new Man();
-        
+       
+         Man man;
             try (Transaction tx = ignite.transactions().txStart(PESSIMISTIC, REPEATABLE_READ))
         {
-            for (long i = 0; i < cache.sizeLong(CachePeekMode.PRIMARY); i++)
+            for (long i = 0; i < 10; i++)
             {
-                man = (Man) cache.get(i);
-                man.setId(i);
+                 man = new Man();
+                 man.setId(i);
+                 cache.put(man.getId(),man);
+                
                 log.log(Level.INFO, "Размещено в кэше [id = " + i + "]" + " { " + man.getFullName() + " }");
             }
             tx.commit();

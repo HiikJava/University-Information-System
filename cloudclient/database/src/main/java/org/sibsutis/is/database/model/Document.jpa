@@ -6,6 +6,21 @@
         <jpa:eq e="true"/>
         <jpa:ath>Admin</jpa:ath>
         <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="SureName" id="_149465652171740">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Name" id="_149465652839041">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="MiddleName" id="_149465654681842">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
             <jpa:basic attribute-type="String" v="true" name="number" id="_149408082259622">
                 <jpa:bv/>
                 <jpa:kbv/>
@@ -39,6 +54,15 @@
         </jpa:nq>
         <jpa:nq e="false" name="Document.findBySex">
             <jpa:query>Select d from Document d where d.sex=:sex</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Document.findBySureName">
+            <jpa:query>Select d from Document d where d.SureName=:SureName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Document.findByName">
+            <jpa:query>Select d from Document d where d.Name=:Name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Document.findByMiddleName">
+            <jpa:query>Select d from Document d where d.MiddleName=:MiddleName</jpa:query>
         </jpa:nq>
         <jpa:el/>
     </jpa:mapped-superclass>
@@ -183,10 +207,10 @@
  */</jpa:snp>
     <jpa:wsl>
         <jpa:ws n="Main" id="_14940797084542">
-            <i ref="_1494081078994" x="607" y="62">
+            <i ref="_1494081078994" x="426" y="62">
                 <el/>
             </i>
-            <i ref="_1494081524196" x="-39" y="117">
+            <i ref="_1494081524196" x="142" y="62">
                 <el/>
             </i>
             <i ref="_1494080776730" x="272" y="140">
@@ -195,10 +219,10 @@
             <i ref="_1494081149920" x="286" y="464">
                 <el/>
             </i>
-            <i ref="_1494080881802" x="173" y="329">
+            <i ref="_1494080881802" x="124" y="374">
                 <el/>
             </i>
-            <i ref="_1494081240719" x="383" y="329">
+            <i ref="_1494081240719" x="397" y="374">
                 <el/>
             </i>
             <i ref="_1494081738003" x="274" y="-57">

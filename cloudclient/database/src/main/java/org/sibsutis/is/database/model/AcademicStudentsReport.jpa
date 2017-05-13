@@ -1,21 +1,210 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="4.2.1" rws="_149406497272257" cws="_149406497272257" sm="false" xs="false" id="_149406497272256" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
-    <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="MappedSuperclass_1PK" abs="false" class="MappedSuperclass_1" v="true" m="false" rootElement="_149406497272256" id="_1494064975453">
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="4.2.1" rws="_149406497272257" Pws="_149406497272257" cws="_149406497272257" sm="false" xs="false" id="_149406497272256" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="ReportsPK" abs="false" class="Reports" v="true" m="false" rootElement="_149406497272256" id="_1494064975453">
+        <jpa:ts e="true"/>
         <jpa:ath>vaganovdv</jpa:ath>
-        <jpa:attributes/>
-        <jpa:nq e="false" name="MappedSuperclass_1.findAll">
-            <jpa:query>Select m from MappedSuperclass_1 m</jpa:query>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Diploma_Project" id="_1494584409166107">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Course_Project" id="_1494584409605108">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Settlement_Project" id="_1494584410005109">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Settlement_and_Graphic_Project" id="_1494584410406110">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Practical_Work" id="_1494584410982111">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Laboratory_Work" id="_1494584608038112">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149458344442249">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Report_DocuumentsidfindAll">
+            <jpa:query>Select m from Reports m</jpa:query>
         </jpa:nq>
+        <jpa:nq e="false" name="Report_DocuumentsidfindByAttribute">
+            <jpa:query>Select r from Reports r where ridattribute=:Diploma_Project</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Report_DocuumentsidfindByAttribute1">
+            <jpa:query>Select r from Reports r where ridattribute1=:Course_Project</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Report_DocuumentsidfindByAttribute2">
+            <jpa:query>Select r from Reports r where ridattribute2=:Settlement_Project</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Report_DocuumentsidfindByAttribute3">
+            <jpa:query>Select r from Reports r where ridattribute3=:Settlement_and_Graphic_Project</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Report_DocuumentsidfindByAttribute4">
+            <jpa:query>Select r from Reports r where ridattribute4=:Practical_Work</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Reports.findByLaboratory_Work">
+            <jpa:query>Select r from Reports r where r.Laboratory_Work=:Laboratory_Work</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Reports.findByDiploma_Project">
+            <jpa:query>Select r from Reports r where r.Diploma_Project=:Diploma_Project</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Reports.findByCourse_Project">
+            <jpa:query>Select r from Reports r where r.Course_Project=:Course_Project</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Reports.findBySettlement_Project">
+            <jpa:query>Select r from Reports r where r.Settlement_Project=:Settlement_Project</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Reports.findBySettlement_and_Graphic_Project">
+            <jpa:query>Select r from Reports r where r.Settlement_and_Graphic_Project=:Settlement_and_Graphic_Project</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Reports.findByPractical_Work">
+            <jpa:query>Select r from Reports r where r.Practical_Work=:Practical_Work</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Reports.findByLaboratory_Work">
+            <jpa:query>Select r from Reports r where r.Laboratory_Work=:Laboratory_Work</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
     </jpa:mapped-superclass>
+    <jpa:entity xre="false" compositePrimaryKeyClass="Information_of_WorksPK" abs="false" class="Information_of_Works" superclassId="_1494064975453" v="true" m="false" rootElement="_149406497272256" id="_1494583294905">
+        <jpa:ts e="true"/>
+        <jpa:ath>Vadim</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Type_of_Work" id="_1494584721438115">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Date_of_Registration" id="_149458357317356">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Theme" id="_149458357353457">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Date_of_Protection" id="_149458357395058">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Valuation" id="_149458357466959">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Information_of_Works.findAll">
+            <jpa:query>Select e from Information_of_Works e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Information_of_Works.findByDate_of_Registration">
+            <jpa:query>Select i from Information_of_Works i where i.Date_of_Registration=:Date_of_Registration</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Information_of_Works.findByTheme">
+            <jpa:query>Select i from Information_of_Works i where i.Theme=:Theme</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Information_of_Works.findByDate_of_Protection">
+            <jpa:query>Select i from Information_of_Works i where i.Date_of_Protection=:Date_of_Protection</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Information_of_Works.findByValuation">
+            <jpa:query>Select i from Information_of_Works i where i.Valuation=:Valuation</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Information_of_Works.findByType_of_Work">
+            <jpa:query>Select i from Information_of_Works i where i.Type_of_Work=:Type_of_Work</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Information_of_Works.findByType_of_Work">
+            <jpa:query>Select i from Information_of_Works i where i.Type_of_Work=:Type_of_Work</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="StudentPK" abs="false" class="Student" v="true" m="false" rootElement="_149406497272256" id="_1494583296528">
+        <jpa:ts e="true"/>
+        <jpa:ath>Vadim</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1494583294905" v="true" name="information_of_Workses" id="_1494584623046113">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.Map" mkt="NEW" mkat="String" v="true" name="Personal_Information" id="_149458365086660">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149458329652930">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Student.findAll">
+            <jpa:query>Select e from Student e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="SubjectPK" abs="false" class="Subject" v="true" m="false" rootElement="_149406497272256" id="_1494583300945">
+        <jpa:ts e="true"/>
+        <jpa:ath>Vadim</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1494583294905" v="true" name="information_of_Workses" id="_1494584627222114">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149458330094634">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Subject.findAll">
+            <jpa:query>Select e from Subject e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
     <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
  * This file was generated by the Jeddict
  */</jpa:snp>
+    <jpa:c>
+        <ct>java.util.Map</ct>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Collection</ct>
+    </jpa:c>
     <jpa:wsl>
         <jpa:ws n="Main" id="_149406497272257">
-            <i ref="_1494064975453" x="108" y="42">
+            <i ref="_1494583294905" x="242" y="250">
+                <el/>
+            </i>
+            <i ref="_1494064975453" x="238" y="13">
+                <el/>
+            </i>
+            <i ref="_1494583296528" x="509" y="250">
+                <el/>
+            </i>
+            <i ref="_1494583300945" x="11" y="250">
                 <el/>
             </i>
         </jpa:ws>
     </jpa:wsl>
 </jpa:entity-mappings>
-

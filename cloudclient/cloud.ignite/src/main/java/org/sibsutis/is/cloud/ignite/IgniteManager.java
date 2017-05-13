@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ To change this license header, choose License Headers in Project Properties.
+ To change this template file, choose Tools | Templates
+ and open the template in the editor.
  */
 package org.sibsutis.is.cloud.ignite;
 
@@ -19,18 +19,14 @@ import static org.apache.ignite.transactions.TransactionIsolation.REPEATABLE_REA
 import org.sibsutis.is.database.all.Man;
 
 /**
- *
- * @author vaganovdv
+
+ @author vaganovdv
  */
-
-
 public class IgniteManager implements IgniteManagerAPI
 {
     private static final Logger log = Logger.getLogger(IgniteManager.class.getName());
-    
     private static Ignite ignite;
-    
-   
+
     @Override
     public boolean start()
     {
@@ -38,56 +34,26 @@ public class IgniteManager implements IgniteManagerAPI
         log.log(Level.INFO, "[IgniteManager] Старт");
 
         IgniteConfiguration cfg = new IgniteConfiguration();
-        
         CacheStorageConfiguration csc = new CacheStorageConfiguration(cfg);
-        
-           Ignition.setClientMode(true);
-           ignite = Ignition.start();
-           result = true;
 
-           
-           IgniteCache<Long, Man> cache = ignite.getOrCreateCache("man.model");
-          
-      
-            /*
-            
-            Man man1 = new Man();
-            man1.setFistName("Владимир");
-            man1.setMiddleName("Владимирович");
-            man1.setSureName("Путин");
-            cache.put(0L,man1);
-            
-            
-            Man man2 = new Man();
-            man2.setFistName("Владимир");
-            man2.setMiddleName("Вольфович");
-            man2.setSureName("Жириновский");
-            cache.put(1L,man2);
-            */
-            
-            log.log(Level.INFO, "[IgniteManager] Разамер базы кэша [man.model] --> {"+cache.sizeLong(CachePeekMode.PRIMARY)+"}");
-            
-            log.log(Level.INFO, "[IgniteManager] Попытка чтения из кэша [man.model]..." );
-            
-            // Контрольное чтение
-            Man man = new Man();
-            
-       try (Transaction tx = ignite.transactions().txStart(PESSIMISTIC, REPEATABLE_READ))
-       {   
-            
-                        
+        Ignition.setClientMode(true);
+        ignite = Ignition.start();
+        result = true;
+        IgniteCache<Long, Man> cache = ignite.getOrCreateCache("man.model");
+
+        log.log(Level.INFO, "[IgniteManager] Разамер базы кэша [man.model] --> {" + cache.sizeLong(CachePeekMode.PRIMARY) + "}");
+        log.log(Level.INFO, "[IgniteManager] Попытка чтения из кэша [man.model]...");
+        // Контрольное чтение
+        Man man = new Man();
+        try (Transaction tx = ignite.transactions().txStart(PESSIMISTIC, REPEATABLE_READ))
+        {
             for (long i = 0; i < cache.sizeLong(CachePeekMode.PRIMARY); i++)
             {
-                    man = (Man)cache.get(i);
-                    log.log(Level.INFO,"Получено из кэша [id = " +i+"]"+ " { " + man.getFullName() + " }");
-                   
+                man = (Man) cache.get(i);
+                log.log(Level.INFO, "Получено из кэша [id = " + i + "]" + " { " + man.getFullName() + " }");
             }
-            
             tx.commit();
-            
-       }    
-      
-
+        }
         log.log(Level.INFO, "[IgniteManager] Стартовал");
         return result;
     }
@@ -100,23 +66,23 @@ public class IgniteManager implements IgniteManagerAPI
 
         try
         {
-         
             if (ignite != null)
             {
                 ignite.close();
                 result = true;
                 log.log(Level.INFO, "[IgniteManager] Остановлен");
-            } else
+            }
+            else
             {
                 result = false;
                 log.log(Level.WARNING, "[IgniteManager] Экземпляр класса не существует - остановка невозможна");
             }
-        } catch (IgniteException ex)
+        }
+        catch (IgniteException ex)
         {
             log.log(Level.WARNING, "[IgniteManager] Ошибка остановки модуля ");
             log.log(Level.WARNING, "[IgniteManager] Описание ошибки: [" + ex.toString() + "]");
         }
-
         return result;
     }
 }

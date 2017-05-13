@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.sibsutis.is.cloud.ignite;
 
 import java.util.logging.Level;
@@ -13,30 +8,24 @@ import org.apache.ignite.configuration.CacheConfiguration;
 import org.apache.ignite.configuration.IgniteConfiguration;
 
 /**
- *
- * @author vaganovdv
+
+ @author vaganovdv
  */
 public class CacheStorageConfiguration
 {
-
     private static final Logger log = Logger.getLogger(CacheStorageConfiguration.class.getName());
-   private       IgniteConfiguration cfg ;
-    
-    
-    public CacheStorageConfiguration( IgniteConfiguration cfg  )
+    private IgniteConfiguration cfg;
+
+    public CacheStorageConfiguration(IgniteConfiguration cfg)
     {
-        
         this.cfg = cfg;
-        log.log(Level.INFO,"[CacheStorageConfiguration] создан экземпляр классаа");
-        
+        log.log(Level.INFO, "[CacheStorageConfiguration] создан экземпляр классаа");
     }
-    
-    
-    private void  addCacheStoreConfiguration(String Name, String StorageClassName)
+
+    private void addCacheStoreConfiguration(String Name, String StorageClassName)
     {
-        
-        log.log(Level.INFO,"[CacheStorageConfiguration] Добавление конфигурации c именем {"+Name+"}");
-        
+        log.log(Level.INFO, "[CacheStorageConfiguration] Добавление конфигурации c именем {" + Name + "}");
+
         CacheConfiguration configuration = new CacheConfiguration();
         configuration.setName(Name);
         configuration.setAtomicityMode(CacheAtomicityMode.TRANSACTIONAL);
@@ -45,11 +34,10 @@ public class CacheStorageConfiguration
         configuration.setReadThrough(true);
         configuration.setWriteThrough(true);
         configuration.setWriteBehindEnabled(true);
-        
-         cfg.setCacheConfiguration(configuration);
 
-     log.log(Level.INFO,"[CacheStorageConfiguration] Конфигурация  {"+Name+"}  добавлена");
+        cfg.setCacheConfiguration(configuration);
+
+        log.log(Level.INFO, "[CacheStorageConfiguration] Конфигурация  {" + Name + "}  добавлена");
     }
-    
-    
+
 }

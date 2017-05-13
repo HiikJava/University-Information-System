@@ -34,17 +34,38 @@ public class IgniteManager implements IgniteManagerAPI
         log.log(Level.INFO, "[IgniteManager] Старт");
 
         IgniteConfiguration cfg = new IgniteConfiguration();
-        CacheStorageConfiguration csc = new CacheStorageConfiguration(cfg);
-
-        Ignition.setClientMode(true);
+        //CacheStorageConfiguration csc = new CacheStorageConfiguration(cfg);
+        cfg.setClientMode(true);
+        
+        
+        
         ignite = Ignition.start();
         result = true;
+        
         IgniteCache<Long, Man> cache = ignite.getOrCreateCache("man.model");
 
         log.log(Level.INFO, "[IgniteManager] Разамер базы кэша [man.model] --> {" + cache.sizeLong(CachePeekMode.PRIMARY) + "}");
+        log.log(Level.INFO, "[IgniteManager] Размещение данных в кеше... ");
+        Man man = new Man();
+        
+            try (Transaction tx = ignite.transactions().txStart(PESSIMISTIC, REPEATABLE_READ))
+        {
+            for (long i = 0; i < cache.sizeLong(CachePeekMode.PRIMARY); i++)
+            {
+                man = (Man) cache.get(i);
+                man.setId(i);
+                log.log(Level.INFO, "Размещено в кэше [id = " + i + "]" + " { " + man.getFullName() + " }");
+            }
+            tx.commit();
+        }
+           log.log(Level.INFO, "[IgniteManager] Размещение данных в кеше завершено ");
+        
+        
+        
+        
         log.log(Level.INFO, "[IgniteManager] Попытка чтения из кэша [man.model]...");
         // Контрольное чтение
-        Man man = new Man();
+        
         try (Transaction tx = ignite.transactions().txStart(PESSIMISTIC, REPEATABLE_READ))
         {
             for (long i = 0; i < cache.sizeLong(CachePeekMode.PRIMARY); i++)

@@ -161,7 +161,7 @@
         </jpa:nq>
         <jpa:el/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="PulpitPK" abs="false" class="Pulpit" v="true" m="false" rootElement="_14940563935111" id="_1494078556460">
+    <jpa:entity xre="false" compositePrimaryKeyClass="DepartmentPK" abs="false" class="Department" v="true" m="false" rootElement="_14940563935111" id="_1494078556460">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -185,7 +185,7 @@
         </jpa:nq>
         <jpa:el/>
     </jpa:entity>
-    <jpa:entity xre="false" compositePrimaryKeyClass="DepartmentPK" abs="false" class="Department" v="true" m="false" rootElement="_14940563935111" id="_1494079255066">
+    <jpa:entity xre="false" compositePrimaryKeyClass="DivisionPK" abs="false" class="Division" v="true" m="false" rootElement="_14940563935111" id="_1494079255066">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -220,7 +220,7 @@
     </jpa:c>
     <jpa:wsl>
         <jpa:ws n="Main" id="_14940563935152">
-            <i ref="_1494058499422" x="196" y="287">
+            <i ref="_1494058499422" x="324" y="304">
                 <el/>
             </i>
             <i ref="_1494058484870" x="89" y="231">
@@ -229,16 +229,16 @@
             <i ref="_1494056480672" x="316" y="-35">
                 <el/>
             </i>
-            <i ref="_1494058512859" x="336" y="231">
+            <i ref="_1494058512859" x="646" y="287">
                 <el/>
             </i>
-            <i ref="_1494078556460" x="-23" y="374">
+            <i ref="_1494078556460" x="316" y="492">
                 <el/>
             </i>
-            <i ref="_1494079255066" x="-15" y="485">
+            <i ref="_1494079255066" x="842" y="362">
                 <el/>
             </i>
-            <i ref="_1494059540052" x="-46" y="270">
+            <i ref="_1494059540052" x="-126" y="330">
                 <el/>
             </i>
         </jpa:ws>

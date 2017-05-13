@@ -12,6 +12,9 @@
     <class>org.sibsutis.is.database.model.entity.MilitaryID</class>
     <class>org.sibsutis.is.database.model.entity.Policy</class>
     <class>org.sibsutis.is.database.model.entity.Education</class>
+    <class>org.sibsutis.is.database.model.entity.Department</class>
+    <class>org.sibsutis.is.database.model.entity.Division</class>
+    <class>org.sibsutis.is.database.model.entity.Institute</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
       <property name="javax.persistence.jdbc.password" value="app"/>

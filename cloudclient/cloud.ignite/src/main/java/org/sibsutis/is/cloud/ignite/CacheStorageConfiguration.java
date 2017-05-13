@@ -8,7 +8,6 @@ import org.apache.ignite.configuration.CacheConfiguration;
 import org.apache.ignite.configuration.IgniteConfiguration;
 
 /**
-
  @author vaganovdv
  */
 public class CacheStorageConfiguration

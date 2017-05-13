@@ -85,4 +85,5 @@ public class IgniteManager implements IgniteManagerAPI
         }
         return result;
     }
+    
 }

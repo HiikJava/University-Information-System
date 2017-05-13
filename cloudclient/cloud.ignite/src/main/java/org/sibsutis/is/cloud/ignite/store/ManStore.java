@@ -22,6 +22,7 @@ public class ManStore extends CacheStoreAdapter<Long, Man>
         Man man = new Man();
         man.setId(1L);
         log.log(Level.INFO, "[ManStore] Загрузка экземпляра {Man} --> {LOAD}");
+        
         return man;
     }
 

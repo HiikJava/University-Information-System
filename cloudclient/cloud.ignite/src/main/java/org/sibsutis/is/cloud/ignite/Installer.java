@@ -22,7 +22,6 @@ public class Installer extends ModuleInstall
 
         igniteManager = new IgniteManager();
         igniteManager.start();
-
     }
 
     @Override

@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 /**
  * @author Eugene
@@ -37,19 +38,7 @@ public
 
     @Basic
     private
-	    String WaterMain;
-
-    @Basic
-    private
-	    String PhoneLine;
-
-    @Basic
-    private
 	    String Line380v;
-
-    @Basic
-    private
-	    String Enternet;
 
     @ElementCollection
     private
@@ -58,6 +47,14 @@ public
     @ElementCollection
     private
 	    List<String> ListDevices;
+
+    @Embedded
+    private
+	    Communications communications;
+
+    @Embedded
+    private
+	    Furnitures furnitures;
 
     public
 	    String getNumberOfRoom () {
@@ -110,26 +107,6 @@ public
     }
 
     public
-	    String getWaterMain () {
-	return this.WaterMain;
-    }
-
-    public
-	    void setWaterMain (String WaterMain) {
-	this.WaterMain = WaterMain;
-    }
-
-    public
-	    String getPhoneLine () {
-	return this.PhoneLine;
-    }
-
-    public
-	    void setPhoneLine (String PhoneLine) {
-	this.PhoneLine = PhoneLine;
-    }
-
-    public
 	    String getLine380v () {
 	return this.Line380v;
     }
@@ -137,16 +114,6 @@ public
     public
 	    void setLine380v (String Line380v) {
 	this.Line380v = Line380v;
-    }
-
-    public
-	    String getEnternet () {
-	return this.Enternet;
-    }
-
-    public
-	    void setEnternet (String Enternet) {
-	this.Enternet = Enternet;
     }
 
     public
@@ -167,6 +134,26 @@ public
     public
 	    void setListDevices (List<String> ListDevices) {
 	this.ListDevices = ListDevices;
+    }
+
+    public
+	    Communications getCommunications () {
+	return this.communications;
+    }
+
+    public
+	    void setCommunications (Communications communications) {
+	this.communications = communications;
+    }
+
+    public
+	    Furnitures getFurnitures () {
+	return this.furnitures;
+    }
+
+    public
+	    void setFurnitures (Furnitures furnitures) {
+	this.furnitures = furnitures;
     }
 
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 /**
  * @author Eugene
@@ -14,6 +15,10 @@ import javax.persistence.Embeddable;
 @Embeddable
 public
 	class Address {
+
+    @Basic
+    private
+	    String ZipCode;
 
     @Basic
     private
@@ -33,7 +38,21 @@ public
 
     @ElementCollection
     private
-	    List<String> GEO_coordinates;
+	    List<String> GeoCoordinates;
+
+    @Embedded
+    private
+	    Building building;
+
+    public
+	    String getZipCode () {
+	return this.ZipCode;
+    }
+
+    public
+	    void setZipCode (String ZipCode) {
+	this.ZipCode = ZipCode;
+    }
 
     public
 	    String getCountry () {
@@ -76,13 +95,23 @@ public
     }
 
     public
-	    List<String> getGEO_coordinates () {
-	return this.GEO_coordinates;
+	    List<String> getGeoCoordinates () {
+	return this.GeoCoordinates;
     }
 
     public
-	    void setGEO_coordinates (List<String> GEO_coordinates) {
-	this.GEO_coordinates = GEO_coordinates;
+	    void setGeoCoordinates (List<String> GeoCoordinates) {
+	this.GeoCoordinates = GeoCoordinates;
+    }
+
+    public
+	    Building getBuilding () {
+	return this.building;
+    }
+
+    public
+	    void setBuilding (Building building) {
+	this.building = building;
     }
 
 }

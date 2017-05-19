@@ -3,7 +3,9 @@
  */
 package org.sibsutis.is.database.model.entity;
 
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
 
 /**
@@ -32,6 +34,10 @@ public
     @Basic
     private
 	    String Parking;
+
+    @ElementCollection
+    private
+	    List<Room> rooms;
 
     public
 	    String getNumberOfBuilding () {
@@ -81,6 +87,16 @@ public
     public
 	    void setParking (String Parking) {
 	this.Parking = Parking;
+    }
+
+    public
+	    List<Room> getRooms () {
+	return this.rooms;
+    }
+
+    public
+	    void setRooms (List<Room> rooms) {
+	this.rooms = rooms;
     }
 
 }

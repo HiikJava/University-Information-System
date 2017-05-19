@@ -17,6 +17,7 @@
     <class>org.sibsutis.is.database.model.entity.Institute</class>
     <class>org.sibsutis.is.database.model.entity.Information_of_Works</class>
     <class>org.sibsutis.is.database.model.entity.Subject</class>
+    <class>org.sibsutis.is.database.model.entity.Home</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
       <property name="javax.persistence.jdbc.password" value="app"/>

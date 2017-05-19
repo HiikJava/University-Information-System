@@ -30,14 +30,6 @@ public abstract
     private
 	    Address address;
 
-    @Embedded
-    private
-	    Building building;
-
-    @Embedded
-    private
-	    Room room;
-
     public
 	    Long getId () {
 	return this.id;
@@ -66,26 +58,6 @@ public abstract
     public
 	    void setAddress (Address address) {
 	this.address = address;
-    }
-
-    public
-	    Building getBuilding () {
-	return this.building;
-    }
-
-    public
-	    void setBuilding (Building building) {
-	this.building = building;
-    }
-
-    public
-	    Room getRoom () {
-	return this.room;
-    }
-
-    public
-	    void setRoom (Room room) {
-	this.room = room;
     }
 
 }

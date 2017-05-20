@@ -14,16 +14,16 @@ public class MilitaryID extends Document
 {
 
     @Basic
-    private String series;
+    private String Series;
 
     public String getSeries()
     {
-        return this.series;
+        return this.Series;
     }
 
-    public void setSeries(String series)
+    public void setSeries(String Series)
     {
-        this.series = series;
+        this.Series = Series;
     }
 
 }

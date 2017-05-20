@@ -21,17 +21,17 @@
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="number" id="_149408082259622">
+            <jpa:basic attribute-type="Integer" v="true" name="Number" id="_149408082259622">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="birthday" id="_149408083348223">
+            <jpa:basic attribute-type="java.sql.Date" v="true" name="Birthday" id="_149408083348223">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="sex" id="_149408087045124">
+            <jpa:basic attribute-type="String" v="true" name="Sex" id="_149408087045124">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
@@ -47,13 +47,13 @@
             <jpa:query>Select m from Document m</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="Document.findByNumber">
-            <jpa:query>Select d from Document d where d.number=:number</jpa:query>
+            <jpa:query>Select d from Document d where d.Number=:Number</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="Document.findByBirthday">
-            <jpa:query>Select d from Document d where d.birthday=:birthday</jpa:query>
+            <jpa:query>Select d from Document d where d.Birthday=:Birthday</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="Document.findBySex">
-            <jpa:query>Select d from Document d where d.sex=:sex</jpa:query>
+            <jpa:query>Select d from Document d where d.Sex=:Sex</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="Document.findBySureName">
             <jpa:query>Select d from Document d where d.SureName=:SureName</jpa:query>
@@ -72,22 +72,22 @@
         <jpa:eq e="true"/>
         <jpa:ath>Admin</jpa:ath>
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" name="series" id="_149408090587527">
+            <jpa:basic attribute-type="String" v="true" name="Series" id="_149408090587527">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="issued_by" id="_149408092864228">
+            <jpa:basic attribute-type="String" v="true" name="IssuedBy" id="_149408092864228">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="date_of_issue" id="_149408093415429">
+            <jpa:basic attribute-type="String" v="true" name="DateOfIssue" id="_149408093415429">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="registration" id="_149408093796130">
+            <jpa:basic attribute-type="String" v="true" name="Registration" id="_149408093796130">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
@@ -97,16 +97,16 @@
             <jpa:query>Select e from Passport e</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="Passport.findBySeries">
-            <jpa:query>Select p from Passport p where p.series=:series</jpa:query>
+            <jpa:query>Select p from Passport p where p.Series=:Series</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Passport.findByIssued_by">
-            <jpa:query>Select p from Passport p where p.issued_by=:issued_by</jpa:query>
+        <jpa:nq e="false" name="Passport.findByIssuedBy">
+            <jpa:query>Select p from Passport p where p.IssuedBy=:IssuedBy</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Passport.findByDate_of_issue">
-            <jpa:query>Select p from Passport p where p.date_of_issue=:date_of_issue</jpa:query>
+        <jpa:nq e="false" name="Passport.findByDateOfIssue">
+            <jpa:query>Select p from Passport p where p.DateOfIssue=:DateOfIssue</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="Passport.findByRegistration">
-            <jpa:query>Select p from Passport p where p.registration=:registration</jpa:query>
+            <jpa:query>Select p from Passport p where p.Registration=:Registration</jpa:query>
         </jpa:nq>
         <jpa:el/>
     </jpa:entity>
@@ -138,7 +138,7 @@
         <jpa:eq e="true"/>
         <jpa:ath>Admin</jpa:ath>
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" name="series" id="_149408130073541">
+            <jpa:basic attribute-type="String" v="true" name="Series" id="_149408130073541">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
@@ -148,7 +148,7 @@
             <jpa:query>Select e from MilitaryID e</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="MilitaryID.findBySeries">
-            <jpa:query>Select m from MilitaryID m where m.series=:series</jpa:query>
+            <jpa:query>Select m from MilitaryID m where m.Series=:Series</jpa:query>
         </jpa:nq>
         <jpa:el/>
     </jpa:entity>
@@ -177,12 +177,12 @@
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="series" id="_149408185048748">
+            <jpa:basic attribute-type="String" v="true" name="Series" id="_149408185048748">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="date_of_issue" id="_149408188408249">
+            <jpa:basic attribute-type="String" v="true" name="DateOfIssue" id="_149408188408249">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
@@ -195,10 +195,10 @@
             <jpa:query>Select e from Education e where e.Education=:Education</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="Education.findBySeries">
-            <jpa:query>Select e from Education e where e.series=:series</jpa:query>
+            <jpa:query>Select e from Education e where e.Series=:Series</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Education.findByDate_of_issue">
-            <jpa:query>Select e from Education e where e.date_of_issue=:date_of_issue</jpa:query>
+        <jpa:nq e="false" name="Education.findByDateOfIssue">
+            <jpa:query>Select e from Education e where e.DateOfIssue=:DateOfIssue</jpa:query>
         </jpa:nq>
         <jpa:el/>
     </jpa:entity>
@@ -207,25 +207,25 @@
  */</jpa:snp>
     <jpa:wsl>
         <jpa:ws n="Main" id="_14940797084542">
-            <i ref="_1494081078994" x="426" y="62">
+            <i ref="_1494081078994" x="447" y="-38">
                 <el/>
             </i>
-            <i ref="_1494081524196" x="142" y="62">
+            <i ref="_1494081524196" x="124" y="-38">
                 <el/>
             </i>
             <i ref="_1494080776730" x="272" y="140">
                 <el/>
             </i>
-            <i ref="_1494081149920" x="286" y="464">
+            <i ref="_1494081149920" x="286" y="379">
                 <el/>
             </i>
-            <i ref="_1494080881802" x="124" y="374">
+            <i ref="_1494080881802" x="124" y="379">
                 <el/>
             </i>
-            <i ref="_1494081240719" x="397" y="374">
+            <i ref="_1494081240719" x="438" y="379">
                 <el/>
             </i>
-            <i ref="_1494081738003" x="274" y="-57">
+            <i ref="_1494081738003" x="273" y="-38">
                 <el/>
             </i>
         </jpa:ws>

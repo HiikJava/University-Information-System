@@ -17,10 +17,10 @@ public class Education extends Document
     private String Education;
 
     @Basic
-    private String series;
+    private String Series;
 
     @Basic
-    private String date_of_issue;
+    private String DateOfIssue;
 
     public String getEducation()
     {
@@ -34,22 +34,22 @@ public class Education extends Document
 
     public String getSeries()
     {
-        return this.series;
+        return this.Series;
     }
 
-    public void setSeries(String series)
+    public void setSeries(String Series)
     {
-        this.series = series;
+        this.Series = Series;
     }
 
-    public String getDate_of_issue()
+    public String getDateOfIssue()
     {
-        return this.date_of_issue;
+        return this.DateOfIssue;
     }
 
-    public void setDate_of_issue(String date_of_issue)
+    public void setDateOfIssue(String DateOfIssue)
     {
-        this.date_of_issue = date_of_issue;
+        this.DateOfIssue = DateOfIssue;
     }
 
 }

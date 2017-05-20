@@ -14,55 +14,55 @@ public class Passport extends Document
 {
 
     @Basic
-    private String series;
+    private String Series;
 
     @Basic
-    private String issued_by;
+    private String IssuedBy;
 
     @Basic
-    private String date_of_issue;
+    private String DateOfIssue;
 
     @Basic
-    private String registration;
+    private String Registration;
 
     public String getSeries()
     {
-        return this.series;
+        return this.Series;
     }
 
-    public void setSeries(String series)
+    public void setSeries(String Series)
     {
-        this.series = series;
+        this.Series = Series;
     }
 
-    public String getIssued_by()
+    public String getIssuedBy()
     {
-        return this.issued_by;
+        return this.IssuedBy;
     }
 
-    public void setIssued_by(String issued_by)
+    public void setIssuedBy(String IssuedBy)
     {
-        this.issued_by = issued_by;
+        this.IssuedBy = IssuedBy;
     }
 
-    public String getDate_of_issue()
+    public String getDateOfIssue()
     {
-        return this.date_of_issue;
+        return this.DateOfIssue;
     }
 
-    public void setDate_of_issue(String date_of_issue)
+    public void setDateOfIssue(String DateOfIssue)
     {
-        this.date_of_issue = date_of_issue;
+        this.DateOfIssue = DateOfIssue;
     }
 
     public String getRegistration()
     {
-        return this.registration;
+        return this.Registration;
     }
 
-    public void setRegistration(String registration)
+    public void setRegistration(String Registration)
     {
-        this.registration = registration;
+        this.Registration = Registration;
     }
 
 }

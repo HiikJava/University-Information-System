@@ -3,6 +3,7 @@
  */
 package org.sibsutis.is.database.model.entity;
 
+import java.sql.Date;
 import javax.persistence.Basic;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,13 +31,13 @@ public abstract class Document
     private String MiddleName;
 
     @Basic
-    private String number;
+    private Integer Number;
 
     @Basic
-    private String birthday;
+    private Date Birthday;
 
     @Basic
-    private String sex;
+    private String Sex;
 
     public Long getId()
     {
@@ -78,34 +79,34 @@ public abstract class Document
         this.MiddleName = MiddleName;
     }
 
-    public String getNumber()
+    public Integer getNumber()
     {
-        return this.number;
+        return this.Number;
     }
 
-    public void setNumber(String number)
+    public void setNumber(Integer Number)
     {
-        this.number = number;
+        this.Number = Number;
     }
 
-    public String getBirthday()
+    public Date getBirthday()
     {
-        return this.birthday;
+        return this.Birthday;
     }
 
-    public void setBirthday(String birthday)
+    public void setBirthday(Date Birthday)
     {
-        this.birthday = birthday;
+        this.Birthday = Birthday;
     }
 
     public String getSex()
     {
-        return this.sex;
+        return this.Sex;
     }
 
-    public void setSex(String sex)
+    public void setSex(String Sex)
     {
-        this.sex = sex;
+        this.Sex = Sex;
     }
 
 }

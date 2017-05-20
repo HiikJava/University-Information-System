@@ -16,7 +16,6 @@ import org.apache.ignite.cache.CachePeekMode;
 import org.apache.ignite.transactions.Transaction;
 import static org.apache.ignite.transactions.TransactionConcurrency.PESSIMISTIC;
 import static org.apache.ignite.transactions.TransactionIsolation.REPEATABLE_READ;
-import org.sibsutis.is.database.all.Man;
 
 /**
  *
@@ -39,8 +38,20 @@ public class IgniteManager implements IgniteManagerAPI
 
       
            ignite = Ignition.start();
+           if (ignite.active())
+           {    
+           
            result = true;
+             log.log(Level.INFO, "[IgniteManager] Стартовал успешно");
+           }
+           else
+           {
+                    
+               log.log(Level.INFO, "[IgniteManager] Ошибка старта {Ignite}");
+           }
 
+           /*
+           
             IgniteCache<Long, Man> cache = ignite.getOrCreateCache("man.model");
             
       try (Transaction tx = ignite.transactions().txStart(PESSIMISTIC, REPEATABLE_READ))
@@ -50,8 +61,8 @@ public class IgniteManager implements IgniteManagerAPI
             man1.setFistName("Владимир");
             man1.setMiddleName("Владимирович");
             man1.setSureName("Путин");
-            man1.setId(0L);
-            cache.put(0L,man1);
+            man1.setId(5L);
+            cache.put(5L,man1);
             log.log(Level.INFO,"[IgniteManager] Размещено в кеше ["+cache.getName()+"] --> { "+man1.getFullName()+" }");
             
             
@@ -59,8 +70,8 @@ public class IgniteManager implements IgniteManagerAPI
             man2.setFistName("Владимир");
             man2.setMiddleName("Вольфович");
             man2.setSureName("Жириновский");
-            man2.setId(1L);
-            cache.put(1L,man2);
+            man2.setId(6L);
+            cache.put(6L,man2);
             log.log(Level.INFO,"[IgniteManager] Размещено в кеше ["+cache.getName()+"] --> { "+man2.getFullName()+" }");
             
             
@@ -87,8 +98,7 @@ public class IgniteManager implements IgniteManagerAPI
              */       
                     
                     
-
-        log.log(Level.INFO, "[IgniteManager] Стартовал");
+      
         return result;
     }
 

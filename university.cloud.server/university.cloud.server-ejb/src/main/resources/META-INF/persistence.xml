@@ -3,7 +3,7 @@
 
   <persistence-unit name="SIBSUTIS_PU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <jta-data-source>java:global/jdbc/sibsutisdatabase</jta-data-source>
+    <jta-data-source>sibsutisdatabase</jta-data-source>
     <class>org.sibsutis.is.database.model.entity.Student</class>
     <class>org.sibsutis.is.database.model.entity.Professor</class>
     <class>org.sibsutis.is.database.model.entity.Employee</class>

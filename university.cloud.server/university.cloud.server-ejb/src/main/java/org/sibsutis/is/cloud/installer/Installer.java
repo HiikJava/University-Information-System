@@ -13,6 +13,7 @@ import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import org.sibsutis.is.cloud.ignite.IgniteManagerAPI;
+import org.sibsutis.is.database.manager.PersonManager;
 
 /**
  *
@@ -23,6 +24,9 @@ import org.sibsutis.is.cloud.ignite.IgniteManagerAPI;
 @Singleton
 public class Installer
 {
+
+    @EJB
+    private PersonManager personManager;
 
     private static final Logger log = Logger.getLogger(Installer.class.getName());
  
@@ -54,9 +58,11 @@ public class Installer
         log.log(Level.INFO,"");
         log.log(Level.INFO,"Старт сервера ...");
         
-                r1 = IgniteManager.start();
+               // r1 = IgniteManager.start();
                
-               
+                log.log(Level.INFO,"Попытка тестовой записи...");
+                
+                personManager.start();
         
         if (r1)
         {

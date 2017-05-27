@@ -4,25 +4,26 @@ import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.inject.Inject;
-import org.sibsutis.is.database.model.entity.Passport;
+import javax.persistence.PersistenceContext;
+import org.sibsutis.is.database.model.entity.Professor;
 
 @Stateless
-@Named("passport")
-public class PassportFacade extends AbstractFacade<Passport, Long>
+@Named("professor")
+public class ProfessorFacade extends AbstractFacade<Professor, Long>
 {
 
-    @Inject
+      @PersistenceContext(unitName = "SIBSUTIS_PU")
     private EntityManager em;
-
+      
     @Override
     protected EntityManager getEntityManager()
     {
         return em;
     }
 
-    public PassportFacade()
+    public ProfessorFacade()
     {
-        super(Passport.class);
+        super(Professor.class);
     }
 
 }

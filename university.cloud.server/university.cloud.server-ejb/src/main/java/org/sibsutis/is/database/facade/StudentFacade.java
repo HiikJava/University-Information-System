@@ -4,14 +4,15 @@ import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.inject.Inject;
-import org.sibsutis.is.database.model.entity.Education;
+import javax.persistence.PersistenceContext;
+import org.sibsutis.is.database.model.entity.Student;
 
 @Stateless
-@Named("education")
-public class EducationFacade extends AbstractFacade<Education, Long>
+@Named("student")
+public class StudentFacade extends AbstractFacade<Student, Long>
 {
 
-    @Inject
+     @PersistenceContext(unitName = "SIBSUTIS_PU")
     private EntityManager em;
 
     @Override
@@ -20,9 +21,9 @@ public class EducationFacade extends AbstractFacade<Education, Long>
         return em;
     }
 
-    public EducationFacade()
+    public StudentFacade()
     {
-        super(Education.class);
+        super(Student.class);
     }
 
 }

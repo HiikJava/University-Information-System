@@ -3,22 +3,25 @@
  */
 package org.sibsutis.is.database.model.entity;
 
-import java.sql.Date;
+import java.util.Map;
 import javax.persistence.Basic;
+import javax.persistence.ElementCollection;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.SequenceGenerator;
 
 /**
- * @author Admin
+ * @author vaganovdv
  */
 @MappedSuperclass
-public abstract class Document
+public abstract class Man
 {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "man_generator", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "man_generator", sequenceName = "man_sequence", allocationSize = 1)
     private Long id;
 
     @Basic
@@ -30,14 +33,20 @@ public abstract class Document
     @Basic
     private String MiddleName;
 
+    /**
+     * День рождения
+     */
     @Basic
-    private Integer Number;
+    private String Birthday;
 
+    /**
+     * Дата принятия
+     */
     @Basic
-    private Date Birthday;
+    private String Accepted;
 
-    @Basic
-    private String Sex;
+    @ElementCollection
+    private Map<String, String> Map;
 
     public Long getId()
     {
@@ -79,34 +88,34 @@ public abstract class Document
         this.MiddleName = MiddleName;
     }
 
-    public Integer getNumber()
-    {
-        return this.Number;
-    }
-
-    public void setNumber(Integer Number)
-    {
-        this.Number = Number;
-    }
-
-    public Date getBirthday()
+    public String getBirthday()
     {
         return this.Birthday;
     }
 
-    public void setBirthday(Date Birthday)
+    public void setBirthday(String Birthday)
     {
         this.Birthday = Birthday;
     }
 
-    public String getSex()
+    public String getAccepted()
     {
-        return this.Sex;
+        return this.Accepted;
     }
 
-    public void setSex(String Sex)
+    public void setAccepted(String Accepted)
     {
-        this.Sex = Sex;
+        this.Accepted = Accepted;
+    }
+
+    public Map<String, String> getMap()
+    {
+        return this.Map;
+    }
+
+    public void setMap(Map<String, String> Map)
+    {
+        this.Map = Map;
     }
 
 }

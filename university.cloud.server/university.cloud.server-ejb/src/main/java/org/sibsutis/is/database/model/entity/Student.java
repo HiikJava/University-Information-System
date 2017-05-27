@@ -6,10 +6,10 @@ package org.sibsutis.is.database.model.entity;
 import javax.persistence.Entity;
 
 /**
- * @author Admin
+ * @author vaganovdv
  */
 @Entity
-public class Policy extends Document
+public class Student extends Man
 {
 
 }

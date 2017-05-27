@@ -4,14 +4,15 @@ import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.inject.Inject;
-import org.sibsutis.is.database.model.entity.SNILS;
+import javax.persistence.PersistenceContext;
+import org.sibsutis.is.database.model.entity.Division;
 
 @Stateless
-@Named("SNILS")
-public class SNILSFacade extends AbstractFacade<SNILS, Long>
+@Named("division")
+public class DivisionFacade extends AbstractFacade<Division, Long>
 {
 
-    @Inject
+       @PersistenceContext(unitName = "SIBSUTIS_PU")
     private EntityManager em;
 
     @Override
@@ -20,9 +21,9 @@ public class SNILSFacade extends AbstractFacade<SNILS, Long>
         return em;
     }
 
-    public SNILSFacade()
+    public DivisionFacade()
     {
-        super(SNILS.class);
+        super(Division.class);
     }
 
 }

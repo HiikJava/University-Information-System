@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.sibsutis.is.database.model.entity" v="4.2.1" rws="_14940563935152" Pws="_14940563935152" cws="_14940563935152" sm="false" xs="false" id="_14940563935111" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.sibsutis.is.database.model.entity" v="4.2.1" rws="_14940563935152" Pws="_14940563935152" cws="_14940563935152" persistenceUnitName="SIBSUTIS_PU" sm="false" xs="false" id="_14940563935111" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
     <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="ManPK" abs="false" class="Man" v="true" m="false" rootElement="_14940563935111" id="_1494056480672">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>

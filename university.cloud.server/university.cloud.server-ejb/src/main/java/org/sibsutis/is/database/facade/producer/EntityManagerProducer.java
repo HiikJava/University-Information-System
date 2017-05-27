@@ -12,6 +12,6 @@ public class EntityManagerProducer
 {
 
     @Produces
-    @PersistenceContext(unitName = "sibsutisdb")
+    @PersistenceContext(unitName = "SIBSUTIS_PU")
     private EntityManager em;
 }

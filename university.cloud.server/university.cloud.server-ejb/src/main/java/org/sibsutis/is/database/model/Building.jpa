@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.sibsutis.is.database.model.entity" v="4.2.1" rws="_14946499688375" Pws="_14946499688375" cws="_14946499688375" persistenceUnitName="sibsutisdb" sm="false" xs="false" id="_14946499688374" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.sibsutis.is.database.model.entity" v="4.2.1" rws="_14946499688375" Pws="_14946499688375" cws="_14946499688375" sm="false" xs="false" id="_14946499688374" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
     <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="AbstractConstructionPK" abs="false" class="AbstractConstruction" v="true" m="false" rootElement="_14946499688374" id="_1494649994469">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
@@ -7,6 +7,11 @@
         <jpa:ath>Eugene</jpa:ath>
         <jpa:attributes>
             <jpa:basic attribute-type="String" v="true" name="Appointment" id="_149465001589412">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Type" id="_149586792551418">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
@@ -40,6 +45,57 @@
         </jpa:nq>
         <jpa:nq e="false" name="AbstractConstruction.findByAppointment">
             <jpa:query>Select c from AbstractConstruction c where c.Appointment=:Appointment</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AbstractConstruction.findByType">
+            <jpa:query>Select a from AbstractConstruction a where a.Type=:Type</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:mapped-superclass>
+    <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="AbstactEquipmentPK" abs="false" class="AbstactEquipment" v="true" m="false" rootElement="_14946499688374" id="_1495868237449">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Type" id="_149586844971532">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149586832050125">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="AbstactEquipment.findAll">
+            <jpa:query>Select m from AbstactEquipment m</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AbstactEquipment.findByType">
+            <jpa:query>Select a from AbstactEquipment a where a.Type=:Type</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:mapped-superclass>
+    <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="AbstractCommunicationPK" abs="false" class="AbstractCommunication" v="true" m="false" rootElement="_14946499688374" id="_1495868357379">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Type" id="_149586856349135">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149586851393533">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="AbstractCommunication.findAll">
+            <jpa:query>Select m from AbstractCommunication m</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AbstractCommunication.findByType">
+            <jpa:query>Select a from AbstractCommunication a where a.Type=:Type</jpa:query>
         </jpa:nq>
         <jpa:el/>
     </jpa:mapped-superclass>
@@ -110,6 +166,73 @@
         </jpa:nq>
         <jpa:el/>
     </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="RoomPK" abs="false" class="Room" superclassId="_1494649994469" v="true" m="false" rootElement="_14946499688374" id="_1495867845937">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1495868282013" v="true" name="furnitures" id="_149586833901426">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1495868393894" v="true" name="electricals" id="_149586855310234">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1495868419378" v="true" name="networks" id="_149586859365236">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Room.findAll">
+            <jpa:query>Select e from Room e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="BuildingPK" abs="false" class="Building" superclassId="_1494649994469" v="true" m="false" rootElement="_14946499688374" id="_1495868148320">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1495867845937" v="true" name="rooms" id="_149586820257321">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Building.findAll">
+            <jpa:query>Select e from Building e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="FurniturePK" abs="false" class="Furniture" superclassId="_1495868237449" v="true" m="false" rootElement="_14946499688374" id="_1495868282013">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes/>
+        <jpa:nq e="false" name="Furniture.findAll">
+            <jpa:query>Select e from Furniture e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ElectricalPK" abs="false" class="Electrical" superclassId="_1495868357379" v="true" m="false" rootElement="_14946499688374" id="_1495868393894">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes/>
+        <jpa:nq e="false" name="Electrical.findAll">
+            <jpa:query>Select e from Electrical e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="NetworkPK" abs="false" class="Network" superclassId="_1495868357379" v="true" m="false" rootElement="_14946499688374" id="_1495868419378">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes/>
+        <jpa:nq e="false" name="Network.findAll">
+            <jpa:query>Select e from Network e</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
     <jpa:embeddable abs="false" class="Address" v="true" m="false" rootElement="_14946499688374" id="_1494650095986">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
@@ -146,14 +269,14 @@
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:element-collection>
-            <jpa:embedded connected-class-id="_1494650356183" v="true" name="building" id="_149518632042360">
+            <jpa:embedded connected-class-id="_1494650356183" v="true" name="building1" id="_149518632042360">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:embedded>
         </jpa:attributes>
     </jpa:embeddable>
-    <jpa:embeddable abs="false" class="Room" v="true" m="false" rootElement="_14946499688374" id="_1494650244479">
+    <jpa:embeddable abs="false" class="Room1" v="true" m="false" rootElement="_14946499688374" id="_1494650244479">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -211,7 +334,7 @@
             </jpa:embedded>
         </jpa:attributes>
     </jpa:embeddable>
-    <jpa:embeddable abs="false" class="Building" v="true" m="false" rootElement="_14946499688374" id="_1494650356183">
+    <jpa:embeddable abs="false" class="Building1" v="true" m="false" rootElement="_14946499688374" id="_1494650356183">
         <jpa:ts e="true"/>
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
@@ -242,7 +365,7 @@
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:element-collection collection-type="java.util.List" connected-class-id="_1494650244479" v="true" name="rooms" id="_149518635859761">
+            <jpa:element-collection collection-type="java.util.List" connected-class-id="_1494650244479" v="true" name="room1s" id="_149518635859761">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
@@ -251,6 +374,8 @@
     </jpa:embeddable>
     <jpa:embeddable abs="false" class="Communications" v="true" m="false" rootElement="_14946499688374" id="_1495106607402">
         <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
         <jpa:ath>Eugene</jpa:ath>
         <jpa:attributes>
             <jpa:basic attribute-type="String" v="true" name="WaterMain" id="_149510663798011">
@@ -314,6 +439,30 @@
     </jpa:c>
     <jpa:wsl>
         <jpa:ws n="Main" id="_14946499688375">
+            <i ref="_1495868419378" x="976" y="-298">
+                <el/>
+            </i>
+            <i ref="_1495868237449" x="818" y="-209">
+                <el/>
+            </i>
+            <i ref="_1495868357379" x="842" y="-584">
+                <el/>
+            </i>
+            <i ref="_1495106607402" x="799" y="77">
+                <el/>
+            </i>
+            <i ref="_1495867845937" x="424" y="-442">
+                <el/>
+            </i>
+            <i ref="_1495868393894" x="740" y="-298">
+                <el/>
+            </i>
+            <i ref="_1494650095986" x="276" y="172">
+                <el/>
+            </i>
+            <i ref="_1495868282013" x="667" y="-72">
+                <el/>
+            </i>
             <i ref="_1494650244479" x="632" y="18">
                 <el>
                     <e ref="_149465062295239">
@@ -327,10 +476,10 @@
             <i ref="_1494651278398" x="105" y="269">
                 <el/>
             </i>
-            <i ref="_1495106607402" x="799" y="77">
+            <i ref="_1494649994469" x="41" y="-15">
                 <el/>
             </i>
-            <i ref="_1494649994469" x="29" y="18">
+            <i ref="_1495868148320" x="385" y="0">
                 <el/>
             </i>
             <i ref="_1494650356183" x="447" y="146">
@@ -339,9 +488,6 @@
                         <v st="1" si="12.0"/>
                     </e>
                 </el>
-            </i>
-            <i ref="_1494650095986" x="276" y="172">
-                <el/>
             </i>
             <i ref="_1495106976915" x="818" y="291">
                 <el/>

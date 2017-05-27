@@ -12,91 +12,85 @@ import javax.persistence.Embeddable;
  * @author Eugene
  */
 @Embeddable
-public
-	class Building {
+public class Building
+{
 
     @Basic
-    private
-	    String NumberOfBuilding;
+    private String NumberOfBuilding;
 
     @Basic
-    private
-	    String TypeOfConstructions;
+    private String TypeOfConstructions;
 
     @Basic
-    private
-	    String TotalStages;
+    private String TotalStages;
 
     @Basic
-    private
-	    String TotalRooms;
+    private String TotalRooms;
 
     @Basic
-    private
-	    String Parking;
+    private String Parking;
 
     @ElementCollection
-    private
-	    List<Room> rooms;
+    private List<Room> rooms;
 
-    public
-	    String getNumberOfBuilding () {
-	return this.NumberOfBuilding;
+    public String getNumberOfBuilding()
+    {
+        return this.NumberOfBuilding;
     }
 
-    public
-	    void setNumberOfBuilding (String NumberOfBuilding) {
-	this.NumberOfBuilding = NumberOfBuilding;
+    public void setNumberOfBuilding(String NumberOfBuilding)
+    {
+        this.NumberOfBuilding = NumberOfBuilding;
     }
 
-    public
-	    String getTypeOfConstructions () {
-	return this.TypeOfConstructions;
+    public String getTypeOfConstructions()
+    {
+        return this.TypeOfConstructions;
     }
 
-    public
-	    void setTypeOfConstructions (String TypeOfConstructions) {
-	this.TypeOfConstructions = TypeOfConstructions;
+    public void setTypeOfConstructions(String TypeOfConstructions)
+    {
+        this.TypeOfConstructions = TypeOfConstructions;
     }
 
-    public
-	    String getTotalStages () {
-	return this.TotalStages;
+    public String getTotalStages()
+    {
+        return this.TotalStages;
     }
 
-    public
-	    void setTotalStages (String TotalStages) {
-	this.TotalStages = TotalStages;
+    public void setTotalStages(String TotalStages)
+    {
+        this.TotalStages = TotalStages;
     }
 
-    public
-	    String getTotalRooms () {
-	return this.TotalRooms;
+    public String getTotalRooms()
+    {
+        return this.TotalRooms;
     }
 
-    public
-	    void setTotalRooms (String TotalRooms) {
-	this.TotalRooms = TotalRooms;
+    public void setTotalRooms(String TotalRooms)
+    {
+        this.TotalRooms = TotalRooms;
     }
 
-    public
-	    String getParking () {
-	return this.Parking;
+    public String getParking()
+    {
+        return this.Parking;
     }
 
-    public
-	    void setParking (String Parking) {
-	this.Parking = Parking;
+    public void setParking(String Parking)
+    {
+        this.Parking = Parking;
     }
 
-    public
-	    List<Room> getRooms () {
-	return this.rooms;
+    public List<Room> getRooms()
+    {
+        return this.rooms;
     }
 
-    public
-	    void setRooms (List<Room> rooms) {
-	this.rooms = rooms;
+    public void setRooms(List<Room> rooms)
+    {
+        this.rooms = rooms;
     }
 
 }

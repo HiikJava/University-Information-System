@@ -10,49 +10,46 @@ import javax.persistence.Entity;
  * @author Eugene
  */
 @Entity
-public
-	class Institute extends AbstractConstruction {
+public class Institute extends AbstractConstruction
+{
 
     @Basic
-    private
-	    String NameOfInstitute;
+    private String NameOfInstitute;
 
     @Basic
-    private
-	    String IsFilial;
+    private String IsFilial;
 
     @Basic
-    private
-	    String TotalStidents;
+    private String TotalStidents;
 
-    public
-	    String getNameOfInstitute () {
-	return this.NameOfInstitute;
+    public String getNameOfInstitute()
+    {
+        return this.NameOfInstitute;
     }
 
-    public
-	    void setNameOfInstitute (String NameOfInstitute) {
-	this.NameOfInstitute = NameOfInstitute;
+    public void setNameOfInstitute(String NameOfInstitute)
+    {
+        this.NameOfInstitute = NameOfInstitute;
     }
 
-    public
-	    String getIsFilial () {
-	return this.IsFilial;
+    public String getIsFilial()
+    {
+        return this.IsFilial;
     }
 
-    public
-	    void setIsFilial (String IsFilial) {
-	this.IsFilial = IsFilial;
+    public void setIsFilial(String IsFilial)
+    {
+        this.IsFilial = IsFilial;
     }
 
-    public
-	    String getTotalStidents () {
-	return this.TotalStidents;
+    public String getTotalStidents()
+    {
+        return this.TotalStidents;
     }
 
-    public
-	    void setTotalStidents (String TotalStidents) {
-	this.TotalStidents = TotalStidents;
+    public void setTotalStidents(String TotalStidents)
+    {
+        this.TotalStidents = TotalStidents;
     }
 
 }

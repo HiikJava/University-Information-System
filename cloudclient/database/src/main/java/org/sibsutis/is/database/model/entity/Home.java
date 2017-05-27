@@ -10,35 +10,33 @@ import javax.persistence.Entity;
  * @author Eugene
  */
 @Entity
-public
-	class Home extends AbstractConstruction {
+public class Home extends AbstractConstruction
+{
 
     @Basic
-    private
-	    String TypeOfOwnership;
+    private String TypeOfOwnership;
 
     @Basic
-    private
-	    String RegisteredTo;
+    private String RegisteredTo;
 
-    public
-	    String getTypeOfOwnership () {
-	return this.TypeOfOwnership;
+    public String getTypeOfOwnership()
+    {
+        return this.TypeOfOwnership;
     }
 
-    public
-	    void setTypeOfOwnership (String TypeOfOwnership) {
-	this.TypeOfOwnership = TypeOfOwnership;
+    public void setTypeOfOwnership(String TypeOfOwnership)
+    {
+        this.TypeOfOwnership = TypeOfOwnership;
     }
 
-    public
-	    String getRegisteredTo () {
-	return this.RegisteredTo;
+    public String getRegisteredTo()
+    {
+        return this.RegisteredTo;
     }
 
-    public
-	    void setRegisteredTo (String RegisteredTo) {
-	this.RegisteredTo = RegisteredTo;
+    public void setRegisteredTo(String RegisteredTo)
+    {
+        this.RegisteredTo = RegisteredTo;
     }
 
 }

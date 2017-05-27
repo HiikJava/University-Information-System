@@ -14,50 +14,47 @@ import javax.persistence.MappedSuperclass;
  * @author Eugene
  */
 @MappedSuperclass
-public abstract
-	class AbstractConstruction {
+public abstract class AbstractConstruction
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private
-	    Long id;
+    private Long id;
 
     @Basic
-    private
-	    String Appointment;
+    private String Appointment;
 
     @Embedded
-    private
-	    Address address;
+    private Address address;
 
-    public
-	    Long getId () {
-	return this.id;
+    public Long getId()
+    {
+        return this.id;
     }
 
-    public
-	    void setId (Long id) {
-	this.id = id;
+    public void setId(Long id)
+    {
+        this.id = id;
     }
 
-    public
-	    String getAppointment () {
-	return this.Appointment;
+    public String getAppointment()
+    {
+        return this.Appointment;
     }
 
-    public
-	    void setAppointment (String Appointment) {
-	this.Appointment = Appointment;
+    public void setAppointment(String Appointment)
+    {
+        this.Appointment = Appointment;
     }
 
-    public
-	    Address getAddress () {
-	return this.address;
+    public Address getAddress()
+    {
+        return this.address;
     }
 
-    public
-	    void setAddress (Address address) {
-	this.address = address;
+    public void setAddress(Address address)
+    {
+        this.address = address;
     }
 
 }

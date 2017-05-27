@@ -13,147 +13,137 @@ import javax.persistence.Embedded;
  * @author Eugene
  */
 @Embeddable
-public
-	class Room {
+public class Room
+{
 
     @Basic
-    private
-	    String NumberOfRoom;
+    private String NumberOfRoom;
 
     @Basic
-    private
-	    String TypeOfRoom;
+    private String TypeOfRoom;
 
     @Basic
-    private
-	    String RoomSize;
+    private String RoomSize;
 
     @Basic
-    private
-	    String TotalWindows;
+    private String TotalWindows;
 
     @Basic
-    private
-	    String NumOfSubrooms;
+    private String NumOfSubrooms;
 
     @Basic
-    private
-	    String Line380v;
+    private String Line380v;
 
     @ElementCollection
-    private
-	    List<String> ListFurniture;
+    private List<String> ListFurniture;
 
     @ElementCollection
-    private
-	    List<String> ListDevices;
+    private List<String> ListDevices;
 
     @Embedded
-    private
-	    Communications communications;
+    private Communications communications;
 
     @Embedded
-    private
-	    Furnitures furnitures;
+    private Furnitures furnitures;
 
-    public
-	    String getNumberOfRoom () {
-	return this.NumberOfRoom;
+    public String getNumberOfRoom()
+    {
+        return this.NumberOfRoom;
     }
 
-    public
-	    void setNumberOfRoom (String NumberOfRoom) {
-	this.NumberOfRoom = NumberOfRoom;
+    public void setNumberOfRoom(String NumberOfRoom)
+    {
+        this.NumberOfRoom = NumberOfRoom;
     }
 
-    public
-	    String getTypeOfRoom () {
-	return this.TypeOfRoom;
+    public String getTypeOfRoom()
+    {
+        return this.TypeOfRoom;
     }
 
-    public
-	    void setTypeOfRoom (String TypeOfRoom) {
-	this.TypeOfRoom = TypeOfRoom;
+    public void setTypeOfRoom(String TypeOfRoom)
+    {
+        this.TypeOfRoom = TypeOfRoom;
     }
 
-    public
-	    String getRoomSize () {
-	return this.RoomSize;
+    public String getRoomSize()
+    {
+        return this.RoomSize;
     }
 
-    public
-	    void setRoomSize (String RoomSize) {
-	this.RoomSize = RoomSize;
+    public void setRoomSize(String RoomSize)
+    {
+        this.RoomSize = RoomSize;
     }
 
-    public
-	    String getTotalWindows () {
-	return this.TotalWindows;
+    public String getTotalWindows()
+    {
+        return this.TotalWindows;
     }
 
-    public
-	    void setTotalWindows (String TotalWindows) {
-	this.TotalWindows = TotalWindows;
+    public void setTotalWindows(String TotalWindows)
+    {
+        this.TotalWindows = TotalWindows;
     }
 
-    public
-	    String getNumOfSubrooms () {
-	return this.NumOfSubrooms;
+    public String getNumOfSubrooms()
+    {
+        return this.NumOfSubrooms;
     }
 
-    public
-	    void setNumOfSubrooms (String NumOfSubrooms) {
-	this.NumOfSubrooms = NumOfSubrooms;
+    public void setNumOfSubrooms(String NumOfSubrooms)
+    {
+        this.NumOfSubrooms = NumOfSubrooms;
     }
 
-    public
-	    String getLine380v () {
-	return this.Line380v;
+    public String getLine380v()
+    {
+        return this.Line380v;
     }
 
-    public
-	    void setLine380v (String Line380v) {
-	this.Line380v = Line380v;
+    public void setLine380v(String Line380v)
+    {
+        this.Line380v = Line380v;
     }
 
-    public
-	    List<String> getListFurniture () {
-	return this.ListFurniture;
+    public List<String> getListFurniture()
+    {
+        return this.ListFurniture;
     }
 
-    public
-	    void setListFurniture (List<String> ListFurniture) {
-	this.ListFurniture = ListFurniture;
+    public void setListFurniture(List<String> ListFurniture)
+    {
+        this.ListFurniture = ListFurniture;
     }
 
-    public
-	    List<String> getListDevices () {
-	return this.ListDevices;
+    public List<String> getListDevices()
+    {
+        return this.ListDevices;
     }
 
-    public
-	    void setListDevices (List<String> ListDevices) {
-	this.ListDevices = ListDevices;
+    public void setListDevices(List<String> ListDevices)
+    {
+        this.ListDevices = ListDevices;
     }
 
-    public
-	    Communications getCommunications () {
-	return this.communications;
+    public Communications getCommunications()
+    {
+        return this.communications;
     }
 
-    public
-	    void setCommunications (Communications communications) {
-	this.communications = communications;
+    public void setCommunications(Communications communications)
+    {
+        this.communications = communications;
     }
 
-    public
-	    Furnitures getFurnitures () {
-	return this.furnitures;
+    public Furnitures getFurnitures()
+    {
+        return this.furnitures;
     }
 
-    public
-	    void setFurnitures (Furnitures furnitures) {
-	this.furnitures = furnitures;
+    public void setFurnitures(Furnitures furnitures)
+    {
+        this.furnitures = furnitures;
     }
 
 }

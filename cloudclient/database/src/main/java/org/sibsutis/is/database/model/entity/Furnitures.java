@@ -11,49 +11,46 @@ import javax.persistence.Embeddable;
  * @author Eugene
  */
 @Embeddable
-public
-	class Furnitures {
+public class Furnitures
+{
 
     @ElementCollection
-    private
-	    List<String> Equipment;
+    private List<String> Equipment;
 
     @ElementCollection
-    private
-	    List<String> PiecesOfFurniture;
+    private List<String> PiecesOfFurniture;
 
     @ElementCollection
-    private
-	    List<String> OtherFurnitures;
+    private List<String> OtherFurnitures;
 
-    public
-	    List<String> getEquipment () {
-	return this.Equipment;
+    public List<String> getEquipment()
+    {
+        return this.Equipment;
     }
 
-    public
-	    void setEquipment (List<String> Equipment) {
-	this.Equipment = Equipment;
+    public void setEquipment(List<String> Equipment)
+    {
+        this.Equipment = Equipment;
     }
 
-    public
-	    List<String> getPiecesOfFurniture () {
-	return this.PiecesOfFurniture;
+    public List<String> getPiecesOfFurniture()
+    {
+        return this.PiecesOfFurniture;
     }
 
-    public
-	    void setPiecesOfFurniture (List<String> PiecesOfFurniture) {
-	this.PiecesOfFurniture = PiecesOfFurniture;
+    public void setPiecesOfFurniture(List<String> PiecesOfFurniture)
+    {
+        this.PiecesOfFurniture = PiecesOfFurniture;
     }
 
-    public
-	    List<String> getOtherFurnitures () {
-	return this.OtherFurnitures;
+    public List<String> getOtherFurnitures()
+    {
+        return this.OtherFurnitures;
     }
 
-    public
-	    void setOtherFurnitures (List<String> OtherFurnitures) {
-	this.OtherFurnitures = OtherFurnitures;
+    public void setOtherFurnitures(List<String> OtherFurnitures)
+    {
+        this.OtherFurnitures = OtherFurnitures;
     }
 
 }

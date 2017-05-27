@@ -13,105 +13,98 @@ import javax.persistence.Embedded;
  * @author Eugene
  */
 @Embeddable
-public
-	class Address {
+public class Address
+{
 
     @Basic
-    private
-	    String ZipCode;
+    private String ZipCode;
 
     @Basic
-    private
-	    String Country;
+    private String Country;
 
     @Basic
-    private
-	    String Region;
+    private String Region;
 
     @Basic
-    private
-	    String City;
+    private String City;
 
     @Basic
-    private
-	    String Street;
+    private String Street;
 
     @ElementCollection
-    private
-	    List<String> GeoCoordinates;
+    private List<String> GeoCoordinates;
 
     @Embedded
-    private
-	    Building building;
+    private Building building;
 
-    public
-	    String getZipCode () {
-	return this.ZipCode;
+    public String getZipCode()
+    {
+        return this.ZipCode;
     }
 
-    public
-	    void setZipCode (String ZipCode) {
-	this.ZipCode = ZipCode;
+    public void setZipCode(String ZipCode)
+    {
+        this.ZipCode = ZipCode;
     }
 
-    public
-	    String getCountry () {
-	return this.Country;
+    public String getCountry()
+    {
+        return this.Country;
     }
 
-    public
-	    void setCountry (String Country) {
-	this.Country = Country;
+    public void setCountry(String Country)
+    {
+        this.Country = Country;
     }
 
-    public
-	    String getRegion () {
-	return this.Region;
+    public String getRegion()
+    {
+        return this.Region;
     }
 
-    public
-	    void setRegion (String Region) {
-	this.Region = Region;
+    public void setRegion(String Region)
+    {
+        this.Region = Region;
     }
 
-    public
-	    String getCity () {
-	return this.City;
+    public String getCity()
+    {
+        return this.City;
     }
 
-    public
-	    void setCity (String City) {
-	this.City = City;
+    public void setCity(String City)
+    {
+        this.City = City;
     }
 
-    public
-	    String getStreet () {
-	return this.Street;
+    public String getStreet()
+    {
+        return this.Street;
     }
 
-    public
-	    void setStreet (String Street) {
-	this.Street = Street;
+    public void setStreet(String Street)
+    {
+        this.Street = Street;
     }
 
-    public
-	    List<String> getGeoCoordinates () {
-	return this.GeoCoordinates;
+    public List<String> getGeoCoordinates()
+    {
+        return this.GeoCoordinates;
     }
 
-    public
-	    void setGeoCoordinates (List<String> GeoCoordinates) {
-	this.GeoCoordinates = GeoCoordinates;
+    public void setGeoCoordinates(List<String> GeoCoordinates)
+    {
+        this.GeoCoordinates = GeoCoordinates;
     }
 
-    public
-	    Building getBuilding () {
-	return this.building;
+    public Building getBuilding()
+    {
+        return this.building;
     }
 
-    public
-	    void setBuilding (Building building) {
-	this.building = building;
+    public void setBuilding(Building building)
+    {
+        this.building = building;
     }
 
 }

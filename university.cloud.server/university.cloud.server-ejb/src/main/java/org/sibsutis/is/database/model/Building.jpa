@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.sibsutis.is.database.model.entity" v="4.2.1" rws="_14946499688375" Pws="_14946499688375" cws="_14946499688375" persistenceUnitName="sibsutisdb" sm="false" xs="false" id="_14946499688374" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="AbstractConstructionPK" abs="false" class="AbstractConstruction" v="true" m="false" rootElement="_14946499688374" id="_1494649994469">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Eugene</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Appointment" id="_149465001589412">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:embedded connected-class-id="_1494650095986" v="true" name="address" id="_149518626349358">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:embedded>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_14946500112547">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="AbstractConstruction.findAll">
+            <jpa:query>Select m from AbstractConstruction m</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AbstractConstruction.findByTypeOfConstruction">
+            <jpa:query>Select c from AbstractConstruction c where c.TypeOfConstruction=:TypeOfConstruction</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AbstractConstruction.findByAttribute1">
+            <jpa:query>Select c from AbstractConstruction c where c.attribute1=:attribute1</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AbstractConstruction.findByAttribute2">
+            <jpa:query>Select c from AbstractConstruction c where c.attribute2=:attribute2</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AbstractConstruction.findByAttribute3">
+            <jpa:query>Select c from AbstractConstruction c where c.attribute3=:attribute3</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AbstractConstruction.findByAppointment">
+            <jpa:query>Select c from AbstractConstruction c where c.Appointment=:Appointment</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:mapped-superclass>
+    <jpa:entity xre="false" compositePrimaryKeyClass="InstitutePK" abs="false" class="Institute" superclassId="_1494649994469" v="true" m="false" rootElement="_14946499688374" id="_1494651278398">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Eugene</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="NameOfInstitute" id="_149465129486551">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="IsFilial" id="_149465136250253">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="TotalStidents" id="_149465136165652">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Institute.findAll">
+            <jpa:query>Select e from Institute e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Institute.findByNameOfInstitute">
+            <jpa:query>Select i from Institute i where i.NameOfInstitute=:NameOfInstitute</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Institute.findByTotalStidents">
+            <jpa:query>Select i from Institute i where i.TotalStidents=:TotalStidents</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Institute.findByIsFilial">
+            <jpa:query>Select i from Institute i where i.IsFilial=:IsFilial</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="HomePK" abs="false" class="Home" superclassId="_1494649994469" v="true" m="false" rootElement="_14946499688374" id="_1495107418505">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Eugene</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="TypeOfOwnership" id="_149510755183427">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="RegisteredTo" id="_149510755230228">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Home.findAll">
+            <jpa:query>Select e from Home e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Home.findByTypeOfOwnership">
+            <jpa:query>Select h from Home h where h.TypeOfOwnership=:TypeOfOwnership</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Home.findByRegisteredTo">
+            <jpa:query>Select h from Home h where h.RegisteredTo=:RegisteredTo</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Home.findByAttribute">
+            <jpa:query>Select h from Home h where h.attribute=:attribute</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:embeddable abs="false" class="Address" v="true" m="false" rootElement="_14946499688374" id="_1494650095986">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Eugene</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="ZipCode" id="_149518629006759">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Country" id="_149465027206521">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Region" id="_149465027227122">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="City" id="_149465027245723">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Street" id="_149465027264724">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="GeoCoordinates" id="_149465026945120">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:embedded connected-class-id="_1494650356183" v="true" name="building" id="_149518632042360">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:embedded>
+        </jpa:attributes>
+    </jpa:embeddable>
+    <jpa:embeddable abs="false" class="Room" v="true" m="false" rootElement="_14946499688374" id="_1494650244479">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Eugene</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="NumberOfRoom" ft="false" id="_149465062295239">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="TypeOfRoom" id="_149465062182235">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="RoomSize" id="_149465062208436">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="TotalWindows" id="_149465077662640">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="NumOfSubrooms" id="_149465077718043">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Line380v" id="_149465062266038">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="ListFurniture" id="_149465080934646">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="ListDevices" id="_149465086563947">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:embedded connected-class-id="_1495106607402" v="true" name="communications" id="_149518637860362">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:embedded>
+            <jpa:embedded connected-class-id="_1495106976915" v="true" name="furnitures" id="_149518642080564">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:embedded>
+        </jpa:attributes>
+    </jpa:embeddable>
+    <jpa:embeddable abs="false" class="Building" v="true" m="false" rootElement="_14946499688374" id="_1494650356183">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Eugene</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="NumberOfBuilding" id="_149465094082548">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="TypeOfConstructions" id="_149465048013730">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="TotalStages" id="_149465037441227">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="TotalRooms" id="_149465037465028">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Parking" id="_149465037485029">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:element-collection collection-type="java.util.List" connected-class-id="_1494650244479" v="true" name="rooms" id="_149518635859761">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+        </jpa:attributes>
+    </jpa:embeddable>
+    <jpa:embeddable abs="false" class="Communications" v="true" m="false" rootElement="_14946499688374" id="_1495106607402">
+        <jpa:ts e="true"/>
+        <jpa:ath>Eugene</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="WaterMain" id="_149510663798011">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="PhoneLine" id="_149510663864012">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="PowerLine380v" id="_149510663942013">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="EthernetLine" id="_149510664027714">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="OtherCommunications" id="_149518640583863">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+        </jpa:attributes>
+    </jpa:embeddable>
+    <jpa:embeddable abs="false" class="Furnitures" v="true" m="false" rootElement="_14946499688374" id="_1495106976915">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Eugene</jpa:ath>
+        <jpa:attributes>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="Equipment" id="_149510711063121">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="PiecesOfFurniture" id="_149510711108422">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="OtherFurnitures" id="_149510711156923">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+        </jpa:attributes>
+    </jpa:embeddable>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+    </jpa:c>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_14946499688375">
+            <i ref="_1494650244479" x="632" y="18">
+                <el>
+                    <e ref="_149465062295239">
+                        <v st="1" si="12.0" cl="#00cc00"/>
+                    </e>
+                </el>
+            </i>
+            <i ref="_1495107418505" x="16" y="391">
+                <el/>
+            </i>
+            <i ref="_1494651278398" x="105" y="269">
+                <el/>
+            </i>
+            <i ref="_1495106607402" x="799" y="77">
+                <el/>
+            </i>
+            <i ref="_1494649994469" x="29" y="18">
+                <el/>
+            </i>
+            <i ref="_1494650356183" x="447" y="146">
+                <el>
+                    <e ref="_149465094082548">
+                        <v st="1" si="12.0"/>
+                    </e>
+                </el>
+            </i>
+            <i ref="_1494650095986" x="276" y="172">
+                <el/>
+            </i>
+            <i ref="_1495106976915" x="818" y="291">
+                <el/>
+            </i>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>

@@ -42,7 +42,7 @@ public class IgniteManager implements IgniteManagerAPI
            {    
            
            result = true;
-             log.log(Level.INFO, "[IgniteManager] Стартовал успешно");
+             log.log(Level.INFO, "[IgniteManager]  Стартовал успешно");
            }
            else
            {

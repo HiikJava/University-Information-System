@@ -50,7 +50,7 @@ public class Installer
         log.log(Level.INFO,"======================================================================");
         log.log(Level.INFO,"");
         log.log(Level.INFO,ServerName);
-        log.log(Level.INFO,"(C) Хабаровский инстиут инфокоммуникаций  'Гипрогазцентр' 2017 г.");
+        log.log(Level.INFO,"(C) Хабаровский инстиут инфокоммуникаций  2017 г.");
         log.log(Level.INFO,"");
         log.log(Level.INFO,BuildDate);
         log.log(Level.INFO,"");

@@ -14,8 +14,9 @@
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
-  <persistence-unit name="DEFAULT_PU" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="DEFAULT_PU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>java:global/jdbc/sibsutisdatabase</jta-data-source>
     <class>org.sibsutis.is.database.model.entity.Passport</class>
     <class>org.sibsutis.is.database.model.entity.SNILS</class>
     <class>org.sibsutis.is.database.model.entity.INN</class>
@@ -26,10 +27,6 @@
     <class>org.sibsutis.is.database.model.entity.UnifiedStateExam</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
-      <property name="javax.persistence.jdbc.password" value="app"/>
-      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="javax.persistence.jdbc.user" value="app"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>

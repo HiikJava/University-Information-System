@@ -6,6 +6,11 @@
         <jpa:eq e="true"/>
         <jpa:ath>Admin</jpa:ath>
         <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Type" id="_149707934982431">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
             <jpa:basic attribute-type="String" v="true" name="SureName" id="_149465652171740">
                 <jpa:bv/>
                 <jpa:kbv/>
@@ -71,6 +76,9 @@
         </jpa:nq>
         <jpa:nq e="false" name="Document.findBySeries">
             <jpa:query>Select d from Document d where d.Series=:Series</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Document.findByType">
+            <jpa:query>Select d from Document d where d.Type=:Type</jpa:query>
         </jpa:nq>
         <jpa:el/>
     </jpa:mapped-superclass>
@@ -296,16 +304,16 @@
             <i ref="_1497062131624" x="771" y="279">
                 <el/>
             </i>
+            <i ref="_1494081078994" x="490" y="8">
+                <el/>
+            </i>
             <i ref="_1494081524196" x="124" y="-38">
                 <el/>
             </i>
-            <i ref="_1494080776730" x="272" y="140">
-                <el/>
-            </i>
-            <i ref="_1494081078994" x="447" y="-38">
-                <el/>
-            </i>
             <i ref="_1497062264360" x="771" y="379">
+                <el/>
+            </i>
+            <i ref="_1494080776730" x="272" y="140">
                 <el/>
             </i>
             <i ref="_1494081149920" x="285" y="467">

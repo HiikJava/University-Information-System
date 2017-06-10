@@ -36,6 +36,11 @@
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Series" id="_149706172732223">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
             <jpa:id attribute-type="Long" v="true" name="id" id="_149408104298534">
                 <jpa:bv/>
                 <jpa:kbv/>
@@ -64,6 +69,9 @@
         <jpa:nq e="false" name="Document.findByMiddleName">
             <jpa:query>Select d from Document d where d.MiddleName=:MiddleName</jpa:query>
         </jpa:nq>
+        <jpa:nq e="false" name="Document.findBySeries">
+            <jpa:query>Select d from Document d where d.Series=:Series</jpa:query>
+        </jpa:nq>
         <jpa:el/>
     </jpa:mapped-superclass>
     <jpa:entity xre="false" compositePrimaryKeyClass="PassportPK" abs="false" class="Passport" superclassId="_1494080776730" v="true" m="false" rootElement="_14940797084531" id="_1494080881802">
@@ -72,11 +80,6 @@
         <jpa:eq e="true"/>
         <jpa:ath>Admin</jpa:ath>
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" name="Series" id="_149408090587527">
-                <jpa:bv/>
-                <jpa:kbv/>
-                <jpa:vbv/>
-            </jpa:basic>
             <jpa:basic attribute-type="String" v="true" name="IssuedBy" id="_149408092864228">
                 <jpa:bv/>
                 <jpa:kbv/>
@@ -137,13 +140,7 @@
         <jpa:hc e="true"/>
         <jpa:eq e="true"/>
         <jpa:ath>Admin</jpa:ath>
-        <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" name="Series" id="_149408130073541">
-                <jpa:bv/>
-                <jpa:kbv/>
-                <jpa:vbv/>
-            </jpa:basic>
-        </jpa:attributes>
+        <jpa:attributes/>
         <jpa:nq e="false" name="MilitaryID.findAll">
             <jpa:query>Select e from MilitaryID e</jpa:query>
         </jpa:nq>
@@ -172,12 +169,7 @@
         <jpa:eq e="true"/>
         <jpa:ath>Admin</jpa:ath>
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" name="Education" id="_149408184460947">
-                <jpa:bv/>
-                <jpa:kbv/>
-                <jpa:vbv/>
-            </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="Series" id="_149408185048748">
+            <jpa:basic attribute-type="String" v="true" name="EducationDocument" id="_149408184460947">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
@@ -187,27 +179,121 @@
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="LevelOfEducation" id="_149706116131817">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="YearEnding" id="_149706119122018">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="NameOfInstitution" id="_149706131564019">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
         </jpa:attributes>
-        <jpa:nq e="false" name="Education.findAll">
-            <jpa:query>Select e from Education e</jpa:query>
+        <jpa:nq e="false" name="EducationDocument.findAll">
+            <jpa:query>Select e from EducationDocument e</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Education.findByEducation">
-            <jpa:query>Select e from Education e where e.Education=:Education</jpa:query>
+        <jpa:nq e="false" name="Education.findByEducationDocument">
+            <jpa:query>Select e from EducationDocument e where e.EducationDocument=:EducationDocument</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationDocument.findBySeries">
+            <jpa:query>Select e from EducationDocument e where e.Series=:Series</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationDocument.findByDateOfIssue">
+            <jpa:query>Select e from EducationDocument e where e.DateOfIssue=:DateOfIssue</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Education.findByLevelOfEducation">
+            <jpa:query>Select e from Education e where e.LevelOfEducation=:LevelOfEducation</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Education.findByYearEnding">
+            <jpa:query>Select e from Education e where e.YearEnding=:YearEnding</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Education.findByNameOfInstitution">
+            <jpa:query>Select e from Education e where e.NameOfInstitution=:NameOfInstitution</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="Education.findBySeries">
             <jpa:query>Select e from Education e where e.Series=:Series</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Education.findByDateOfIssue">
-            <jpa:query>Select e from Education e where e.DateOfIssue=:DateOfIssue</jpa:query>
+        <jpa:nq e="false" name="Education.findBySeries">
+            <jpa:query>Select e from Education e where e.Series=:Series</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Education.findByNumber">
+            <jpa:query>Select e from Education e where e.Number=:Number</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="DisciplinesPK" abs="false" class="Disciplines" superclassId="_1494080776730" v="true" m="false" rootElement="_14940797084531" id="_1497062131624">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Maximus</jpa:ath>
+        <jpa:attributes>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="Discipline" id="_149706215108740">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="Mark" id="_149706215550741">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Disciplines.findAll">
+            <jpa:query>Select e from Disciplines e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Disciplines.findByAttribute">
+            <jpa:query>Select d from Disciplines d where d.attribute=:attribute</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Disciplines.findByAttribute1">
+            <jpa:query>Select d from Disciplines d where d.attribute1=:attribute1</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="UnifiedStateExamPK" abs="false" class="UnifiedStateExam" superclassId="_1494080776730" v="true" m="false" rootElement="_14940797084531" id="_1497062264360">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>Maximus</jpa:ath>
+        <jpa:attributes>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="Discipline" id="_149706228531544">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="Score" id="_149706229778445">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+            <jpa:element-collection target-class="java.lang.String" collection-type="java.util.List" v="true" name="DeliveryDate" id="_149706231412746">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:element-collection>
+        </jpa:attributes>
+        <jpa:nq e="false" name="UnifiedStateExam.findAll">
+            <jpa:query>Select e from UnifiedStateExam e</jpa:query>
         </jpa:nq>
         <jpa:el/>
     </jpa:entity>
     <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
  * This file was generated by the Jeddict
  */</jpa:snp>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+    </jpa:c>
     <jpa:wsl>
         <jpa:ws n="Main" id="_14940797084542">
-            <i ref="_1494081078994" x="447" y="-38">
+            <i ref="_1497062131624" x="771" y="279">
                 <el/>
             </i>
             <i ref="_1494081524196" x="124" y="-38">
@@ -216,16 +302,22 @@
             <i ref="_1494080776730" x="272" y="140">
                 <el/>
             </i>
-            <i ref="_1494081149920" x="285" y="396">
+            <i ref="_1494081078994" x="447" y="-38">
                 <el/>
             </i>
-            <i ref="_1494080881802" x="124" y="379">
+            <i ref="_1497062264360" x="771" y="379">
                 <el/>
             </i>
-            <i ref="_1494081240719" x="438" y="379">
+            <i ref="_1494081149920" x="285" y="467">
                 <el/>
             </i>
-            <i ref="_1494081738003" x="273" y="-38">
+            <i ref="_1494080881802" x="106" y="437">
+                <el/>
+            </i>
+            <i ref="_1494081240719" x="438" y="467">
+                <el/>
+            </i>
+            <i ref="_1494081738003" x="771" y="76">
                 <el/>
             </i>
         </jpa:ws>

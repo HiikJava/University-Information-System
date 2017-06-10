@@ -1,18 +1,263 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="4.2.1" rws="_149406490971048" cws="_149406490971048" sm="false" xs="false" id="_149406490971047" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
-    <jpa:mapped-superclass xre="false" compositePrimaryKeyClass="MappedSuperclass_1PK" abs="false" class="MappedSuperclass_1" v="true" m="false" rootElement="_149406490971047" id="_1494064942311">
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="4.2.1" rws="_149406490971048" Pws="_149406490971048" cws="_149406490971048" sm="false" xs="false" id="_149406490971047" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="EducationUnitPK" abs="false" class="EducationUnit" v="true" m="false" rootElement="_149406490971047" id="_1497081731057">
+        <jpa:ts e="true"/>
         <jpa:ath>vaganovdv</jpa:ath>
-        <jpa:attributes/>
-        <jpa:nq e="false" name="MappedSuperclass_1.findAll">
-            <jpa:query>Select m from MappedSuperclass_1 m</jpa:query>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Type" id="_149708175259475">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Description" id="_149708175785177">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Duration" id="_149708175819278">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Title" id="_149708197222780">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Location" id="_149708382519397">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="DateTime" id="_149708384652198">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Time" id="_149708385919399">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="PlanReport" id="_1497084318683100">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Professor" id="_1497085210779108">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497083261708" v="true" name="themes" id="_149708332884293">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149708173106073">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="EducationUnit.findAll">
+            <jpa:query>Select e from EducationUnit e</jpa:query>
         </jpa:nq>
-    </jpa:mapped-superclass>
+        <jpa:nq e="false" name="EducationUnit.findByType">
+            <jpa:query>Select e from EducationUnit e where e.Type=:Type</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationUnit.findByName">
+            <jpa:query>Select e from EducationUnit e where e.Name=:Name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationUnit.findByDescription">
+            <jpa:query>Select e from EducationUnit e where e.Description=:Description</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationUnit.findByDuration">
+            <jpa:query>Select e from EducationUnit e where e.Duration=:Duration</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationUnit.findByTitle">
+            <jpa:query>Select e from EducationUnit e where e.Title=:Title</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationUnit.findByLocation">
+            <jpa:query>Select e from EducationUnit e where e.Location=:Location</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationUnit.findByDateTime">
+            <jpa:query>Select e from EducationUnit e where e.DateTime=:DateTime</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationUnit.findByTime">
+            <jpa:query>Select e from EducationUnit e where e.Time=:Time</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationUnit.findByPlanReport">
+            <jpa:query>Select e from EducationUnit e where e.PlanReport=:PlanReport</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="EducationUnit.findByProfessor">
+            <jpa:query>Select e from EducationUnit e where e.Professor=:Professor</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="DisciplinePK" abs="false" class="Discipline" v="true" m="false" rootElement="_149406490971047" id="_1497082805014">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Name" id="_149708283224684">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="ShortName" id="_149708283308585">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="TheoryCycle" id="_149708283351086">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="TotalHour" id="_149708283352787">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497081731057" v="true" name="educationUnits" id="_149708312372490">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149708280501682">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Discipline.findAll">
+            <jpa:query>Select e from Discipline e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Discipline.findByName">
+            <jpa:query>Select a from Discipline a where a.Name=:Name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Discipline.findByShortName">
+            <jpa:query>Select a from Discipline a where a.ShortName=:ShortName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Discipline.findByTheoryCycle">
+            <jpa:query>Select a from Discipline a where a.TheoryCycle=:TheoryCycle</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Discipline.findByTotalHour">
+            <jpa:query>Select a from Discipline a where a.TotalHour=:TotalHour</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Discipline.findByAttribute4">
+            <jpa:query>Select a from Discipline a where a.attribute4=:attribute4</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Discipline.findByAttribute5">
+            <jpa:query>Select a from Discipline a where a.attribute5=:attribute5</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ThemePK" abs="false" class="Theme" v="true" m="false" rootElement="_149406490971047" id="_1497083261708">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Section" id="_149708357008794">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Title" id="_149708360569295">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Duration" id="_149708365116396">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149708326171891">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Theme.findAll">
+            <jpa:query>Select e from Theme e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Theme.findBySection">
+            <jpa:query>Select t from Theme t where t.Section=:Section</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Theme.findByTitle">
+            <jpa:query>Select t from Theme t where t.Title=:Title</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Theme.findByDuration">
+            <jpa:query>Select t from Theme t where t.Duration=:Duration</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="SpecilityPK" abs="false" class="Specility" v="true" m="false" rootElement="_149406490971047" id="_1497084848257">
+        <jpa:ts e="true"/>
+        <jpa:ath>vaganovdv</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="Name" id="_1497084869778103">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Direction" id="_1497084883666104">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Code" id="_1497084897770105">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497082805014" v="true" name="disciplines" id="_1497084975653107">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497084848259101">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Specility.findAll">
+            <jpa:query>Select e from Specility e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Specility.findByName">
+            <jpa:query>Select s from Specility s where s.Name=:Name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Specility.findByDirection">
+            <jpa:query>Select s from Specility s where s.Direction=:Direction</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Specility.findByCode">
+            <jpa:query>Select s from Specility s where s.Code=:Code</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Specility.findByAttribute1">
+            <jpa:query>Select s from Specility s where s.attribute1=:attribute1</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
     <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
  * This file was generated by the Jeddict
  */</jpa:snp>
     <jpa:wsl>
         <jpa:ws n="Main" id="_149406490971048">
-            <i ref="_1494064942311" x="267" y="28">
+            <i ref="_1497083261708" x="227" y="302">
+                <el/>
+            </i>
+            <i ref="_1497082805014" x="-230" y="15">
+                <el/>
+            </i>
+            <i ref="_1497081731057" x="-3" y="15">
+                <el/>
+            </i>
+            <i ref="_1497084848257" x="-354" y="273">
                 <el/>
             </i>
         </jpa:ws>

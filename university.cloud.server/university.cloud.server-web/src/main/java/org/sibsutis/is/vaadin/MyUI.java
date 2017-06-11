@@ -2,21 +2,24 @@ package org.sibsutis.is.vaadin;
 
 import javax.servlet.annotation.WebServlet;
 
-import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.cdi.CDIUI;
-import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
-import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
-import org.sibsutis.is.database.facade.StudentFacade;
 import org.sibsutis.is.database.model.entity.Student;
+import javax.inject.Inject;
+
+import com.vaadin.annotations.Push;
+import com.vaadin.annotations.Theme;
+import com.vaadin.cdi.CDIUI;
+import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.UI;
+import org.sibsutis.is.database.facade.StudentFacade;
+
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -25,19 +28,21 @@ import org.sibsutis.is.database.model.entity.Student;
  * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
  * overridden to add component to the user interface and initialize non-component functionality.
  */
-@CDIUI
+
 @Theme("mytheme")
+@CDIUI("")
+@Push
+@SuppressWarnings("serial")
 public class MyUI extends UI 
 {
 
    
 private static final Logger log = Logger.getLogger(MyUI.class.getName());
 
-  @EJB
-    private StudentFacade studentFacade;
-  
+   // private StudentService studentService = StudentService.getInstance();
 
-  
+    @Inject
+    private StudentFacade studentFacade;
   
     @Override
     protected void init(VaadinRequest vaadinRequest)
@@ -65,17 +70,18 @@ private static final Logger log = Logger.getLogger(MyUI.class.getName());
             log.log(Level.INFO,"Попытка сохранения в базe данных... ");
             if (studentFacade !=null)
             {
-                log.log(Level.INFO,"Менеджер {Person } доступен");
+                log.log(Level.INFO,"Менеджер {StudentFacade} доступен");
                 Student  s = new Student();
                 s.setName("Иван");
                 s.setSureName("Иванов");
                 studentFacade.create(s);
-                      log.log(Level.INFO,"Менеджер {Person } экземпляр класса сохранен в БД"); 
+                
+                log.log(Level.INFO,"Менеджер {StudentFacade} экземпляр класса сохранен в БД"); 
                 
             } 
             else
                 {
-            log.log(Level.WARNING,"Менеджер {Person } не  доступен");
+            log.log(Level.WARNING,"Менеджер {StudentFacade} не  доступен");
         }
             
         });
@@ -86,10 +92,14 @@ private static final Logger log = Logger.getLogger(MyUI.class.getName());
     }
     
 
-    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
-    @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
-    public static class MyUIServlet extends VaadinServlet {
-    }
+ //   @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
+ //   @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
+ //   public static class MyUIServlet extends VaadinServlet 
+ //   {
+ //       
+ //       
+ //       
+ //   }
 
     
 }

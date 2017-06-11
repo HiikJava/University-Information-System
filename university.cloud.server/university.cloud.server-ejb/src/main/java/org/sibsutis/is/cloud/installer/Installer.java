@@ -60,9 +60,10 @@ public class Installer
         
                // r1 = IgniteManager.start();
                
-                log.log(Level.INFO,"Попытка тестовой записи...");
+                
                 
                 personManager.start();
+                
         
         if (r1)
         {

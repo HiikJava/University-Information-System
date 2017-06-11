@@ -7,6 +7,8 @@ package org.sibsutis.is.database.manager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import org.sibsutis.is.database.facade.EmployeeFacade;
@@ -24,6 +26,8 @@ import org.sibsutis.is.database.model.entity.StudentGroup;
 public class PersonManager
 {
 
+    private static final Logger log = Logger.getLogger(PersonManager.class.getName());
+    
     @EJB
     private StudentGroupFacade studentGroupFacade;
 
@@ -36,9 +40,12 @@ public class PersonManager
     
     
     
+    
 
     public void start()
     {
+        log.log(Level.INFO,"Попытка тестовой записи...");
+        
         Student student1  =new Student();
         student1.setName("Владимир");
         student1.setMiddleName("Владимирович");
@@ -66,6 +73,9 @@ public class PersonManager
         studentGroup.setStudents(StudentDatabase);
        
         studentGroupFacade.create(studentGroup);
+        
+        log.log(Level.INFO,"Попытка тестовой записи завершена");
+        
         
     }
     

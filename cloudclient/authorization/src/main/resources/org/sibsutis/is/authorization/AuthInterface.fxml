@@ -14,8 +14,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import org.controlsfx.control.SegmentedButton?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sibsutis.is.authorization.AuthInterfaceController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sibsutis.is.authorization.AuthInterfaceController">
     <stylesheets>
         <URL value="@authinterface.css" />
     </stylesheets>
@@ -102,7 +103,7 @@
                   </AnchorPane>
             </content>
           </TitledPane>
-          <TitledPane animated="false" text="Восстановление пароля">
+          <TitledPane animated="false" prefHeight="349.0" prefWidth="616.0" text="Восстановление пароля">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -147,5 +148,6 @@
           </TitledPane>
         </panes>
       </Accordion>
+      <SegmentedButton layoutX="791.0" layoutY="171.0" prefWidth="83.0" />
    </children>
 </AnchorPane>

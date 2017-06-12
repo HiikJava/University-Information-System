@@ -15,7 +15,7 @@
                 <artifactId>nbm-maven-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <useOSGiDependencies>true</useOSGiDependencies>
+                    <useOSGiDependencies>false</useOSGiDependencies>
                     <publicPackages>
                         <publicPackage>org.sibsutis.is.man.editor</publicPackage>
                     </publicPackages>
@@ -75,6 +75,11 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>man.manager</artifactId>
             <version>${project.version}</version>
+        </dependency>
+           <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>8.40.12</version>
         </dependency>
     </dependencies>
     <properties>

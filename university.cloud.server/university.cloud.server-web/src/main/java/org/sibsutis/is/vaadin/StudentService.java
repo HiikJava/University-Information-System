@@ -20,7 +20,7 @@ import org.sibsutis.is.database.model.entity.Student;
 public class StudentService
 {
     
-  private static final Logger log = Logger.getLogger(StudentService.class.getName());
+    private static final Logger log = Logger.getLogger(StudentService.class.getName());
     private static StudentService instance;
 
     @EJB

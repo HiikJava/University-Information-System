@@ -72,8 +72,9 @@ private static final Logger log = Logger.getLogger(MyUI.class.getName());
             {
                 log.log(Level.INFO,"Менеджер {StudentFacade} доступен");
                 Student  s = new Student();
-                s.setName("Иван");
-                s.setSureName("Иванов");
+                s.setName(i.getValue());
+                s.setSureName(fam.getValue());
+                s.setMiddleName(o.getValue());
                 studentFacade.create(s);
                 
                 log.log(Level.INFO,"Менеджер {StudentFacade} экземпляр класса сохранен в БД"); 

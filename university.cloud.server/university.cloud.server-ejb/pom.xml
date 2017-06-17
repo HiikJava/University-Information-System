@@ -140,7 +140,7 @@
                 </property>
             </activation>
             <properties>
-                <db.password>postgresdb</db.password>
+                <db.password>root</db.password>
                 <db.user>postgres</db.user>
                 <db.port>5432</db.port>
                 <db.name>postgres</db.name>

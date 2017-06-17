@@ -1,9 +1,5 @@
 package org.sibsutis.is.vaadin;
 
-import javax.servlet.annotation.WebServlet;
-
-import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
@@ -19,8 +15,12 @@ import com.vaadin.cdi.CDIUI;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.UI;
+import java.sql.Date;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import static java.time.temporal.TemporalQueries.localDate;
 import java.util.Locale;
+import java.util.function.Supplier;
 import org.sibsutis.is.database.facade.StudentFacade;
 
 
@@ -62,9 +62,12 @@ private static final Logger log = Logger.getLogger(MyUI.class.getName());
         fam.setCaption("Введите фамилию:");
         i.setCaption("Введите Имfя:");
         o.setCaption("Введите отчество:");
-        date.setDateFormat("MM-dd-yyyy");
+        date.setCaption("Введите дату рождения");
+        date.setDateFormat("dd.MM.yyyy");
         date.setLocale(new Locale( "ru" , "RU" ) );
         date.setValue(LocalDate.now());
+        
+        
         
         Button button = new Button("Сохранить");
         button.addClickListener( e -> 
@@ -80,6 +83,7 @@ private static final Logger log = Logger.getLogger(MyUI.class.getName());
                 s.setName(i.getValue());
                 s.setSureName(fam.getValue());
                 s.setMiddleName(o.getValue());
+                s.setBirthday(java.sql.Date.valueOf(date.getValue()));
                 studentFacade.create(s);
                 
                 log.log(Level.INFO,"Менеджер {StudentFacade} экземпляр класса сохранен в БД"); 

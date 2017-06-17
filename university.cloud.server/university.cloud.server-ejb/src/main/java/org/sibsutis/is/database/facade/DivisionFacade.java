@@ -9,20 +9,18 @@ import org.sibsutis.is.database.model.entity.Division;
 
 @Stateless
 @Named("division")
-public class DivisionFacade extends AbstractFacade<Division, Long>
-{
+public class DivisionFacade extends AbstractFacade<Division, Long> {
 
-       @PersistenceContext(unitName = "SIBSUTIS_PU")
+    @PersistenceContext(unitName = "SIBSUTIS_PU")
     private EntityManager em;
 
+
     @Override
-    protected EntityManager getEntityManager()
-    {
+    protected EntityManager getEntityManager() {
         return em;
     }
 
-    public DivisionFacade()
-    {
+    public DivisionFacade() {
         super(Division.class);
     }
 

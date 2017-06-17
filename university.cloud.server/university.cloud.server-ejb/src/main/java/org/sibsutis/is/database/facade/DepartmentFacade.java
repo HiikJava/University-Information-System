@@ -9,20 +9,18 @@ import org.sibsutis.is.database.model.entity.Department;
 
 @Stateless
 @Named("department")
-public class DepartmentFacade extends AbstractFacade<Department, Long>
-{
+public class DepartmentFacade extends AbstractFacade<Department, Long> {
 
-     @PersistenceContext(unitName = "SIBSUTIS_PU")
+    @PersistenceContext(unitName = "SIBSUTIS_PU")
     private EntityManager em;
 
+
     @Override
-    protected EntityManager getEntityManager()
-    {
+    protected EntityManager getEntityManager() {
         return em;
     }
 
-    public DepartmentFacade()
-    {
+    public DepartmentFacade() {
         super(Department.class);
     }
 

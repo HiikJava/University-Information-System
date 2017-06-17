@@ -10,8 +10,7 @@ import javax.persistence.Entity;
  * @author vaganovdv
  */
 @Entity
-public class Professor extends Man
-{
+public class Professor extends Man {
 
     /**
      * Должность преподователя
@@ -19,13 +18,11 @@ public class Professor extends Man
     @Basic
     private String Position;
 
-    public String getPosition()
-    {
+    public String getPosition() {
         return this.Position;
     }
 
-    public void setPosition(String Position)
-    {
+    public void setPosition(String Position) {
         this.Position = Position;
     }
 

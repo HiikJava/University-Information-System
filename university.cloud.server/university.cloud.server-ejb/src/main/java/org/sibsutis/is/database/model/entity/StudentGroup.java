@@ -16,8 +16,7 @@ import javax.persistence.OneToMany;
  * @author vaganovdv
  */
 @Entity
-public class StudentGroup
-{
+public class StudentGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,23 +25,19 @@ public class StudentGroup
     @OneToMany(targetEntity = Student.class)
     private List<Student> students;
 
-    public Long getId()
-    {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(Long id)
-    {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public List<Student> getStudents()
-    {
+    public List<Student> getStudents() {
         return this.students;
     }
 
-    public void setStudents(List<Student> students)
-    {
+    public void setStudents(List<Student> students) {
         this.students = students;
     }
 

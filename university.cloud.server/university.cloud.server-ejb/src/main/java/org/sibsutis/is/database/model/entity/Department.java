@@ -16,8 +16,7 @@ import javax.persistence.OneToMany;
  * @author Maximus
  */
 @Entity
-public class Department
-{
+public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,23 +25,19 @@ public class Department
     @OneToMany(targetEntity = Professor.class)
     private List<Professor> professors;
 
-    public Long getId()
-    {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(Long id)
-    {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public List<Professor> getProfessors()
-    {
+    public List<Professor> getProfessors() {
         return this.professors;
     }
 
-    public void setProfessors(List<Professor> professors)
-    {
+    public void setProfessors(List<Professor> professors) {
         this.professors = professors;
     }
 

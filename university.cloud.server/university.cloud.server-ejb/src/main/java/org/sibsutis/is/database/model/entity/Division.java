@@ -16,8 +16,7 @@ import javax.persistence.OneToMany;
  * @author Maximus
  */
 @Entity
-public class Division
-{
+public class Division {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,23 +25,19 @@ public class Division
     @OneToMany(targetEntity = Employee.class)
     private List<Employee> employees;
 
-    public Long getId()
-    {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(Long id)
-    {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public List<Employee> getEmployees()
-    {
+    public List<Employee> getEmployees() {
         return this.employees;
     }
 
-    public void setEmployees(List<Employee> employees)
-    {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
 

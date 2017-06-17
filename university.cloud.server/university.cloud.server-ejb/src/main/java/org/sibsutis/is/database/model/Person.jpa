@@ -21,7 +21,7 @@
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" name="Birthday" id="_149407990098719">
+            <jpa:basic attribute-type="java.sql.Date" v="true" name="Birthday" id="_149407990098719">
                 <jpa:des>День рождения</jpa:des>
                 <jpa:bv/>
                 <jpa:kbv/>

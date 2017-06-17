@@ -9,7 +9,6 @@ import javax.persistence.Entity;
  * @author vaganovdv
  */
 @Entity
-public class Student extends Man
-{
+public class Student extends Man {
 
 }

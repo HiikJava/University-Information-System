@@ -17,7 +17,10 @@ import com.vaadin.annotations.Push;
 import com.vaadin.annotations.Theme;
 import com.vaadin.cdi.CDIUI;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.DateField;
 import com.vaadin.ui.UI;
+import java.time.LocalDate;
+import java.util.Locale;
 import org.sibsutis.is.database.facade.StudentFacade;
 
 
@@ -54,12 +57,14 @@ private static final Logger log = Logger.getLogger(MyUI.class.getName());
         final TextField fam = new TextField();
         final TextField i = new TextField();
         final TextField o = new TextField();
+        final DateField date = new DateField();
         
         fam.setCaption("Введите фамилию:");
-        i.setCaption("Введите Имя:");
+        i.setCaption("Введите Имfя:");
         o.setCaption("Введите отчество:");
-        
-        
+        date.setDateFormat("MM-dd-yyyy");
+        date.setLocale(new Locale( "ru" , "RU" ) );
+        date.setValue(LocalDate.now());
         
         Button button = new Button("Сохранить");
         button.addClickListener( e -> 
@@ -87,7 +92,7 @@ private static final Logger log = Logger.getLogger(MyUI.class.getName());
             
         });
         
-        layout.addComponents(fam,i,o, button);
+        layout.addComponents(fam,i,o, date, button);
         
         setContent(layout);
     }

@@ -33,6 +33,12 @@
             <version>6.0</version>
         </dependency>
         <dependency>
+            <groupId>org.sibsutis.is</groupId>
+            <artifactId>university.cloud.server-ejb</artifactId>
+            <version>0.0.7</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>

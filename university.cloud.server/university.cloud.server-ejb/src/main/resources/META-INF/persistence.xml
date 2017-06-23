@@ -14,20 +14,5 @@
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
-  <persistence-unit name="DEFAULT_PU" transaction-type="JTA">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <jta-data-source>java:global/jdbc/sibsutisdatabase</jta-data-source>
-    <class>org.sibsutis.is.database.model.entity.Passport</class>
-    <class>org.sibsutis.is.database.model.entity.SNILS</class>
-    <class>org.sibsutis.is.database.model.entity.INN</class>
-    <class>org.sibsutis.is.database.model.entity.MilitaryID</class>
-    <class>org.sibsutis.is.database.model.entity.Policy</class>
-    <class>org.sibsutis.is.database.model.entity.Education</class>
-    <class>org.sibsutis.is.database.model.entity.Disciplines</class>
-    <class>org.sibsutis.is.database.model.entity.UnifiedStateExam</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
-    </properties>
-  </persistence-unit>
+  
 </persistence>

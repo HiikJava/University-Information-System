@@ -8,15 +8,20 @@
      </h:head>
  
      <h:body>
- 
-<h:form>
-    <p:focus for="terminal" />
- 
-    <p:terminal id="terminal" widgetVar="term" commandHandler="#{terminalView.handleCommand}"
-                welcomeMessage="Welcome to PrimeFaces Terminal, how are you today?" />
- 
-    <p:commandButton type="button" value="Clear" icon="ui-icon-trash" onclick="PF('term').clear()" style="margin-top:10px"/>
-</h:form>
- 
+        <h:form>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel value="Введите фамилию:" for="LastName" style="font-weight:bold; font-family: 'latoregular', 'Trebuchet MS', Arial, Helvetica, sans-serif;"/>
+                <p:inputText id="LastName" value="#{terminalView.lastname}"/>
+                <p:outputLabel value="Введите имя:" for="FirstName" style="font-weight:bold"/>
+                <p:inputText id="FirstName" value="#{terminalView.firstname}"/>
+                <p:outputLabel value="Введите отчество" for="MiddleName" style="font-weight:bold"/>
+                <p:inputText id="MiddleName" value="#{terminalView.middlename}"/>
+
+                <p:commandButton value="Submit" update="display" icon="ui-icon-check" />
+                <h:outputText id="display" value="#{terminalView.fullname}" />
+            </h:panelGrid>> 
+        </h:form> 
+         
+        
      </h:body>
 </html>

@@ -59,8 +59,13 @@ public class terminalView
     }
     
     public String getfullname(){
-        fullname = lastname+" "+firstname+" "+middlename;
-        log.log(Level.INFO, "[terminalView] полное имя: "+fullname);
+        if (lastname!=null){
+                fullname = lastname+" "+firstname+" "+middlename;
+                log.log(Level.INFO, "[terminalView] полное имя: "+fullname);
+            
+        }else{
+                fullname = "";
+             }
         return fullname;
     }
 }

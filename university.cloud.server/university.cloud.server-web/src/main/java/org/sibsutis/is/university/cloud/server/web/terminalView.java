@@ -3,7 +3,9 @@ package org.sibsutis.is.university.cloud.server.web;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Resource;
 import javax.ejb.EJB;
+import javax.ejb.SessionContext;
 import org.sibsutis.is.database.facade.StudentFacade;
 import javax.faces.bean.ManagedBean;
 import org.sibsutis.is.cloud.ignite.IgniteManager;
@@ -15,9 +17,12 @@ import org.sibsutis.is.cloud.ignite.IgniteManager;
 
 
 @ManagedBean
+
 public class terminalView 
 {
     private static final Logger log = Logger.getLogger(IgniteManager.class.getName());
+    
+    @Resource SessionContext ctx; 
     
     private String firstname;
     private String lastname;
@@ -29,7 +34,8 @@ public class terminalView
         
 
     public String handleCommand(String command, String[] params) {
-        if(command.equals("greet")) {
+        if(command.equals("greet")) 
+        {
             return "В базе данных студентов: "+studentFacade.count();
         }
         else {
@@ -63,6 +69,14 @@ public class terminalView
                 fullname = lastname+" "+firstname+" "+middlename;
                 log.log(Level.INFO, "[terminalView] полное имя: "+fullname);
             
+               
+                
+               
+                 String SessionUser ="Не указан"; 
+                        SessionUser = ctx.getCallerPrincipal().getName();
+                log.log(Level.INFO, "[terminalView] Login user: "+fullname);
+                 
+                 
         }else{
                 fullname = "";
              }
